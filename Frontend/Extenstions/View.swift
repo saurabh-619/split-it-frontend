@@ -12,4 +12,8 @@ extension View {
     func toastView(toast: Binding<Toast?>) -> some View {
         self.modifier(ToastModifier(toast: toast))
     }
+    
+    func backgroundColor() -> some View {
+        self.modifier(BackgroundModifier())
+    }
 }

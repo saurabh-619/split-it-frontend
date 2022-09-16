@@ -16,16 +16,17 @@ struct ToastModifier: ViewModifier {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay {
                 ZStack() {
-                    if let toast {
+                    if let toast = toast {
                         VStack {
                             ToastView(type: toast.type, title: toast.title, message: toast.message) {
                                 dismissToken()
                             }
                             Spacer()
                         }
-                        .transition(.asymmetric(insertion: .offset(y: 0), removal: .offset(y: -300))) 
+                        .transition(.opacity.combined(with: .offset(y: -300)))
                     }
                 }
+                .animation(.spring().speed(0.9), value: toast)
             }
             .onChange(of: toast) { _ in
                 showToast()
@@ -44,8 +45,6 @@ struct ToastModifier: ViewModifier {
     }
     
     private func dismissToken() {
-        withAnimation(.easeInOut(duration: 0.5)) {
-            toast = nil
-        }
+        toast = nil
     }
 }

@@ -26,7 +26,6 @@ struct ToastView: View {
                         .foregroundStyle(type.iconColor, .white)
                         .font(.system(size: 26))
                 }
-                .shadow(color: type.shadowColor, radius: 15, x: 3, y: 6)
             
             Spacer()
             
@@ -46,11 +45,12 @@ struct ToastView: View {
             Spacer()
             
             Rectangle()
-                .fill(isHoveringClose ? .white : .clear)
-                .cornerRadius(12)
-                .frame(width: 40, height: 40)
+                .fill(isHoveringClose ? Color.theme.white80 : Color.clear)
+                .cornerRadius(8)
+                .frame(width: 30, height: 30)
                 .overlay(
                     Image(systemName: "xmark")
+                        .font(.system(size: 13))
                         .onTapGesture {
                             onClose()
                             isHoveringClose.toggle()
@@ -58,15 +58,19 @@ struct ToastView: View {
                                 isHoveringClose.toggle()
                             }
                         }
-                        .foregroundColor(isHoveringClose ? .black : .black.opacity(0.35))
+                        .foregroundColor(isHoveringClose ? Color.black : Color.theme.white30)
                         .fontWeight(.bold),
                     alignment: .center
                 )
         }
         .padding(16)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(minHeight: 90)
-        .background(type.bgColor)
+        .background(
+            LinearGradient(colors: [type.shadowColor.opacity(0.2), type.shadowColor.opacity(0.01)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
+        .backgroundColor()
     }
 }
 
@@ -78,5 +82,6 @@ struct ToastView_Previews: PreviewProvider {
             ToastView(type: .warning, title:"New volume!", message: "your subscription ends in 2 days")
             ToastView(type: .error, title:"oops!", message: "couldn't logged in")
         }
+        .preferredColorScheme(.dark)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A30E128D497DE00F93215 /* BackgroundModifier.swift */; };
 		09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62028D24DA10007ACEF /* ToastView.swift */; };
 		09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62228D257F70007ACEF /* UIScreen.swift */; };
 		09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62528D263ED0007ACEF /* ToastModifier.swift */; };
@@ -21,9 +22,14 @@
 		09BEAA8B28D10D7A00FFEF94 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BEAA8A28D10D7A00FFEF94 /* LoginRequest.swift */; };
 		09BEAA8D28D10DB500FFEF94 /* CoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BEAA8C28D10DB500FFEF94 /* CoreResponse.swift */; };
 		09BEAA8F28D10EA800FFEF94 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BEAA8E28D10EA800FFEF94 /* LoginResponse.swift */; };
+		09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */; };
+		09C0425728D3A16E00FEAC6D /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425628D3A16E00FEAC6D /* LoginValidation.swift */; };
+		09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */; };
+		09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425A28D3B2CE00FEAC6D /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		099A30E128D497DE00F93215 /* BackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
 		09BBB62028D24DA10007ACEF /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		09BBB62228D257F70007ACEF /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		09BBB62528D263ED0007ACEF /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
@@ -39,6 +45,10 @@
 		09BEAA8A28D10D7A00FFEF94 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		09BEAA8C28D10DB500FFEF94 /* CoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreResponse.swift; sourceTree = "<group>"; };
 		09BEAA8E28D10EA800FFEF94 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		09C0425628D3A16E00FEAC6D /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
+		09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
+		09C0425A28D3B2CE00FEAC6D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				09BBB62528D263ED0007ACEF /* ToastModifier.swift */,
+				099A30E128D497DE00F93215 /* BackgroundModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -83,6 +94,7 @@
 				09BEAA7A28D1035500FFEF94 /* Utilities */,
 				09BEAA7B28D1035D00FFEF94 /* Services */,
 				09BEAA7D28D103B400FFEF94 /* Common */,
+				09C0425528D3A0F400FEAC6D /* Validations */,
 				09BEAA7528D1032800FFEF94 /* Core */,
 				09BEAA6728D102F500FFEF94 /* FrontendApp.swift */,
 				09BEAA6B28D102F500FFEF94 /* Assets.xcassets */,
@@ -102,8 +114,8 @@
 		09BEAA7528D1032800FFEF94 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				09BBB62428D263CE0007ACEF /* ViewModifiers */,
 				09BEAA7828D1033A00FFEF94 /* Components */,
+				09BBB62428D263CE0007ACEF /* ViewModifiers */,
 				09BEAA7728D1033500FFEF94 /* Register */,
 				09BEAA7628D1032D00FFEF94 /* Login */,
 			);
@@ -131,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				09BBB62028D24DA10007ACEF /* ToastView.swift */,
+				09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -140,6 +153,8 @@
 			children = (
 				09BBB62228D257F70007ACEF /* UIScreen.swift */,
 				09BBB62928D26B380007ACEF /* View.swift */,
+				09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */,
+				09C0425A28D3B2CE00FEAC6D /* Color.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -217,6 +232,14 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		09C0425528D3A0F400FEAC6D /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				09C0425628D3A16E00FEAC6D /* LoginValidation.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,13 +315,18 @@
 				09BEAA8D28D10DB500FFEF94 /* CoreResponse.swift in Sources */,
 				09BEAA6828D102F500FFEF94 /* FrontendApp.swift in Sources */,
 				09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */,
+				09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */,
 				09BEAA8328D108DA00FFEF94 /* LoginViewModel.swift in Sources */,
 				09BEAA8B28D10D7A00FFEF94 /* LoginRequest.swift in Sources */,
 				09BEAA8528D10A2C00FFEF94 /* Constants.swift in Sources */,
+				099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */,
 				09BBB62A28D26B380007ACEF /* View.swift in Sources */,
 				09BBB62828D2642E0007ACEF /* Toast.swift in Sources */,
+				09C0425728D3A16E00FEAC6D /* LoginValidation.swift in Sources */,
 				09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */,
 				09BEAA8F28D10EA800FFEF94 /* LoginResponse.swift in Sources */,
+				09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */,
+				09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import Foundation
 class LoginViewModel: ObservableObject {
     @Published var username = ""
     @Published var password = ""
+    @Published var isPasswordVisible = false
     @Published private var isLoading = false
     
     func login(loginRequest: LoginRequest) async {

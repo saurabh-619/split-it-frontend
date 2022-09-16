@@ -16,22 +16,13 @@ enum ToastStyle {
 }
 
 
-extension ToastStyle {
-    var bgColor: Color {
-        switch self {
-        case .info: return Color.blue.opacity(0.15)
-        case .success: return Color.green.opacity(0.15)
-        case .warning: return Color.yellow.opacity(0.15)
-        case .error: return Color.red.opacity(0.15)
-        }
-    }
-    
+extension ToastStyle {  
     var shadowColor: Color {
         switch self {
-        case .info: return Color.blue.opacity(0.4)
-        case .success: return Color.green.opacity(0.4)
-        case .warning: return Color.yellow.opacity(0.4)
-        case .error: return Color.red.opacity(0.4)
+        case .info: return Color.blue.opacity(0.7)
+        case .success: return Color.green.opacity(0.7)
+        case .warning: return Color.yellow.opacity(0.7)
+        case .error: return Color.red.opacity(0.7)
         }
     }
     
