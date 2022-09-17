@@ -5,7 +5,6 @@
 //  Created by Saurabh Bomble on 15/09/22.
 //
 
-import Foundation
 import SwiftUI
 
 struct ToastModifier: ViewModifier {

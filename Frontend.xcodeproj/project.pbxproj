@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A30E128D497DE00F93215 /* BackgroundModifier.swift */; };
+		099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */; };
+		099D4B5A28D63BEF00023AF2 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5928D63BEF00023AF2 /* TextField.swift */; };
+		099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5C28D63DEE00023AF2 /* ValidationErrorView.swift */; };
+		099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */; };
+		099D4B6528D6536F00023AF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6428D6536F00023AF2 /* HomeView.swift */; };
+		099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */; };
 		09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62028D24DA10007ACEF /* ToastView.swift */; };
 		09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62228D257F70007ACEF /* UIScreen.swift */; };
 		09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62528D263ED0007ACEF /* ToastModifier.swift */; };
@@ -26,10 +32,21 @@
 		09C0425728D3A16E00FEAC6D /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425628D3A16E00FEAC6D /* LoginValidation.swift */; };
 		09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */; };
 		09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425A28D3B2CE00FEAC6D /* Color.swift */; };
+		09CB888E28D5BB7D0077F045 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* Request.swift */; };
+		09CB889028D5BB840077F045 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* Response.swift */; };
+		09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889328D5BBC30077F045 /* ActionButtonView.swift */; };
+		09CB889628D5BD280077F045 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889528D5BD280077F045 /* RegisterView.swift */; };
+		09CB889A28D5CC0E0077F045 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889928D5CC0E0077F045 /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		099A30E128D497DE00F93215 /* BackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
+		099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		099D4B5928D63BEF00023AF2 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		099D4B5C28D63DEE00023AF2 /* ValidationErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorView.swift; sourceTree = "<group>"; };
+		099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboardModifier.swift; sourceTree = "<group>"; };
+		099D4B6428D6536F00023AF2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		09BBB62028D24DA10007ACEF /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		09BBB62228D257F70007ACEF /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		09BBB62528D263ED0007ACEF /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
@@ -49,6 +66,11 @@
 		09C0425628D3A16E00FEAC6D /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		09C0425A28D3B2CE00FEAC6D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		09CB888D28D5BB7D0077F045 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		09CB888F28D5BB840077F045 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		09CB889328D5BBC30077F045 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
+		09CB889528D5BD280077F045 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		09CB889928D5CC0E0077F045 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		099D4B5B28D63DC700023AF2 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */,
+				09CB889328D5BBC30077F045 /* ActionButtonView.swift */,
+				09CB889928D5CC0E0077F045 /* TextFieldView.swift */,
+				099D4B5C28D63DEE00023AF2 /* ValidationErrorView.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		099D4B6028D6535400023AF2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				099D4B6328D6536200023AF2 /* ViewModels */,
+				099D4B6128D6535900023AF2 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		099D4B6128D6535900023AF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				099D4B6428D6536F00023AF2 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		099D4B6328D6536200023AF2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		09BBB62428D263CE0007ACEF /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
 				09BBB62528D263ED0007ACEF /* ToastModifier.swift */,
 				099A30E128D497DE00F93215 /* BackgroundModifier.swift */,
+				099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */,
+				099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -95,6 +154,8 @@
 				09BEAA7B28D1035D00FFEF94 /* Services */,
 				09BEAA7D28D103B400FFEF94 /* Common */,
 				09C0425528D3A0F400FEAC6D /* Validations */,
+				09BEAA7828D1033A00FFEF94 /* Components */,
+				09BBB62428D263CE0007ACEF /* ViewModifiers */,
 				09BEAA7528D1032800FFEF94 /* Core */,
 				09BEAA6728D102F500FFEF94 /* FrontendApp.swift */,
 				09BEAA6B28D102F500FFEF94 /* Assets.xcassets */,
@@ -114,8 +175,7 @@
 		09BEAA7528D1032800FFEF94 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				09BEAA7828D1033A00FFEF94 /* Components */,
-				09BBB62428D263CE0007ACEF /* ViewModifiers */,
+				099D4B6028D6535400023AF2 /* Home */,
 				09BEAA7728D1033500FFEF94 /* Register */,
 				09BEAA7628D1032D00FFEF94 /* Login */,
 			);
@@ -135,6 +195,9 @@
 		09BEAA7728D1033500FFEF94 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				09CB888A28D5BB590077F045 /* Models */,
+				09CB888928D5BB4E0077F045 /* Views */,
+				09CB888828D5BB450077F045 /* ViewModels */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -142,8 +205,8 @@
 		09BEAA7828D1033A00FFEF94 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				099D4B5B28D63DC700023AF2 /* Form */,
 				09BBB62028D24DA10007ACEF /* ToastView.swift */,
-				09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -155,6 +218,7 @@
 				09BBB62928D26B380007ACEF /* View.swift */,
 				09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */,
 				09C0425A28D3B2CE00FEAC6D /* Color.swift */,
+				099D4B5928D63BEF00023AF2 /* TextField.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -240,6 +304,47 @@
 			path = Validations;
 			sourceTree = "<group>";
 		};
+		09CB888828D5BB450077F045 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		09CB888928D5BB4E0077F045 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09CB889528D5BD280077F045 /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09CB888A28D5BB590077F045 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09CB888C28D5BB610077F045 /* Requests */,
+				09CB888B28D5BB5C0077F045 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		09CB888B28D5BB5C0077F045 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				09CB888F28D5BB840077F045 /* Response.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		09CB888C28D5BB610077F045 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				09CB888D28D5BB7D0077F045 /* Request.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,22 +415,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099D4B6528D6536F00023AF2 /* HomeView.swift in Sources */,
 				09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */,
 				09BEAA8128D103EB00FFEF94 /* LoginView.swift in Sources */,
 				09BEAA8D28D10DB500FFEF94 /* CoreResponse.swift in Sources */,
+				099D4B5A28D63BEF00023AF2 /* TextField.swift in Sources */,
+				09CB889628D5BD280077F045 /* RegisterView.swift in Sources */,
 				09BEAA6828D102F500FFEF94 /* FrontendApp.swift in Sources */,
 				09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */,
+				09CB889028D5BB840077F045 /* Response.swift in Sources */,
 				09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */,
 				09BEAA8328D108DA00FFEF94 /* LoginViewModel.swift in Sources */,
+				09CB888E28D5BB7D0077F045 /* Request.swift in Sources */,
+				09CB889A28D5CC0E0077F045 /* TextFieldView.swift in Sources */,
 				09BEAA8B28D10D7A00FFEF94 /* LoginRequest.swift in Sources */,
 				09BEAA8528D10A2C00FFEF94 /* Constants.swift in Sources */,
 				099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */,
 				09BBB62A28D26B380007ACEF /* View.swift in Sources */,
+				099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */,
 				09BBB62828D2642E0007ACEF /* Toast.swift in Sources */,
 				09C0425728D3A16E00FEAC6D /* LoginValidation.swift in Sources */,
+				099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */,
 				09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */,
+				099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */,
+				099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */,
 				09BEAA8F28D10EA800FFEF94 /* LoginResponse.swift in Sources */,
 				09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */,
+				09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */,
 				09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

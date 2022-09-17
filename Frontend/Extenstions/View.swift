@@ -16,4 +16,8 @@ extension View {
     func backgroundColor() -> some View {
         self.modifier(BackgroundModifier())
     }
+    
+    func adaptsToKeyboard() -> some View {
+        self.modifier(AdaptsToKeyboardModifier())
+    }
 }
