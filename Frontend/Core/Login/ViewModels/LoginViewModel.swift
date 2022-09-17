@@ -6,20 +6,73 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
+@MainActor
 class LoginViewModel: ObservableObject {
     @Published var username = ""
     @Published var password = ""
-    @Published var isPasswordVisible = false
-    @Published private var isLoading = false
     
-    func login(loginRequest: LoginRequest) async {
+    @Published var usernameErrorMsg: String?
+    @Published var passwordErrorMsg: String?
+    
+    @Published var isPasswordVisible = false
+    @Published var isLoading = false
+    @Published var toast: Toast?
+    
+    @Published var isFormDisabled = true
+    @Published var takeHome = false
+    
+    private var bag = Set<AnyCancellable>()
+    
+    init() {
+        
+    }
+    
+    private func resetErrors() {
+        usernameErrorMsg = nil
+        passwordErrorMsg = nil
+    }
+    
+    private func validation() {
+        $username
+            .sink { [weak self] username in
+                if(username.isEmpty) {
+                    self?.usernameErrorMsg =  "username can't be empty"
+                    self?.isFormDisabled = true
+                } else {
+                    self?.usernameErrorMsg = nil
+                    self?.isFormDisabled = false
+                } 
+            }
+            .store(in: &bag)
+        
+        $password
+            .sink { [weak self] password in
+                if(password.isEmpty == true) {
+                    self?.passwordErrorMsg = "password can't be empty"
+                    self?.isFormDisabled = true
+                } else {
+                    self?.passwordErrorMsg = nil
+                    self?.isFormDisabled = false
+                }
+            }
+            .store(in: &bag)
+    }
+    
+    func login() async {
+        validation()
+        if(isFormDisabled) { return }
+        
+        let loginRequest = LoginRequest(username: username, password: password)
+        
         guard let encoded = try? JSONEncoder().encode(loginRequest) else {
             debugPrint("couldn't encode the request object")
             return
         }
         
-        guard let url = Constants.loginUrl else {
+        guard let url = ApiConstants.loginUrl else {
             debugPrint("couldn't get the url")
             return
         }
@@ -31,18 +84,18 @@ class LoginViewModel: ObservableObject {
         do {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
             let response = try JSONDecoder().decode(LoginResponse.self, from: data)
-            
-            print(response)
             if(response.ok) {
                 UserDefaults.standard.setValue(response.token!, forKey: "token")
+                toast = Toast(type: .success, title: "congratulations!", message: "welcome back to splitit app")
+                
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                takeHome = true
+            } else {
+                toast = Toast(type: .error, title: "error", message: response.error ?? "")
             }
         } catch  {
             debugPrint("couldnt make login request.")
             debugPrint(error.localizedDescription)
         }
-    }
-    
-    func printToken() {
-        print("token -------> \n", UserDefaults.standard.string(forKey: "token") ?? "no token yet")
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Constants {
+struct ApiConstants {
     static let loginUrl = URL(string: "http://localhost:3000/auth/login")
 }

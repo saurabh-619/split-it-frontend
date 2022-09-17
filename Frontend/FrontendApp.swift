@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct FrontendApp: App {
+    
+    init() {
+        UITextField.appearance().tintColor = UIColor(Color.theme.accent)
+    }
+    
     var body: some Scene {
         WindowGroup {
             LoginView()

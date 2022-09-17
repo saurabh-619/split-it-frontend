@@ -9,40 +9,27 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject() private var vm = LoginViewModel()
-    @State private var toast: Toast?
-    
     
     var body: some View {
-        ZStack {
-            Color
-                .theme.background
-                .ignoresSafeArea()
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text("let's sign you in.")
-                Text("welcome back.")
-                Text("you've been missed")
-                
-                Spacer(minLength: 20)
-                
-                TextField("username", text: $vm.username)
-                PasswordFieldView(title: "password", password: $vm.password, isPasswordVisible: $vm.isPasswordVisible)
-                
-                Button("Submit") {
-                    Task {
-                        await vm.login(loginRequest: LoginRequest(username: vm.username, password: vm.password))
-                    }
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    heading
+                    Spacer()
+                        .frame(height: 100)
+                    loginFields
+                    Spacer(minLength: UIScreen.screenHeight / 2 - 230)
+                    footer
                 }
-                
-                Button("get token") {
-                    toast = Toast(type: .success, title: "congratulations!", message: "you have successfully logged in", duration: 3)
-                    vm.printToken()
-                }
+                .padding(20)
+                .backgroundColor()
+                .toastView(toast: $vm.toast)
             }
-            .padding(20)
+            .navigationDestination(isPresented: $vm.takeHome) {
+                HomeView()
+            }
         }
-        .backgroundColor()
-        .toastView(toast: $toast)
+        .navigationBarBackButtonHidden()
     }
 }
 
@@ -50,5 +37,57 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
             .preferredColorScheme(.dark)
+    }
+}
+
+extension LoginView {
+    private var heading: some View {
+        Group {
+            Text("let's sign you in.")
+                .font(.system(size: 40, weight: .bold))
+                .padding(.bottom, 12)
+            
+            VStack(alignment: .leading) {
+                Text("welcome back.")
+                Text("you've been missed!")
+            }
+            .font(.system(size: 32, weight: .light))
+        }
+    }
+    
+    private var loginFields: some View {
+        VStack(spacing: 24) {
+            TextFieldView(placeholder: "username", text: $vm.username, errorMsg: vm.usernameErrorMsg)
+            PasswordFieldView(placeholder: "password", password: $vm.password, isPasswordVisible: $vm.isPasswordVisible, errorMsg: vm.passwordErrorMsg)
+        }
+    }
+    
+    private var registerLink: some View {
+        NavigationStack {
+            HStack {
+                Text("don't have an account? ")
+                    .foregroundColor(Color.theme.gray400)
+                NavigationLink(destination: RegisterView()) {
+                    Text("register")
+                        .foregroundColor(Color.theme.appWhite)
+                        .bold()
+                }
+            }
+        }
+    }
+    
+    private var signInButton: some View {
+        ActionButtonView(text: "sign in") {
+            Task {
+                await vm.login()
+            }
+        }
+    }
+    
+    private var footer: some View {
+        VStack {
+            registerLink
+            signInButton
+        }
     }
 }
