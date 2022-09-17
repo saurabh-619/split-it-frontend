@@ -19,16 +19,12 @@ class LoginViewModel: ObservableObject {
     
     @Published var isPasswordVisible = false
     @Published var isLoading = false
-    @Published var toast: Toast?
     
     @Published var isFormDisabled = true
+    @Published var toast: Toast?
     @Published var takeHome = false
     
     private var bag = Set<AnyCancellable>()
-    
-    init() {
-        
-    }
     
     private func resetErrors() {
         usernameErrorMsg = nil
@@ -67,7 +63,7 @@ class LoginViewModel: ObservableObject {
         
         let loginRequest = LoginRequest(username: username, password: password)
         
-        guard let encoded = try? JSONEncoder().encode(loginRequest) else {
+        guard let body = try? JSONEncoder().encode(loginRequest) else {
             debugPrint("couldn't encode the request object")
             return
         }
@@ -82,7 +78,7 @@ class LoginViewModel: ObservableObject {
         request.httpMethod = "POST"
         
         do {
-            let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
+            let (data, _) = try await URLSession.shared.upload(for: request, from: body)
             let response = try JSONDecoder().decode(LoginResponse.self, from: data)
             if(response.ok) {
                 UserDefaults.standard.setValue(response.token!, forKey: "token")

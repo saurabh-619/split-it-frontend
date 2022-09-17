@@ -32,8 +32,8 @@
 		09C0425728D3A16E00FEAC6D /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425628D3A16E00FEAC6D /* LoginValidation.swift */; };
 		09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */; };
 		09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425A28D3B2CE00FEAC6D /* Color.swift */; };
-		09CB888E28D5BB7D0077F045 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* Request.swift */; };
-		09CB889028D5BB840077F045 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* Response.swift */; };
+		09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */; };
+		09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* RegisterResponse.swift */; };
 		09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889328D5BBC30077F045 /* ActionButtonView.swift */; };
 		09CB889628D5BD280077F045 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889528D5BD280077F045 /* RegisterView.swift */; };
 		09CB889A28D5CC0E0077F045 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889928D5CC0E0077F045 /* TextFieldView.swift */; };
@@ -66,8 +66,8 @@
 		09C0425628D3A16E00FEAC6D /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		09C0425A28D3B2CE00FEAC6D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		09CB888D28D5BB7D0077F045 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		09CB888F28D5BB840077F045 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		09CB888F28D5BB840077F045 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		09CB889328D5BBC30077F045 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 		09CB889528D5BD280077F045 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		09CB889928D5CC0E0077F045 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 		09CB888B28D5BB5C0077F045 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				09CB888F28D5BB840077F045 /* Response.swift */,
+				09CB888F28D5BB840077F045 /* RegisterResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 		09CB888C28D5BB610077F045 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				09CB888D28D5BB7D0077F045 /* Request.swift */,
+				09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -423,10 +423,10 @@
 				09CB889628D5BD280077F045 /* RegisterView.swift in Sources */,
 				09BEAA6828D102F500FFEF94 /* FrontendApp.swift in Sources */,
 				09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */,
-				09CB889028D5BB840077F045 /* Response.swift in Sources */,
+				09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */,
 				09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */,
 				09BEAA8328D108DA00FFEF94 /* LoginViewModel.swift in Sources */,
-				09CB888E28D5BB7D0077F045 /* Request.swift in Sources */,
+				09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */,
 				09CB889A28D5CC0E0077F045 /* TextFieldView.swift in Sources */,
 				09BEAA8B28D10D7A00FFEF94 /* LoginRequest.swift in Sources */,
 				09BEAA8528D10A2C00FFEF94 /* Constants.swift in Sources */,

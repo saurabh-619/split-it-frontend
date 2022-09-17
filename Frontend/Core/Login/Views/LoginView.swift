@@ -12,24 +12,25 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     heading
                     Spacer()
                         .frame(height: 100)
                     loginFields
-                    Spacer(minLength: UIScreen.screenHeight / 2 - 230)
+                    Spacer()
+                        .frame(height:  UIScreen.screenHeight / 2 - 240)
                     footer
                 }
                 .padding(20)
                 .backgroundColor()
-                .toastView(toast: $vm.toast)
             }
+            .toastView(toast: $vm.toast)
             .navigationDestination(isPresented: $vm.takeHome) {
                 HomeView()
             }
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarBackButtonHidden()
     }
 }
 
@@ -73,6 +74,7 @@ extension LoginView {
                         .bold()
                 }
             }
+            .padding(.bottom, 10)
         }
     }
     

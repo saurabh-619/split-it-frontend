@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var vm = RegisterViewModel()
+    @StateObject private var vm = RegisterViewModel()
     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                heading
-                Spacer(minLength: 100)
-                registerFields
-                footer
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    heading
+                    Spacer()
+                        .frame(height: 45)
+                    registerFields
+                    Spacer()
+                        .frame(height: 65)
+                    footer
+                }
+                .padding(20)
+                .backgroundColor()
             }
-            .padding(20)
-            .backgroundColor()
             .toastView(toast: $vm.toast)
+            .navigationDestination(isPresented: $vm.takeHome, destination: {
+                HomeView()
+            })
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarBackButtonHidden()
     }
 }
 
@@ -49,7 +57,14 @@ extension RegisterView {
     }
     
     private var registerFields: some View {
-        EmptyView()
+        VStack(spacing: 24) {
+            TextFieldView(placeholder: "first name", text: $vm.firstName)
+            TextFieldView(placeholder: "last name", text: $vm.lastName)
+            TextFieldView(placeholder: "email", text: $vm.email)
+            TextFieldView(placeholder: "username", text: $vm.username)
+            PasswordFieldView(placeholder: "password", hasEye: false, password: $vm.password, isPasswordVisible: .constant(false))
+            PasswordFieldView(placeholder: "confirm password", password: $vm.confirmPassword, isPasswordVisible: $vm.isPasswordVisible)
+        }
     }
     
     private var signInLink: some View {
@@ -63,6 +78,7 @@ extension RegisterView {
                     dismiss()
                 }
         }
+        .padding(.bottom, 10)
     }
     
     private var registerButton: some View {
