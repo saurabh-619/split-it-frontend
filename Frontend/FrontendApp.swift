@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct FrontendApp: App {
+    @AppStorage(AppStorageKeys.TOKEN) var token: String?
     
     init() {
         UITextField.appearance().tintColor = UIColor(Color.theme.accent)
@@ -16,7 +17,11 @@ struct FrontendApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            if(token == nil) {
+                LoginView()
+            } else {
+                Tabbar()
+            }
         }
     }
 }

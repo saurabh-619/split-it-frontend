@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject private var vm = RegisterViewModel()
-    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -58,12 +57,12 @@ extension RegisterView {
     
     private var registerFields: some View {
         VStack(spacing: 24) {
-            TextFieldView(placeholder: "first name", text: $vm.firstName)
-            TextFieldView(placeholder: "last name", text: $vm.lastName)
-            TextFieldView(placeholder: "email", text: $vm.email)
-            TextFieldView(placeholder: "username", text: $vm.username)
-            PasswordFieldView(placeholder: "password", hasEye: false, password: $vm.password, isPasswordVisible: .constant(false))
-            PasswordFieldView(placeholder: "confirm password", password: $vm.confirmPassword, isPasswordVisible: $vm.isPasswordVisible)
+            TextFieldView(placeholder: "first name", text: $vm.firstName, errorMsg: vm.firstNameError)
+            TextFieldView(placeholder: "last name", text: $vm.lastName, errorMsg: vm.lastNameError)
+            TextFieldView(placeholder: "email", text: $vm.email, isEmail: true, errorMsg: vm.emailError)
+            TextFieldView(placeholder: "username", text: $vm.username, haveSpinner: vm.isUsernameSearching, errorMsg: vm.usernameError)
+            PasswordFieldView(placeholder: "password", hasEye: false, password: $vm.password, isPasswordVisible: .constant(false), errorMsg: vm.passwordError)
+            PasswordFieldView(placeholder: "confirm password", password: $vm.confirmPassword, isPasswordVisible: $vm.isPasswordVisible, errorMsg: vm.confirmPasswordError)
         }
     }
     
@@ -82,7 +81,7 @@ extension RegisterView {
     }
     
     private var registerButton: some View {
-        ActionButtonView(text: "register") {
+        ActionButtonView(text: "register", isLoading: vm.isLoading) {
             Task {
                 await vm.register()
             }

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+
 @MainActor
 class LoginViewModel: ObservableObject {
     @Published var username = ""
@@ -25,11 +26,6 @@ class LoginViewModel: ObservableObject {
     @Published var takeHome = false
     
     private var bag = Set<AnyCancellable>()
-    
-    private func resetErrors() {
-        usernameErrorMsg = nil
-        passwordErrorMsg = nil
-    }
     
     private func validation() {
         $username
@@ -59,39 +55,27 @@ class LoginViewModel: ObservableObject {
     
     func login() async {
         validation()
+        
         if(isFormDisabled) { return }
         
         let loginRequest = LoginRequest(username: username, password: password)
         
-        guard let body = try? JSONEncoder().encode(loginRequest) else {
-            debugPrint("couldn't encode the request object")
-            return
-        }
-        
-        guard let url = ApiConstants.loginUrl else {
-            debugPrint("couldn't get the url")
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        
+        isLoading = true
         do {
-            let (data, _) = try await URLSession.shared.upload(for: request, from: body)
-            let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+            let response: LoginResponse = try await ApiManager.shared
+                .post(ApiConstants.LOGIN_URL, body: loginRequest)
+            
             if(response.ok) {
-                UserDefaults.standard.setValue(response.token!, forKey: "token")
-                toast = Toast(type: .success, title: "congratulations!", message: "welcome back to splitit app")
-                
-                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                UserDefaults.standard.setToken(response.token!)
+                toast = Toast(type: .success, title: "congratulations!", message: "hi again \(username)😀, welcome back to splitit app")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
                 takeHome = true
             } else {
-                toast = Toast(type: .error, title: "error", message: response.error ?? "")
+                throw NetworkError.backendError(response.error ?? "")
             }
-        } catch  {
-            debugPrint("couldnt make login request.")
-            debugPrint(error.localizedDescription)
+        } catch let error {
+            toast = Toast(type: .error, title: "error", message: error.localizedDescription)
         }
+        isLoading = false
     }
 }

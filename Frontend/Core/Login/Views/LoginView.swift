@@ -79,7 +79,7 @@ extension LoginView {
     }
     
     private var signInButton: some View {
-        ActionButtonView(text: "sign in") {
+        ActionButtonView(text: "sign in", isLoading: vm.isLoading) {
             Task {
                 await vm.login()
             }

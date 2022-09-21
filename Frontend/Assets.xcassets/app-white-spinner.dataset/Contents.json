@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "app-white-spinner.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
