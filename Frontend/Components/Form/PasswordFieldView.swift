@@ -14,6 +14,7 @@ struct PasswordFieldView: View {
     var cornerRadius = 12.0
     var horizontalPad = 20.0
     var height = 60.0
+    var hasEye = true
     
     @Binding var password: String
     @Binding var isPasswordVisible: Bool
@@ -29,12 +30,14 @@ struct PasswordFieldView: View {
                     TextField(placeholder, text: $password)
                 }
                 
-                Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                    .font(.system(size: 16))
-                    .foregroundColor(.gray)
-                    .onTapGesture {
-                        isPasswordVisible.toggle()
-                    }
+                if hasEye == true {
+                    Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
+                        .font(.system(size: 16))
+                        .foregroundColor(.gray)
+                        .onTapGesture {
+                            isPasswordVisible.toggle()
+                        }
+                }
             }
             .padding(.horizontal, horizontalPad)
             .frame(height: height)

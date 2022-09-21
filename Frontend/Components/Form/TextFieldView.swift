@@ -1,4 +1,4 @@
-//
+ //
 //  TextFieldView.swift
 //  Frontend
 //
@@ -17,19 +17,28 @@ struct TextFieldView: View {
     var horizontalPad = 20.0
     var height = 60.0
     
+    var haveSpinner = false
     var errorMsg: String?
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField(placeholder, text: $text)
-                .keyboardDetails(isEmail: isEmail)
-                .padding(.horizontal, horizontalPad)
-                .frame(height: height)
-                .background(bgColor)
-                .overlay(
-                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .stroke(borderColor)
-                )
+            ZStack(alignment: .trailing) {
+                TextField(placeholder, text: $text)
+                    .keyboardDetails(isEmail: isEmail)
+                
+                if(haveSpinner) {
+                    AccentSpinner()
+                        .frame(height: 40)
+                        .frame(maxWidth: 30)
+                }
+            }
+            .padding(.horizontal, horizontalPad)
+            .frame(height: height)
+            .background(bgColor)
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(borderColor)
+            )
             ValidationErrorView(errorMsg: errorMsg)
         }
     }
@@ -38,5 +47,6 @@ struct TextFieldView: View {
 struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
         TextFieldView(placeholder: "some text", text: .constant("yo"), errorMsg: "bro wth")
+            .preferredColorScheme(.dark)
     }
 }
