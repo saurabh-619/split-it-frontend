@@ -35,3 +35,9 @@ enum NetworkError: LocalizedError {
         }
     }
 }
+
+enum NetworkImageError: Error {
+    case badRequest
+    case badUrl
+    case unsupportedImage
+}

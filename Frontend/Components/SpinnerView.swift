@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct AccentSpinner: View {
+    var size = 60.0
+    
     var body: some View {
         LottieView(animationName: "accent-spinner", loopMode: .loop, contentMode: .scaleAspectFill)
+            .frame(width: size, height: size)
     }
 }
 

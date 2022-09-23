@@ -9,10 +9,14 @@ import Foundation
 
 extension UserDefaults {
     func getToken() -> String? {
-        return self.string(forKey: AppStorageKeys.TOKEN)
+        return self.string(forKey: "token")
     }
     
     func setToken(_ token: String) {
-        set(token, forKey: AppStorageKeys.TOKEN)
+        set(token, forKey: "token")
+    }
+    
+    func deleteToken() {
+        removeObject(forKey: "token")
     }
 }
