@@ -30,6 +30,7 @@ let tabs = [
 
 struct Tabbar: View {
     @State var currentScreen: Screen = Screen.HOME
+    @StateObject var profileVM = ProfileViewModel()
     
     var body: some View {
         ZStack() {
@@ -41,7 +42,7 @@ struct Tabbar: View {
             case .ADD:
                 AddView()
             case .PROFILE:
-                ProfileView()
+                ProfileView(vm: profileVM)
             }
             
             HStack() {
@@ -52,25 +53,7 @@ struct Tabbar: View {
                             currentScreen = tab.screen
                         }
                     } label: {
-                        VStack(alignment: .center) {
-                            if tab.screen == currentScreen {
-                                Rectangle()
-                                    .fill(Color.theme.success)
-                                    .frame(width: 22, height: 4)
-                                    .clipShape(
-                                        RoundedRectangle(cornerRadius: 2, style: .continuous)
-                                    )
-                            }
-                            Spacer()
-                            Image(tab.icon)
-                                .resizable()
-                                .frame(width: 22, height: 22)
-                            Text(tab.title)
-                                .font(.system(size: 10))
-                            Spacer()
-                        }
-                        .foregroundColor(tab.screen == currentScreen ? Color.theme.appWhite : Color.theme.gray500)
-                        .frame(alignment: .center)
+                        tabComponent(tab: tab)
                     }
                     Spacer()
                 }
@@ -90,5 +73,29 @@ struct Tabbar_Previews: PreviewProvider {
     static var previews: some View {
         Tabbar()
             .preferredColorScheme(.dark)
+    }
+}
+
+extension Tabbar {
+    private func tabComponent(tab: Tab) -> some View {
+        VStack(alignment: .center) {
+            if tab.screen == currentScreen {
+                Rectangle()
+                    .fill(Color.theme.success)
+                    .frame(width: 22, height: 4)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 2, style: .continuous)
+                    )
+            }
+            Spacer()
+            Image(tab.icon)
+                .resizable()
+                .frame(width: 22, height: 22)
+            Text(tab.title)
+                .font(.system(size: 10))
+            Spacer()
+        }
+        .foregroundColor(tab.screen == currentScreen ? Color.theme.appWhite : Color.theme.gray500)
+        .frame(alignment: .center)
     }
 }

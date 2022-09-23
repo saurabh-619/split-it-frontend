@@ -8,9 +8,14 @@
 import Foundation
 
 struct ApiConstants {
+    // login and register
     static let LOGIN_URL = "http://localhost:3000/auth/login"
     static let REGISTER_URL = "http://localhost:3000/auth/register"
-    static let USERNAME_AVAILABLE = "http://localhost:3000/user/is-available?username"
+    static let USERNAME_AVAILABLE_URL = "http://localhost:3000/user/is-available?username"
+    
+    // profile
+    static let AUTH_USER_URL = "http://localhost:3000/auth"
+    static let EDIT_PROFILE_URL = "http://localhost:3000/user"
 }
 
 struct AppStorageKeys {
