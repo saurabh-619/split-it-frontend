@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject private var vm = RegisterViewModel()
+    @EnvironmentObject private var sessionState: SessionState
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -29,6 +30,7 @@ struct RegisterView: View {
             .toastView(toast: $vm.toast)
             .navigationDestination(isPresented: $vm.takeHome, destination: {
                 HomeView()
+                    .environmentObject(sessionState)
             })
             .navigationBarBackButtonHidden()
         }
@@ -38,6 +40,7 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
@@ -83,7 +86,11 @@ extension RegisterView {
     private var registerButton: some View {
         ActionButtonView(text: "register", isLoading: vm.isLoading) {
             Task {
-                await vm.register()
+                let takeHome = await vm.register()
+                await sessionState.getAuthUser()
+                if(!sessionState.isFetching) {
+                    vm.takeHome = takeHome
+                }
             }
         }
     }

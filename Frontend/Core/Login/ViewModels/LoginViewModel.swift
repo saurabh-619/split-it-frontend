@@ -52,10 +52,10 @@ class LoginViewModel: ObservableObject {
             .store(in: &bag)
     }
     
-    func login() async {
+    func login() async -> Bool {
         validation()
         
-        if(isFormDisabled) { return }
+        if(isFormDisabled) { return false }
         
         let loginRequest = LoginRequest(username: username, password: password)
         
@@ -68,13 +68,13 @@ class LoginViewModel: ObservableObject {
                 UserDefaults.standard.setToken(response.token!)
                 toast = Toast(type: .success, title: "congratulations!", message: "hi again \(username)😀, welcome back to splitit app")
                 try await Task.sleep(nanoseconds: 1_000_000_000)
-                takeHome = true
+                return true
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }
         } catch let error {
             toast = Toast(type: .error, title: "error", message: error.localizedDescription)
+            return false
         }
-        isLoading = false
     }
 }

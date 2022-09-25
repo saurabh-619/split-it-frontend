@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var sessionState: SessionState
+    
     var body: some View {
-        Text("Home View")
-            .navigationBarBackButtonHidden()
+        VStack{
+            Text(sessionState.user.firstName)
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
+

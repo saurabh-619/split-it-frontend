@@ -9,7 +9,8 @@ import Foundation
 
 struct Wallet: Identifiable, Decodable {
     let id, version: Int
-    let balance, ownerId: Int
+    let ownerId: Int
+    let balance: Double
     let createdAt, updatedAt: String
     let deletedAt: String?
 }

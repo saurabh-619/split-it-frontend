@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var sessionState: SessionState
     @StateObject() private var vm = LoginViewModel()
     
     var body: some View {
@@ -28,6 +29,7 @@ struct LoginView: View {
             .toastView(toast: $vm.toast)
             .navigationDestination(isPresented: $vm.takeHome) {
                 HomeView()
+                    .environmentObject(sessionState)
             }
             .navigationBarBackButtonHidden()
         }
@@ -37,6 +39,7 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
@@ -68,7 +71,10 @@ extension LoginView {
             HStack {
                 Text("don't have an account? ")
                     .foregroundColor(Color.theme.gray400)
-                NavigationLink(destination: RegisterView()) {
+                NavigationLink(
+                    destination: RegisterView()
+                        .environmentObject(sessionState)
+                ) {
                     Text("register")
                         .foregroundColor(Color.theme.appWhite)
                         .bold()
@@ -81,7 +87,11 @@ extension LoginView {
     private var signInButton: some View {
         ActionButtonView(text: "sign in", isLoading: vm.isLoading) {
             Task {
-                await vm.login()
+                let takeHome = await vm.login()
+                await sessionState.getAuthUser()
+                if(!sessionState.isFetching) {
+                    vm.takeHome = takeHome
+                }
             }
         }
     }

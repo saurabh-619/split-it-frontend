@@ -8,33 +8,27 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var vm: ProfileViewModel
+    @EnvironmentObject private var sessionState: SessionState
+    @StateObject var vm = ProfileViewModel()
+    
     @State private var showEdit = false
     
     var body: some View {
         VStack {
             navbar
             Spacer()
-            if vm.isFetching {
-                AccentSpinner()
-            } else {
-                userDetails
-            }
+            userDetails
             Spacer()
         }
         .backgroundColor()
         .padding(20)
-        .onAppear {
-            Task {
-                await vm.getCurrentUser()
-            }
-        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(vm: ProfileViewModel())
+        ProfileView()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
@@ -56,10 +50,10 @@ extension ProfileView {
                     .frame(width: 18, height: 18)
             }
             .sheet(isPresented: $showEdit) {
-                EditProfileView(user: vm.user) {
+                EditProfileView(user: sessionState.user) {
                     // on edit complete
                     Task {
-                        await vm.getCurrentUser()
+                        await sessionState.getAuthUser()
                     }
                 }
                 .presentationDetents([.large])
@@ -68,7 +62,7 @@ extension ProfileView {
     }
     
     var avatar: some View {
-        CacheImage(url: vm.user.avatar) { image in
+        CacheImage(url: sessionState.user.avatar) { image in
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -94,7 +88,7 @@ extension ProfileView {
     
     var name: some View {
         HStack(spacing: 8) {
-            Text("\(vm.user.firstName) \(vm.user.lastName)")
+            Text("\(sessionState.user.firstName) \(sessionState.user.lastName)")
                 .font(.title2)
                 .bold()
                 .padding(.bottom, 0.2)
@@ -107,7 +101,7 @@ extension ProfileView {
     }
     
     var username: some View {
-        Text("@\(vm.user.username)")
+        Text("@\(sessionState.user.username)")
             .font(.system(size: 14, weight: .semibold))
             .foregroundColor(Color.theme.white30)
     }

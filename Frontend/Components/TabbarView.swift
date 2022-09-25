@@ -7,30 +7,9 @@
 
 import SwiftUI
 
-
-enum Screen {
-    case HOME
-    case WALLET
-    case ADD
-    case PROFILE
-}
-
-struct Tab {
-    let icon: String
-    let title: String
-    let screen: Screen
-}
-
-let tabs = [
-    Tab(icon: "home", title: "home", screen: Screen.HOME),
-    Tab(icon: "wallet", title: "wallet", screen: Screen.WALLET),
-    Tab(icon: "plus", title: "transaction", screen: Screen.ADD),
-    Tab(icon: "user", title: "profile", screen: Screen.PROFILE)
-]
-
 struct Tabbar: View {
     @State var currentScreen: Screen = Screen.HOME
-    @StateObject var profileVM = ProfileViewModel()
+    @EnvironmentObject private var sessionState: SessionState
     
     var body: some View {
         ZStack() {
@@ -41,12 +20,14 @@ struct Tabbar: View {
                 WalletView()
             case .ADD:
                 AddView()
+            case .BILLS:
+                BillsView()
             case .PROFILE:
-                ProfileView(vm: profileVM)
+                ProfileView()
             }
             
             HStack() {
-                ForEach(tabs, id: \.icon) { tab in
+                ForEach(Tab.tabs, id: \.icon) { tab in
                     Spacer()
                     Button {
                         withAnimation(.spring()) {
@@ -58,6 +39,7 @@ struct Tabbar: View {
                     Spacer()
                 }
             }
+            .environmentObject(sessionState)
             .frame(height: 80)
             .frame(maxWidth: .infinity)
             .background(.ultraThinMaterial)
@@ -72,6 +54,7 @@ struct Tabbar: View {
 struct Tabbar_Previews: PreviewProvider {
     static var previews: some View {
         Tabbar()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }

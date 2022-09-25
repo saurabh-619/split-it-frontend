@@ -18,7 +18,7 @@ class DeveloperPreview {
     private init(){}
     
     var wallet: Wallet {
-        Wallet(id: 1, version: 1, balance: 5000, ownerId: 1, createdAt: "", updatedAt: "", deletedAt: "")
+        Wallet(id: 1, version: 1, ownerId: 1, balance: 5000, createdAt: "", updatedAt: "", deletedAt: "")
     }
     
     var user: User {

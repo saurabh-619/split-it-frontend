@@ -29,3 +29,11 @@ enum HttpMethod: String {
     case PUT = "PUT"
     case DELETE = "DELETE"
 }
+
+enum Screen {
+    case HOME
+    case WALLET
+    case ADD
+    case BILLS
+    case PROFILE
+}
