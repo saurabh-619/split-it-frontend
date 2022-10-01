@@ -15,7 +15,17 @@ struct ApiConstants {
     
     // profile
     static let AUTH_USER_URL = "http://localhost:3000/auth"
+    
+    // user
     static let EDIT_PROFILE_URL = "http://localhost:3000/user"
+    static let SEARCH_USERS = "http://localhost:3000/user/search?query"
+    static let SEARCH_USER_WITH_FRIENDSHIP_STATUS = "http://localhost:3000/user"
+    
+    // friends
+    static let GET_FRIENDS = "http://localhost:3000/friend-request/friends"
+    static let GET_FRIEND_REQUESTS = "http://localhost:3000/friend-request"
+    static let CHANGE_FRIEND_REQUEST_STATUS = "http://localhost:3000/friend-request"
+    static let SEND_FRIEND_REQUEST = "http://localhost:3000/friend-request"
 }
 
 struct AppStorageKeys {
@@ -36,4 +46,13 @@ enum Screen {
     case ADD
     case BILLS
     case PROFILE
+}
+
+
+enum FriendRequestStatus: String {
+    case SEEN = "seen"
+    case PENDING = "pending"
+    case ACCEPTED = "accepted"
+    case REJECTED = "rejected"
+    case UNFRIENDED = "unfriended"
 }

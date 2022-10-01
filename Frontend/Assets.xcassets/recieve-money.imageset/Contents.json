@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "bell.svg",
+      "filename" : "recieve-money.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -19,6 +19,7 @@
     "version" : 1
   },
   "properties" : {
+    "compression-type" : "lossless",
     "template-rendering-intent" : "template"
   }
 }

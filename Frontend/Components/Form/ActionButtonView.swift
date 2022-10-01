@@ -15,6 +15,7 @@ struct ActionButtonView: View {
     var bgColor = Color.theme.accent
     var cornerRadius = 14.0
     var isLoading = false
+    var isDisabled = false
     
     var onClick: () -> Void
     
@@ -33,9 +34,10 @@ struct ActionButtonView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: height)
-        .foregroundColor(fontColor)
-        .background(bgColor)
+        .foregroundColor(isDisabled ? Color.theme.gray400 : fontColor)
+        .background(isDisabled ? Color.theme.gray900 : bgColor)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+        .disabled(isDisabled)
     }
 }
 
