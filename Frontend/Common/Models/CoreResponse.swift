@@ -16,3 +16,9 @@ protocol CoreResponse {
 extension CoreResponse {
     var error: String? { return nil }
 }
+
+struct BaseResponse: CoreResponse, Decodable {
+    var ok: Bool
+    var status: Int
+    var error: String?
+}

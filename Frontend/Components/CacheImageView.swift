@@ -1,5 +1,5 @@
 //
-//  CacheImage.swift
+//  CacheImageView.swift
 //  Frontend
 //
 //  Created by Saurabh Bomble on 23/09/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CacheImage<Content: View>: View {
+struct CacheImageView<Content: View>: View {
     let url: String
     @ViewBuilder var content: (UIImage) -> Content
     
@@ -27,7 +27,7 @@ struct CacheImage<Content: View>: View {
     }
 }
 
-extension CacheImage {
+extension CacheImageView {
     private func getImage() async {
         do {
             try await self.imageLoader.fetchImage(URL(string: self.url))

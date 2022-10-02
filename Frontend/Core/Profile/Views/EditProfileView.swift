@@ -54,30 +54,11 @@ struct EditProfileView_Previews: PreviewProvider {
 extension EditProfileView {
     private var heading: some View {
         Group {
-            HStack {
-                Text("edit")
-                    .font(.system(size: 32, weight: .semibold))
-                    .foregroundColor(Color.theme.white45)
-                    .padding(.bottom, 1)
-                Spacer()
-                closeButton
-            }
-            
+            SheetHeadingView(title: "edit")
             Text("hi, \("saurabh")")
                 .font(.system(size: 40, weight: .bold))
         }
-    }
-    
-    private var closeButton: some View {
-        Button {
-            self.dismiss()
-        } label: {
-            Image("close")
-                .resizable()
-                .foregroundColor(Color.theme.appWhite)
-                .frame(width: 18, height: 18)
-        }
-    }
+    } 
     
     private var registerFields: some View {
         VStack(spacing: 24) {

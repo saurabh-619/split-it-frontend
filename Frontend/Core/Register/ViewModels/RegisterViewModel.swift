@@ -165,10 +165,10 @@ class RegisterViewModel: ObservableObject {
         }
     }
     
-    func register() async {
+    func register() async -> Bool {
         validation()
         
-        if(isFormDisabled) { return }
+        if(isFormDisabled) { return false }
         
         let registerRequest = RegisterRequest(email: email, username: username, firstName: firstName, lastName: lastName, password: password)
         
@@ -180,13 +180,13 @@ class RegisterViewModel: ObservableObject {
                 UserDefaults.standard.setToken(response.token!)
                 toast = Toast(type: .success, title: "congratulations!", message: "hello \(firstName)😀, welcome to splitit app")
                 try await Task.sleep(nanoseconds: 1_000_000_000)
-                takeHome = true
+                return true
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }
         } catch let error {
             toast = Toast(type: .error, title: "error", message: error.localizedDescription)
+            return false
         }
-        isLoading = false
     }
 }
