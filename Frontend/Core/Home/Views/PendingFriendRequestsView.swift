@@ -14,7 +14,7 @@ struct PendingFriendRequestsView: View {
     
     var body: some View {
         VStack {
-            SheetHeadingView(title: "friend requests").padding(.bottom, 16)
+            heading
             if vm.isLoading {
                 AccentSpinner()
                     .frame(height: 450)
@@ -39,12 +39,17 @@ struct PendingFriendRequestsView_Previews: PreviewProvider {
 }
 
 extension PendingFriendRequestsView {
+    private var heading: some View {
+        SheetHeadingView(title: "friend requests").padding(.bottom, 16)
+    }
+    
     private var friendRequests: some View {
         LazyVStack(spacing: 24) {
-            ForEach(vm.friendRequests) { request in
-                PersonRowView(user: request.requester, hasButton: true, buttonText: vm.buttonText, buttonTextColor: vm.buttonTextColor, isButtonDisabled: vm.isButtonDisabled) {
+            ForEach(vm.friendRequests.indices, id: \.self) { index in
+                let request = vm.friendRequests[index]
+                PersonRowView(user: request.requester, hasButton: true, buttonText: vm.buttonText[index], buttonTextColor: vm.buttonTextColor[index], isButtonDisabled: vm.isButtonDisabled[index]) {
                     Task {
-                       await vm.onAcceptClicked(requestId: request.id)
+                        await vm.onAcceptClicked(requestId: request.id, index: index)
                     }
                 }
                 .onTapGesture {

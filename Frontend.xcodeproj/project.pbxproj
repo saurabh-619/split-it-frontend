@@ -14,6 +14,9 @@
 		093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */; };
 		093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */; };
 		093CC71428E83906005A4298 /* UpdateFriendRequestStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */; };
+		0941FEF128E983F100897DC6 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF028E983F100897DC6 /* WalletViewModel.swift */; };
+		0941FEF328E9847300897DC6 /* AvatarWithoutBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF228E9847300897DC6 /* AvatarWithoutBorder.swift */; };
+		0941FEF528E9895100897DC6 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF428E9895100897DC6 /* Double.swift */; };
 		0958400B28E4C44000225BA3 /* MoneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400A28E4C44000225BA3 /* MoneyRequest.swift */; };
 		0958400D28E4CE0C00225BA3 /* MoneyRequestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */; };
 		0958400F28E4DBD700225BA3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400E28E4DBD700225BA3 /* String.swift */; };
@@ -95,6 +98,9 @@
 		093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsView.swift; sourceTree = "<group>"; };
 		093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsViewModel.swift; sourceTree = "<group>"; };
 		093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFriendRequestStatusRequest.swift; sourceTree = "<group>"; };
+		0941FEF028E983F100897DC6 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		0941FEF228E9847300897DC6 /* AvatarWithoutBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarWithoutBorder.swift; sourceTree = "<group>"; };
+		0941FEF428E9895100897DC6 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0958400A28E4C44000225BA3 /* MoneyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequest.swift; sourceTree = "<group>"; };
 		0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestRowView.swift; sourceTree = "<group>"; };
 		0958400E28E4DBD700225BA3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -185,6 +191,45 @@
 			children = (
 				093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */,
 				09B4871E28E8BF7900596340 /* SendFriendRequestRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0941FEEB28E983B000897DC6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0941FEF028E983F100897DC6 /* WalletViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0941FEEC28E983BC00897DC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09C4B2C628DB8B48008621AA /* WalletView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0941FEED28E983BF00897DC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0941FEEF28E983E100897DC6 /* Requests */,
+				0941FEEE28E983C200897DC6 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0941FEEE28E983C200897DC6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		0941FEEF28E983E100897DC6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -339,6 +384,7 @@
 				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
 				09A5B99028E0F091004D48B3 /* PeopleListView.swift */,
 				09D0AF4E28E34E0A003C5AC0 /* AvatarView.swift */,
+				0941FEF228E9847300897DC6 /* AvatarWithoutBorder.swift */,
 				0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */,
 			);
 			path = Components;
@@ -354,6 +400,7 @@
 				099D4B5928D63BEF00023AF2 /* TextField.swift */,
 				092C862A28D77931007C45F1 /* UserDefaults.swift */,
 				0958400E28E4DBD700225BA3 /* String.swift */,
+				0941FEF428E9895100897DC6 /* Double.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -471,7 +518,9 @@
 		09C4B2C528DB8B41008621AA /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				09C4B2C628DB8B48008621AA /* WalletView.swift */,
+				0941FEED28E983BF00897DC6 /* Models */,
+				0941FEEC28E983BC00897DC6 /* Views */,
+				0941FEEB28E983B000897DC6 /* ViewModels */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -584,12 +633,12 @@
 			isa = PBXGroup;
 			children = (
 				093CC71228E838F4005A4298 /* Requests */,
-				09CD180B28E0B695001E44B2 /* Reponses */,
+				09CD180B28E0B695001E44B2 /* Responses */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		09CD180B28E0B695001E44B2 /* Reponses */ = {
+		09CD180B28E0B695001E44B2 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				09CD180928E0B692001E44B2 /* FriendsResponse.swift */,
@@ -597,7 +646,7 @@
 				09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */,
 				09A5B98E28E0EB15004D48B3 /* SearchUsersResponse.swift */,
 			);
-			path = Reponses;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,6 +729,7 @@
 				09CF061E28E229B200F2C481 /* UserViewModel.swift in Sources */,
 				0958400B28E4C44000225BA3 /* MoneyRequest.swift in Sources */,
 				09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */,
+				0941FEF528E9895100897DC6 /* Double.swift in Sources */,
 				09BEAA8128D103EB00FFEF94 /* LoginView.swift in Sources */,
 				09BEAA8D28D10DB500FFEF94 /* CoreResponse.swift in Sources */,
 				093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */,
@@ -697,6 +747,8 @@
 				09EC2F3228DE37A500C1D048 /* EditProfileRequest.swift in Sources */,
 				09B5589828DA3F530006DE68 /* UsernameAvailableResponse.swift in Sources */,
 				09A5B98D28E0E856004D48B3 /* SheetHeadingView.swift in Sources */,
+				0941FEF128E983F100897DC6 /* WalletViewModel.swift in Sources */,
+				0941FEF328E9847300897DC6 /* AvatarWithoutBorder.swift in Sources */,
 				09B3651728DF5A5600910584 /* PersistenceManager.swift in Sources */,
 				09C4B2C728DB8B48008621AA /* WalletView.swift in Sources */,
 				09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */,
