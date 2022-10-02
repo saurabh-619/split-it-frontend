@@ -26,6 +26,10 @@ struct ApiConstants {
     static let GET_FRIEND_REQUESTS = "http://localhost:3000/friend-request"
     static let CHANGE_FRIEND_REQUEST_STATUS = "http://localhost:3000/friend-request"
     static let SEND_FRIEND_REQUEST = "http://localhost:3000/friend-request"
+    
+    // money requests
+    static let MONEY_REQUESTS_TO_ME = "http://localhost:3000/money-request/to-me?status"
+    static let MONEY_REQUESTS_BY_ME = "http://localhost:3000/money-request/by-me?status"
 }
 
 struct AppStorageKeys {
@@ -48,11 +52,22 @@ enum Screen {
     case PROFILE
 }
 
-
 enum FriendRequestStatus: String {
     case SEEN = "seen"
     case PENDING = "pending"
     case ACCEPTED = "accepted"
     case REJECTED = "rejected"
     case UNFRIENDED = "unfriended"
+}
+
+enum MoneyRequestStatus: String, CaseIterable, Identifiable {
+    case PENDING = "pending"
+    case ACCEPTED = "accepted"
+    case REJECTED = "rejected"
+    case PAID = "paid"
+    case SEEN = "seen"
+    
+    var id: String {
+        self.rawValue
+    }
 }

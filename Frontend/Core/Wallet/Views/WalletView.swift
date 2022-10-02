@@ -12,14 +12,33 @@ struct WalletView: View {
     @StateObject var vm = WalletViewModel()
     
     var body: some View {
-        VStack {
-            heading
-            walletCard
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    heading
+                    walletCard
+                    receiveButton
+                    transactionContent
+                }
+                .padding(.horizontal, 20)
+                .frame(maxHeight: .infinity, alignment: .top)
+                .task {
+                    await vm.getMoneyRequests()
+                }
+                .onChange(of: vm.isToMeSelected) { newValue in
+                    Task {
+                        await vm.getMoneyRequests()
+                    }
+                }
+                .onChange(of: vm.statusChosen) { newValue in
+                    Task {
+                        await vm.getMoneyRequests()
+                    }
+                }
+            }
+            .backgroundColor()
+            .toastView(toast: $vm.toast)
         }
-        .padding(20)
-        .frame(maxHeight: .infinity, alignment: .top)
-        .backgroundColor()
-        .toastView(toast: $vm.toast)
     }
 }
 
@@ -38,7 +57,7 @@ extension WalletView {
                 .font(.title2)
                 .bold()
             Spacer()
-            AvatarWithoutBorder(url: sessionState.user.avatar)
+            AvatarWithoutBorderView(url: sessionState.user.avatar)
         }
         .padding(.bottom, 36)
     }
@@ -53,6 +72,7 @@ extension WalletView {
             .overlay {
                 walletCardContent
             }
+            .padding(.bottom, 16)
     }
     
     private var walletCardContent: some View {
@@ -96,5 +116,100 @@ extension WalletView {
         }
         .padding(24)
         .frame(maxHeight: 240, alignment: .top)
+    }
+    
+    private var receiveButton: some View {
+        NavigationLink {
+            ReceiveMoneyView()
+        } label: {
+            VStack(spacing: 10) {
+                Image("receive-money")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 28, height: 28)
+                    .foregroundColor(Color.theme.appWhite)
+                    .frame(width: 65, height: 65)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20, style: .circular)
+                            .fill(Color.theme.cardBackground)
+                    )
+                Text("request")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.theme.white60)
+            }
+        }
+        .padding(.bottom, 24)
+    }
+    
+    private var statusDropDown: some View {
+        Menu {
+            ForEach(MoneyRequestStatus.allCases) { status in
+                Button {
+                    vm.statusChosen = status
+                } label: {
+                    Text(status.rawValue)
+                }
+            }
+        } label: {
+            Text(vm.statusChosen.rawValue)
+                .font(.callout)
+                .fontWeight(.bold)
+                .foregroundColor(Color.theme.white80)
+        }
+        .menuStyle(.button)
+    }
+    
+    private var filterSection: some View {
+        HStack {
+            Button {
+                withAnimation(.spring()) {
+                    vm.isToMeSelected = true
+                }
+            } label: {
+                PillView(text: "to me", color: vm.isToMeSelected ? Color.theme.appWhite : Color.theme.white45, bgColor: vm.isToMeSelected ? Color.theme.accent : Color.clear)
+            }
+            Button {
+                withAnimation(.spring()) {
+                    vm.isToMeSelected = false
+                }
+            } label: {
+                PillView(text: "by me", color: vm.isToMeSelected ? Color.theme.white45 : Color.theme.appWhite, bgColor: vm.isToMeSelected ? Color.clear : Color.theme.accent)
+            }
+            Spacer()
+            statusDropDown
+        }
+    }
+    
+    private var transactions: some View {
+        Group {
+            if vm.moneyRequests.isEmpty {
+                Text("no money request yet")
+                    .font(.footnote)
+                    .foregroundColor(Color.theme.white60)
+                    .frame(height: 90, alignment: .center)
+                    .frame(maxWidth: .infinity)
+            } else {
+                Text("transaction")
+            }
+        }
+    }
+    
+    private var transactionContent: some View {
+        VStack(alignment: .leading) {
+            SectionTitleView(title: "money requests")
+                .padding(.bottom, 8)
+            
+            filterSection
+                .padding(.bottom, 8)
+            
+            if(vm.isLoading) {
+                AccentSpinner(size: 36)
+                    .frame(height: 90)
+                    .frame(maxWidth: .infinity)
+            } else {
+                transactions
+            }
+        }
     }
 }

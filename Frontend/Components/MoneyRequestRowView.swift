@@ -39,7 +39,7 @@ struct MoneyRequestRowView_Previews: PreviewProvider {
 
 extension MoneyRequestRowView {
     private var moneyIcon: some View {
-        Image(isSent ? "send-money" : "recieve-money")
+        Image(isSent ? "send-money" : "receive-money")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: 22, height: 22)

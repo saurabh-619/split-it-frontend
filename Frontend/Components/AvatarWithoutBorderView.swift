@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AvatarWithoutBorder: View {
+struct AvatarWithoutBorderView: View {
     let url: String
     var size = 50.0
     var cornerRadius = 19.0
@@ -28,7 +28,7 @@ struct AvatarWithoutBorder: View {
 
 struct AvatarWithoutBorder_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarWithoutBorder(url: self.dev.user.avatar)
+        AvatarWithoutBorderView(url: self.dev.user.avatar)
             .preferredColorScheme(.dark)
     }
 }
