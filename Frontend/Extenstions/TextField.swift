@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension TextField {
-    func keyboardDetails(isEmail: Bool = false) -> some View {
-        self.modifier(TextFieldModifier(isEmail: isEmail))
+    func keyboardDetails(isEmail: Bool = false, isNumber: Bool = false) -> some View {
+        self.modifier(TextFieldModifier(isEmail: isEmail, isNumber: isNumber))
     }
 }

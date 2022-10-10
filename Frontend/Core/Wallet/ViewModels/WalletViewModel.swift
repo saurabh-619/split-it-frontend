@@ -20,8 +20,6 @@ class WalletViewModel: ObservableObject {
     func getMoneyRequests() async {
         do {
             let response: MoneyRequestsResponse = try await ApiManager.shared.get((isToMeSelected ? ApiConstants.MONEY_REQUESTS_TO_ME : ApiConstants.MONEY_REQUESTS_BY_ME) + "=\(statusChosen.rawValue)")
-            
-            print(response)
             if(response.ok) {
                 moneyRequests = response.moneyRequests
             } else {

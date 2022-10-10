@@ -21,13 +21,13 @@ struct SheetHeadingView: View {
             Spacer()
             closeButton
         }
-        
     }
 }
 
 struct SheetHeadingView_Previews: PreviewProvider {
     static var previews: some View {
         SheetHeadingView(title: "edit")
+            .preferredColorScheme(.dark)
     }
 }
 

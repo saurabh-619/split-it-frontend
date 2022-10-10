@@ -30,18 +30,18 @@ struct ActionButtonView: View {
             } else {
                 Text(text)
                 .font(.system(size: fontSize, weight: .bold))
+                .frame(maxWidth: .infinity)
+                .frame(height: height)
+                .foregroundColor(isDisabled ? Color.theme.gray400 : fontColor)
+                .background(isDisabled ? Color.theme.gray900 : bgColor)
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             }
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: height)
-        .foregroundColor(isDisabled ? Color.theme.gray400 : fontColor)
-        .background(isDisabled ? Color.theme.gray900 : bgColor)
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
         .disabled(isDisabled)
     }
 }
 
-struct AppButtonView_Previews: PreviewProvider {
+struct ActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
         ActionButtonView(text: "sign in") {}
             .preferredColorScheme(.dark)

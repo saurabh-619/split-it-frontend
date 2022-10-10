@@ -16,6 +16,7 @@ struct PillView: View {
         Text(text)
             .padding(.vertical, 5)
             .padding(.horizontal, 16)
+            .font(.callout)
             .foregroundColor(color)
             .background(bgColor)
             .clipShape(

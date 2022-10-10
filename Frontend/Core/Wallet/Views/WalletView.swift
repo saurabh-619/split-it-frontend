@@ -11,6 +11,8 @@ struct WalletView: View {
     @EnvironmentObject var sessionState: SessionState
     @StateObject var vm = WalletViewModel()
     
+    @State private var selectedRequest: MoneyRequest?
+    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
@@ -25,15 +27,20 @@ struct WalletView: View {
                 .task {
                     await vm.getMoneyRequests()
                 }
-                .onChange(of: vm.isToMeSelected) { newValue in
+                .onChange(of: vm.isToMeSelected) { _ in
                     Task {
                         await vm.getMoneyRequests()
                     }
                 }
-                .onChange(of: vm.statusChosen) { newValue in
+                .onChange(of: vm.statusChosen) { _ in
                     Task {
                         await vm.getMoneyRequests()
                     }
+                }
+            }
+            .refreshable {
+                Task {
+                    await vm.getMoneyRequests()
                 }
             }
             .backgroundColor()
@@ -146,7 +153,7 @@ extension WalletView {
         Menu {
             ForEach(MoneyRequestStatus.allCases) { status in
                 Button {
-                    vm.statusChosen = status
+                    vm.statusChosen = status    
                 } label: {
                     Text(status.rawValue)
                 }
@@ -190,7 +197,22 @@ extension WalletView {
                     .frame(height: 90, alignment: .center)
                     .frame(maxWidth: .infinity)
             } else {
-                Text("transaction")
+                LazyVStack {
+                    ForEach(vm.moneyRequests) { request in
+                        let isSent = request.requestee!.id == sessionState.user.id
+                        
+                        MoneyRequestRowView(moneyRequest: request, isWalletView: true)
+                            .padding(.vertical, 10)
+                            .onTapGesture {
+                                selectedRequest = request
+                            }
+                            .sheet(item: $selectedRequest) { moneyRequest in
+                                MoneyRequestSheetView(moneyRequest: moneyRequest, isSent: isSent, toast: $vm.toast)
+                                    .preferredColorScheme(.dark)
+                                    .presentationDetents([.fraction(0.75), .large])
+                            } 
+                    }
+                }
             }
         }
     }
