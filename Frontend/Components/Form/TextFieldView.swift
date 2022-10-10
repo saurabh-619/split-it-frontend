@@ -11,6 +11,7 @@ struct TextFieldView: View {
     let placeholder: String
     @Binding var text: String
     var isEmail = false
+    var isNumber = false
     var bgColor = Color.theme.gray1000
     var borderColor = Color.theme.white30
     var cornerRadius = 12.0
@@ -24,7 +25,7 @@ struct TextFieldView: View {
         VStack(alignment: .leading) {
             ZStack(alignment: .trailing) {
                 TextField(placeholder, text: $text)
-                    .keyboardDetails(isEmail: isEmail)
+                    .keyboardDetails(isEmail: isEmail, isNumber: isNumber)
                 
                 if(haveSpinner) {
                     AccentSpinner()

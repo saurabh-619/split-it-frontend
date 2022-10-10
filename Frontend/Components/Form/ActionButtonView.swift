@@ -29,21 +29,21 @@ struct ActionButtonView: View {
                     .frame(maxWidth: 30)
             } else {
                 Text(text)
-                .font(.system(size: fontSize, weight: .bold))
+                    .font(.system(size: fontSize, weight: .bold))
+                    .foregroundColor(isDisabled ? Color.theme.gray400 : fontColor)
             }
         }
         .frame(maxWidth: .infinity)
         .frame(height: height)
-        .foregroundColor(isDisabled ? Color.theme.gray400 : fontColor)
         .background(isDisabled ? Color.theme.gray900 : bgColor)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
         .disabled(isDisabled)
     }
 }
 
-struct AppButtonView_Previews: PreviewProvider {
+struct ActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButtonView(text: "sign in") {}
+        ActionButtonView(text: "sign in", isLoading: false) {}
             .preferredColorScheme(.dark)
     }
 }

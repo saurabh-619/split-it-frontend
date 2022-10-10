@@ -9,10 +9,11 @@ import SwiftUI
  
 struct TextFieldModifier: ViewModifier {
     let isEmail: Bool
+    let isNumber: Bool
     
     func body(content: Content) -> some View {
         content
-            .keyboardType(isEmail ? .emailAddress : .default)
+            .keyboardType(isEmail ? .emailAddress : isNumber ? .numberPad : .default)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
     }

@@ -37,7 +37,7 @@ struct FrontendApp: App {
             }
         }
         .onChange(of: scenePhase) { newScenePhase in
-            switch scenePhase {
+            switch newScenePhase {
             case .background:
                 persistenceManager.save()
                 print("core data saved in background")

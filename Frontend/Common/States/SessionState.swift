@@ -18,7 +18,6 @@ class SessionState: ObservableObject {
             let response: User = try await ApiManager.shared.get(ApiConstants.AUTH_USER_URL)
             user = response
         } catch let error {
-            print(error)
             toast = Toast(type: .error, title: "ohhh oh!", message: error.localizedDescription)
         }
         isFetching = false

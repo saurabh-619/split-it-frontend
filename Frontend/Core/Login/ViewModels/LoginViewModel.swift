@@ -74,6 +74,7 @@ class LoginViewModel: ObservableObject {
             }
         } catch let error {
             toast = Toast(type: .error, title: "error", message: error.localizedDescription)
+            isLoading = false
             return false
         }
     }

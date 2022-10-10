@@ -19,13 +19,7 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 10) {
                     headline
-                    if vm.isLoading {
-                        AccentSpinner()
-                            .frame(height: 450)
-                            .frame(maxWidth: .infinity)
-                    } else {
-                        friends
-                    }
+                    friends
                     Spacer()
                 }
                 .padding(20)
@@ -37,7 +31,7 @@ struct HomeView: View {
             }
             .refreshable {
                 Task {
-                   await vm.getFriends()
+                    await vm.getFriends()
                 }
             }
             .toastView(toast: $vm.toast)
@@ -82,30 +76,35 @@ extension HomeView {
     
     private var friends: some View {
         Group {
-            HStack(alignment: .center) {
-                Text("near by friends")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.theme.appWhite)
-                Spacer()
-                Button {
-                    showFriends = true
-                } label: {
-                    Text("add")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.theme.white60)
+            if vm.isLoading {
+                AccentSpinner()
+                    .frame(height: 450)
+                    .frame(maxWidth: .infinity)
+            } else {
+                HStack(alignment: .center) {
+                    SectionTitleView(title: "near by friends")
+                    Spacer()
+                    Button {
+                        showFriends = true
+                    } label: {
+                        Text("add")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.theme.white60)
+                    }
                 }
+                .padding(.bottom, 10)
+                .sheet(isPresented: $showFriends) {
+                    SearchFriendView()
+                }
+                
+                ScrollView {
+                    PeopleListView(emptyText: "you don't any friends yet.", people: vm.friends)
+                }
+                .frame(maxWidth: .infinity)
             }
-            .padding(.bottom, 10)
-            .sheet(isPresented: $showFriends) {
-                SearchFriendView()
-            }
-            
-            ScrollView {
-                PeopleListView(emptyText: "you don't any friends yet.", people: vm.friends)
-            }
-            .frame(maxWidth: .infinity)
         }
     }
+
 }
+

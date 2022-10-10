@@ -62,7 +62,7 @@ extension ProfileView {
     }
     
     var avatar: some View {
-        AvatarView(url: sessionState.user.avatar)
+        AvatarView(url: sessionState.user.avatar, hasBorder: true)
     }
     
     var name: some View {

@@ -11,19 +11,31 @@
 		092C862328D7679B007C45F1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862228D7679B007C45F1 /* ApiManager.swift */; };
 		092C862528D76EC9007C45F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862428D76EC9007C45F1 /* Errors.swift */; };
 		092C862B28D77931007C45F1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862A28D77931007C45F1 /* UserDefaults.swift */; };
+		093924FF28F48D39006B2438 /* RequestMoneyViewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */; };
+		0939250128F48DA3006B2438 /* RequestMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250028F48DA3006B2438 /* RequestMoneyView.swift */; };
+		0939250328F48DAD006B2438 /* RequestMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */; };
+		0939250628F496C3006B2438 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250528F496C3006B2438 /* NavbarView.swift */; };
 		093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */; };
 		093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */; };
 		093CC71428E83906005A4298 /* UpdateFriendRequestStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */; };
+		0941FEF128E983F100897DC6 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF028E983F100897DC6 /* WalletViewModel.swift */; };
+		0941FEF328E9847300897DC6 /* AvatarWithoutBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */; };
+		0941FEF528E9895100897DC6 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF428E9895100897DC6 /* Double.swift */; };
 		0958400B28E4C44000225BA3 /* MoneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400A28E4C44000225BA3 /* MoneyRequest.swift */; };
 		0958400D28E4CE0C00225BA3 /* MoneyRequestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */; };
 		0958400F28E4DBD700225BA3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400E28E4DBD700225BA3 /* String.swift */; };
 		099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A30E128D497DE00F93215 /* BackgroundModifier.swift */; };
+		099D006C28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */; };
+		099D006E28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */; };
 		099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */; };
 		099D4B5A28D63BEF00023AF2 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5928D63BEF00023AF2 /* TextField.swift */; };
 		099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5C28D63DEE00023AF2 /* ValidationErrorView.swift */; };
 		099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */; };
 		099D4B6528D6536F00023AF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6428D6536F00023AF2 /* HomeView.swift */; };
 		099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */; };
+		09A2EA1328F2AE3F00F63832 /* EditMoneyRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */; };
+		09A2EA1528F2AE4700F63832 /* EditMoneyRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */; };
+		09A2EA1728F2B0C200F63832 /* EditMoneyRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */; };
 		09A4437828E03534002B2F0C /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4437728E03534002B2F0C /* SessionState.swift */; };
 		09A5B98528E0D0FF004D48B3 /* PendingFriendRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */; };
 		09A5B98728E0D13D004D48B3 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98628E0D13D004D48B3 /* FriendRequest.swift */; };
@@ -41,6 +53,9 @@
 		09B558A128DA50C50006DE68 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B558A028DA50C50006DE68 /* SpinnerView.swift */; };
 		09B6ED5A28DDCF2500CC2406 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B6ED5928DDCF2500CC2406 /* ImageLoader.swift */; };
 		09B6ED5C28DDD19200CC2406 /* CacheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B6ED5B28DDD19200CC2406 /* CacheImageView.swift */; };
+		09B7D0A528EA133B0012394E /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D0A428EA133B0012394E /* SectionTitleView.swift */; };
+		09B7D0A728EA145F0012394E /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D0A628EA145F0012394E /* PillView.swift */; };
+		09B7D0A928EA267B0012394E /* MoneyRequestsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D0A828EA267B0012394E /* MoneyRequestsResponse.swift */; };
 		09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62028D24DA10007ACEF /* ToastView.swift */; };
 		09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62228D257F70007ACEF /* UIScreen.swift */; };
 		09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBB62528D263ED0007ACEF /* ToastModifier.swift */; };
@@ -58,6 +73,9 @@
 		09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */; };
 		09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */; };
 		09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0425A28D3B2CE00FEAC6D /* Color.swift */; };
+		09C1B46628ED67BF00FA35A8 /* MoneyRequestSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B46528ED67BF00FA35A8 /* MoneyRequestSheetView.swift */; };
+		09C1B46828ED768E00FA35A8 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B46728ED768E00FA35A8 /* Int.swift */; };
+		09C1B46A28ED79A200FA35A8 /* IconLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B46928ED79A200FA35A8 /* IconLabelView.swift */; };
 		09C33DDC28DEFF02003AE11E /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C33DDB28DEFF02003AE11E /* Tab.swift */; };
 		09C33DE228DF000E003AE11E /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C33DE128DF000E003AE11E /* BillsView.swift */; };
 		09C4B2C728DB8B48008621AA /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4B2C628DB8B48008621AA /* WalletView.swift */; };
@@ -67,6 +85,7 @@
 		09C4B2D328DB97C8008621AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4B2D228DB97C8008621AA /* User.swift */; };
 		09C4B2D528DB97D5008621AA /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4B2D428DB97D5008621AA /* Wallet.swift */; };
 		09C4B2DA28DB9A02008621AA /* AuthUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4B2D928DB9A02008621AA /* AuthUserResponse.swift */; };
+		09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C74D8A28F1CF1C001885FE /* AlertView.swift */; };
 		09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */; };
 		09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* RegisterResponse.swift */; };
 		09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB889328D5BBC30077F045 /* ActionButtonView.swift */; };
@@ -92,19 +111,31 @@
 		092C862228D7679B007C45F1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		092C862428D76EC9007C45F1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		092C862A28D77931007C45F1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyViewRequest.swift; sourceTree = "<group>"; };
+		0939250028F48DA3006B2438 /* RequestMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyView.swift; sourceTree = "<group>"; };
+		0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyViewModel.swift; sourceTree = "<group>"; };
+		0939250528F496C3006B2438 /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsView.swift; sourceTree = "<group>"; };
 		093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsViewModel.swift; sourceTree = "<group>"; };
 		093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFriendRequestStatusRequest.swift; sourceTree = "<group>"; };
+		0941FEF028E983F100897DC6 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarWithoutBorderView.swift; sourceTree = "<group>"; };
+		0941FEF428E9895100897DC6 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0958400A28E4C44000225BA3 /* MoneyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequest.swift; sourceTree = "<group>"; };
 		0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestRowView.swift; sourceTree = "<group>"; };
 		0958400E28E4DBD700225BA3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		099A30E128D497DE00F93215 /* BackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
+		099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestSheetViewModel.swift; sourceTree = "<group>"; };
+		099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestStatusUpdateRequest.swift; sourceTree = "<group>"; };
 		099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		099D4B5928D63BEF00023AF2 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		099D4B5C28D63DEE00023AF2 /* ValidationErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorView.swift; sourceTree = "<group>"; };
 		099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboardModifier.swift; sourceTree = "<group>"; };
 		099D4B6428D6536F00023AF2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestView.swift; sourceTree = "<group>"; };
+		09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestViewModel.swift; sourceTree = "<group>"; };
+		09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestRequest.swift; sourceTree = "<group>"; };
 		09A4437728E03534002B2F0C /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestResponse.swift; sourceTree = "<group>"; };
 		09A5B98628E0D13D004D48B3 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
@@ -121,6 +152,9 @@
 		09B558A028DA50C50006DE68 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		09B6ED5928DDCF2500CC2406 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		09B6ED5B28DDD19200CC2406 /* CacheImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageView.swift; sourceTree = "<group>"; };
+		09B7D0A428EA133B0012394E /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		09B7D0A628EA145F0012394E /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
+		09B7D0A828EA267B0012394E /* MoneyRequestsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestsResponse.swift; sourceTree = "<group>"; };
 		09BBB62028D24DA10007ACEF /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		09BBB62228D257F70007ACEF /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		09BBB62528D263ED0007ACEF /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
@@ -139,6 +173,9 @@
 		09C0425328D39BFD00FEAC6D /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		09C0425828D3AE2C00FEAC6D /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		09C0425A28D3B2CE00FEAC6D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		09C1B46528ED67BF00FA35A8 /* MoneyRequestSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestSheetView.swift; sourceTree = "<group>"; };
+		09C1B46728ED768E00FA35A8 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		09C1B46928ED79A200FA35A8 /* IconLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelView.swift; sourceTree = "<group>"; };
 		09C33DDB28DEFF02003AE11E /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		09C33DE128DF000E003AE11E /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
 		09C4B2C628DB8B48008621AA /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
@@ -148,6 +185,7 @@
 		09C4B2D228DB97C8008621AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09C4B2D428DB97D5008621AA /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		09C4B2D928DB9A02008621AA /* AuthUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserResponse.swift; sourceTree = "<group>"; };
+		09C74D8A28F1CF1C001885FE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		09CB888F28D5BB840077F045 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		09CB889328D5BBC30077F045 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
@@ -180,11 +218,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0939250428F49682006B2438 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				0920577628DB650A00BAA9E1 /* TabbarView.swift */,
+				09BBB62028D24DA10007ACEF /* ToastView.swift */,
+				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
+				09B7D0A428EA133B0012394E /* SectionTitleView.swift */,
+				0939250528F496C3006B2438 /* NavbarView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		093CC71228E838F4005A4298 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */,
 				09B4871E28E8BF7900596340 /* SendFriendRequestRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0941FEEB28E983B000897DC6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0941FEF028E983F100897DC6 /* WalletViewModel.swift */,
+				099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */,
+				09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */,
+				0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0941FEEC28E983BC00897DC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09C4B2C628DB8B48008621AA /* WalletView.swift */,
+				09C1B46528ED67BF00FA35A8 /* MoneyRequestSheetView.swift */,
+				09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */,
+				0939250028F48DA3006B2438 /* RequestMoneyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0941FEED28E983BF00897DC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0941FEEF28E983E100897DC6 /* Requests */,
+				0941FEEE28E983C200897DC6 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0941FEEE28E983C200897DC6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				09B7D0A828EA267B0012394E /* MoneyRequestsResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		0941FEEF28E983E100897DC6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */,
+				09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */,
+				093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -329,17 +428,19 @@
 		09BEAA7828D1033A00FFEF94 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0939250428F49682006B2438 /* Layout */,
 				099D4B5B28D63DC700023AF2 /* Form */,
-				09BBB62028D24DA10007ACEF /* ToastView.swift */,
 				09B5589C28DA4E920006DE68 /* LottieView.swift */,
 				09B558A028DA50C50006DE68 /* SpinnerView.swift */,
-				0920577628DB650A00BAA9E1 /* TabbarView.swift */,
 				09B6ED5B28DDD19200CC2406 /* CacheImageView.swift */,
 				09A5B98A28E0D732004D48B3 /* PersonRowView.swift */,
-				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
 				09A5B99028E0F091004D48B3 /* PeopleListView.swift */,
 				09D0AF4E28E34E0A003C5AC0 /* AvatarView.swift */,
+				0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */,
 				0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */,
+				09B7D0A628EA145F0012394E /* PillView.swift */,
+				09C1B46928ED79A200FA35A8 /* IconLabelView.swift */,
+				09C74D8A28F1CF1C001885FE /* AlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +455,8 @@
 				099D4B5928D63BEF00023AF2 /* TextField.swift */,
 				092C862A28D77931007C45F1 /* UserDefaults.swift */,
 				0958400E28E4DBD700225BA3 /* String.swift */,
+				0941FEF428E9895100897DC6 /* Double.swift */,
+				09C1B46728ED768E00FA35A8 /* Int.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -471,7 +574,9 @@
 		09C4B2C528DB8B41008621AA /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				09C4B2C628DB8B48008621AA /* WalletView.swift */,
+				0941FEED28E983BF00897DC6 /* Models */,
+				0941FEEC28E983BC00897DC6 /* Views */,
+				0941FEEB28E983B000897DC6 /* ViewModels */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -584,12 +689,12 @@
 			isa = PBXGroup;
 			children = (
 				093CC71228E838F4005A4298 /* Requests */,
-				09CD180B28E0B695001E44B2 /* Reponses */,
+				09CD180B28E0B695001E44B2 /* Responses */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		09CD180B28E0B695001E44B2 /* Reponses */ = {
+		09CD180B28E0B695001E44B2 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				09CD180928E0B692001E44B2 /* FriendsResponse.swift */,
@@ -597,7 +702,7 @@
 				09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */,
 				09A5B98E28E0EB15004D48B3 /* SearchUsersResponse.swift */,
 			);
-			path = Reponses;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -679,7 +784,9 @@
 				099D4B6528D6536F00023AF2 /* HomeView.swift in Sources */,
 				09CF061E28E229B200F2C481 /* UserViewModel.swift in Sources */,
 				0958400B28E4C44000225BA3 /* MoneyRequest.swift in Sources */,
+				09C1B46828ED768E00FA35A8 /* Int.swift in Sources */,
 				09BBB62128D24DA10007ACEF /* ToastView.swift in Sources */,
+				0941FEF528E9895100897DC6 /* Double.swift in Sources */,
 				09BEAA8128D103EB00FFEF94 /* LoginView.swift in Sources */,
 				09BEAA8D28D10DB500FFEF94 /* CoreResponse.swift in Sources */,
 				093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */,
@@ -687,6 +794,8 @@
 				09C33DE228DF000E003AE11E /* BillsView.swift in Sources */,
 				092C862B28D77931007C45F1 /* UserDefaults.swift in Sources */,
 				099D4B5A28D63BEF00023AF2 /* TextField.swift in Sources */,
+				09C1B46A28ED79A200FA35A8 /* IconLabelView.swift in Sources */,
+				09C1B46628ED67BF00FA35A8 /* MoneyRequestSheetView.swift in Sources */,
 				09C33DDC28DEFF02003AE11E /* Tab.swift in Sources */,
 				09A5B98B28E0D732004D48B3 /* PersonRowView.swift in Sources */,
 				09CB889628D5BD280077F045 /* RegisterView.swift in Sources */,
@@ -695,12 +804,18 @@
 				09BBB62328D257F70007ACEF /* UIScreen.swift in Sources */,
 				09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */,
 				09EC2F3228DE37A500C1D048 /* EditProfileRequest.swift in Sources */,
+				09B7D0A528EA133B0012394E /* SectionTitleView.swift in Sources */,
+				09A2EA1528F2AE4700F63832 /* EditMoneyRequestViewModel.swift in Sources */,
 				09B5589828DA3F530006DE68 /* UsernameAvailableResponse.swift in Sources */,
 				09A5B98D28E0E856004D48B3 /* SheetHeadingView.swift in Sources */,
+				09A2EA1328F2AE3F00F63832 /* EditMoneyRequestView.swift in Sources */,
+				0941FEF128E983F100897DC6 /* WalletViewModel.swift in Sources */,
+				0941FEF328E9847300897DC6 /* AvatarWithoutBorderView.swift in Sources */,
 				09B3651728DF5A5600910584 /* PersistenceManager.swift in Sources */,
 				09C4B2C728DB8B48008621AA /* WalletView.swift in Sources */,
 				09C0425B28D3B2CE00FEAC6D /* Color.swift in Sources */,
 				09BEAA8328D108DA00FFEF94 /* LoginViewModel.swift in Sources */,
+				09A2EA1728F2B0C200F63832 /* EditMoneyRequestRequest.swift in Sources */,
 				09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */,
 				09C4B2CA28DB8B65008621AA /* AddView.swift in Sources */,
 				09EC2F2E28DE30A600C1D048 /* EditProfileView.swift in Sources */,
@@ -716,6 +831,7 @@
 				099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */,
 				09CD180A28E0B692001E44B2 /* FriendsResponse.swift in Sources */,
 				09B3651528DF586D00910584 /* Stash.xcdatamodeld in Sources */,
+				099D006E28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift in Sources */,
 				09CF062028E22A7700F2C481 /* UserWithFriendshipStatus.swift in Sources */,
 				0958400D28E4CE0C00225BA3 /* MoneyRequestRowView.swift in Sources */,
 				09B5589D28DA4E920006DE68 /* LottieView.swift in Sources */,
@@ -729,25 +845,33 @@
 				09C4B2DA28DB9A02008621AA /* AuthUserResponse.swift in Sources */,
 				099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */,
 				09CD180728E0AFDC001E44B2 /* SearchFriendView.swift in Sources */,
+				0939250328F48DAD006B2438 /* RequestMoneyViewModel.swift in Sources */,
+				09B7D0A728EA145F0012394E /* PillView.swift in Sources */,
 				09B6ED5C28DDD19200CC2406 /* CacheImageView.swift in Sources */,
+				0939250128F48DA3006B2438 /* RequestMoneyView.swift in Sources */,
 				09D0AF4F28E34E0A003C5AC0 /* AvatarView.swift in Sources */,
 				09BBB62828D2642E0007ACEF /* Toast.swift in Sources */,
 				09C4B2D328DB97C8008621AA /* User.swift in Sources */,
 				09B4871F28E8BF7900596340 /* SendFriendRequestRequest.swift in Sources */,
 				099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */,
+				09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */,
 				09EC2F3428DE37DE00C1D048 /* EditProfileResponse.swift in Sources */,
 				093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */,
 				092C862328D7679B007C45F1 /* ApiManager.swift in Sources */,
+				093924FF28F48D39006B2438 /* RequestMoneyViewRequest.swift in Sources */,
 				09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */,
 				099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */,
 				099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */,
 				09BEAA8F28D10EA800FFEF94 /* LoginResponse.swift in Sources */,
+				0939250628F496C3006B2438 /* NavbarView.swift in Sources */,
 				09B6ED5A28DDCF2500CC2406 /* ImageLoader.swift in Sources */,
+				09B7D0A928EA267B0012394E /* MoneyRequestsResponse.swift in Sources */,
 				09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */,
 				09B3651228DF56DE00910584 /* HomeViewModel.swift in Sources */,
 				09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */,
 				09C4B2D128DB934A008621AA /* ProfileViewModel.swift in Sources */,
 				09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */,
+				099D006C28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift in Sources */,
 				09CF061C28E2211300F2C481 /* UserView.swift in Sources */,
 				09B558A128DA50C50006DE68 /* SpinnerView.swift in Sources */,
 				09A5B98528E0D0FF004D48B3 /* PendingFriendRequestResponse.swift in Sources */,

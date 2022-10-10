@@ -12,9 +12,10 @@ struct MoneyRequest: Identifiable, Decodable {
     let createdAt, updatedAt: String
     let deletedAt: String?
     let title, description: String
-    let amount: Int
+    var amount: Int
     let status: String
     let requesteeRemark: String?
     let requester, requestee: User?
     let requesterId, requesteeId: Int?
+    let transactionId: Int?
 }
