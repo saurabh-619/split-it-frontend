@@ -11,9 +11,10 @@
 		092C862328D7679B007C45F1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862228D7679B007C45F1 /* ApiManager.swift */; };
 		092C862528D76EC9007C45F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862428D76EC9007C45F1 /* Errors.swift */; };
 		092C862B28D77931007C45F1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C862A28D77931007C45F1 /* UserDefaults.swift */; };
-		093924FF28F48D39006B2438 /* SendMoneyRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093924FE28F48D39006B2438 /* SendMoneyRequestRequest.swift */; };
-		0939250128F48DA3006B2438 /* SendMoneyRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250028F48DA3006B2438 /* SendMoneyRequestView.swift */; };
-		0939250328F48DAD006B2438 /* SendMoneyRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250228F48DAD006B2438 /* SendMoneyRequestViewModel.swift */; };
+		093924FF28F48D39006B2438 /* RequestMoneyViewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */; };
+		0939250128F48DA3006B2438 /* RequestMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250028F48DA3006B2438 /* RequestMoneyView.swift */; };
+		0939250328F48DAD006B2438 /* RequestMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */; };
+		0939250628F496C3006B2438 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939250528F496C3006B2438 /* NavbarView.swift */; };
 		093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */; };
 		093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */; };
 		093CC71428E83906005A4298 /* UpdateFriendRequestStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */; };
@@ -24,7 +25,6 @@
 		0958400D28E4CE0C00225BA3 /* MoneyRequestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */; };
 		0958400F28E4DBD700225BA3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958400E28E4DBD700225BA3 /* String.swift */; };
 		099A30E228D497DE00F93215 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A30E128D497DE00F93215 /* BackgroundModifier.swift */; };
-		099C628E28E9E73800DB1CA6 /* ReceiveMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C628D28E9E73800DB1CA6 /* ReceiveMoneyView.swift */; };
 		099D006C28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */; };
 		099D006E28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */; };
 		099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */; };
@@ -111,9 +111,10 @@
 		092C862228D7679B007C45F1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		092C862428D76EC9007C45F1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		092C862A28D77931007C45F1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		093924FE28F48D39006B2438 /* SendMoneyRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyRequestRequest.swift; sourceTree = "<group>"; };
-		0939250028F48DA3006B2438 /* SendMoneyRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyRequestView.swift; sourceTree = "<group>"; };
-		0939250228F48DAD006B2438 /* SendMoneyRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyRequestViewModel.swift; sourceTree = "<group>"; };
+		093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyViewRequest.swift; sourceTree = "<group>"; };
+		0939250028F48DA3006B2438 /* RequestMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyView.swift; sourceTree = "<group>"; };
+		0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMoneyViewModel.swift; sourceTree = "<group>"; };
+		0939250528F496C3006B2438 /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsView.swift; sourceTree = "<group>"; };
 		093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsViewModel.swift; sourceTree = "<group>"; };
 		093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFriendRequestStatusRequest.swift; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestRowView.swift; sourceTree = "<group>"; };
 		0958400E28E4DBD700225BA3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		099A30E128D497DE00F93215 /* BackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
-		099C628D28E9E73800DB1CA6 /* ReceiveMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyView.swift; sourceTree = "<group>"; };
 		099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestSheetViewModel.swift; sourceTree = "<group>"; };
 		099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequestStatusUpdateRequest.swift; sourceTree = "<group>"; };
 		099D4B5728D63B6B00023AF2 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -218,6 +218,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0939250428F49682006B2438 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				0920577628DB650A00BAA9E1 /* TabbarView.swift */,
+				09BBB62028D24DA10007ACEF /* ToastView.swift */,
+				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
+				09B7D0A428EA133B0012394E /* SectionTitleView.swift */,
+				0939250528F496C3006B2438 /* NavbarView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		093CC71228E838F4005A4298 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +245,7 @@
 				0941FEF028E983F100897DC6 /* WalletViewModel.swift */,
 				099D006B28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift */,
 				09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */,
-				0939250228F48DAD006B2438 /* SendMoneyRequestViewModel.swift */,
+				0939250228F48DAD006B2438 /* RequestMoneyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -242,10 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				09C4B2C628DB8B48008621AA /* WalletView.swift */,
-				099C628D28E9E73800DB1CA6 /* ReceiveMoneyView.swift */,
 				09C1B46528ED67BF00FA35A8 /* MoneyRequestSheetView.swift */,
 				09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */,
-				0939250028F48DA3006B2438 /* SendMoneyRequestView.swift */,
+				0939250028F48DA3006B2438 /* RequestMoneyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,7 +283,7 @@
 			children = (
 				099D006D28F0A3FE00E6E324 /* MoneyRequestStatusUpdateRequest.swift */,
 				09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */,
-				093924FE28F48D39006B2438 /* SendMoneyRequestRequest.swift */,
+				093924FE28F48D39006B2438 /* RequestMoneyViewRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -417,19 +428,16 @@
 		09BEAA7828D1033A00FFEF94 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0939250428F49682006B2438 /* Layout */,
 				099D4B5B28D63DC700023AF2 /* Form */,
-				09BBB62028D24DA10007ACEF /* ToastView.swift */,
 				09B5589C28DA4E920006DE68 /* LottieView.swift */,
 				09B558A028DA50C50006DE68 /* SpinnerView.swift */,
-				0920577628DB650A00BAA9E1 /* TabbarView.swift */,
 				09B6ED5B28DDD19200CC2406 /* CacheImageView.swift */,
 				09A5B98A28E0D732004D48B3 /* PersonRowView.swift */,
-				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
 				09A5B99028E0F091004D48B3 /* PeopleListView.swift */,
 				09D0AF4E28E34E0A003C5AC0 /* AvatarView.swift */,
 				0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */,
 				0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */,
-				09B7D0A428EA133B0012394E /* SectionTitleView.swift */,
 				09B7D0A628EA145F0012394E /* PillView.swift */,
 				09C1B46928ED79A200FA35A8 /* IconLabelView.swift */,
 				09C74D8A28F1CF1C001885FE /* AlertView.swift */,
@@ -797,7 +805,6 @@
 				09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */,
 				09EC2F3228DE37A500C1D048 /* EditProfileRequest.swift in Sources */,
 				09B7D0A528EA133B0012394E /* SectionTitleView.swift in Sources */,
-				099C628E28E9E73800DB1CA6 /* ReceiveMoneyView.swift in Sources */,
 				09A2EA1528F2AE4700F63832 /* EditMoneyRequestViewModel.swift in Sources */,
 				09B5589828DA3F530006DE68 /* UsernameAvailableResponse.swift in Sources */,
 				09A5B98D28E0E856004D48B3 /* SheetHeadingView.swift in Sources */,
@@ -838,10 +845,10 @@
 				09C4B2DA28DB9A02008621AA /* AuthUserResponse.swift in Sources */,
 				099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */,
 				09CD180728E0AFDC001E44B2 /* SearchFriendView.swift in Sources */,
-				0939250328F48DAD006B2438 /* SendMoneyRequestViewModel.swift in Sources */,
+				0939250328F48DAD006B2438 /* RequestMoneyViewModel.swift in Sources */,
 				09B7D0A728EA145F0012394E /* PillView.swift in Sources */,
 				09B6ED5C28DDD19200CC2406 /* CacheImageView.swift in Sources */,
-				0939250128F48DA3006B2438 /* SendMoneyRequestView.swift in Sources */,
+				0939250128F48DA3006B2438 /* RequestMoneyView.swift in Sources */,
 				09D0AF4F28E34E0A003C5AC0 /* AvatarView.swift in Sources */,
 				09BBB62828D2642E0007ACEF /* Toast.swift in Sources */,
 				09C4B2D328DB97C8008621AA /* User.swift in Sources */,
@@ -851,11 +858,12 @@
 				09EC2F3428DE37DE00C1D048 /* EditProfileResponse.swift in Sources */,
 				093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */,
 				092C862328D7679B007C45F1 /* ApiManager.swift in Sources */,
-				093924FF28F48D39006B2438 /* SendMoneyRequestRequest.swift in Sources */,
+				093924FF28F48D39006B2438 /* RequestMoneyViewRequest.swift in Sources */,
 				09BBB62628D263ED0007ACEF /* ToastModifier.swift in Sources */,
 				099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */,
 				099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */,
 				09BEAA8F28D10EA800FFEF94 /* LoginResponse.swift in Sources */,
+				0939250628F496C3006B2438 /* NavbarView.swift in Sources */,
 				09B6ED5A28DDCF2500CC2406 /* ImageLoader.swift in Sources */,
 				09B7D0A928EA267B0012394E /* MoneyRequestsResponse.swift in Sources */,
 				09C0425928D3AE2C00FEAC6D /* PasswordFieldView.swift in Sources */,

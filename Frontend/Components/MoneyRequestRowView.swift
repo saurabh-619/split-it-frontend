@@ -67,7 +67,7 @@ extension MoneyRequestRowView {
                 .foregroundColor(Color.theme.appWhite)
             if(isWalletView) {
                 HStack(alignment: .center, spacing: 12) {
-                    Text(isSent ? "to \(moneyRequest.requester!.username)" : "from \(moneyRequest.requestee!.username)")
+                    Text(isSent ? "from \(moneyRequest.requester!.username)" : "to \(moneyRequest.requestee!.username)")
                 }
                 .font(.caption2)
                 .fontWeight(.medium)

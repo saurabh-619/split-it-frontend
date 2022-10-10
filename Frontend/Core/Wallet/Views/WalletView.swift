@@ -127,7 +127,7 @@ extension WalletView {
     
     private var receiveButton: some View {
         NavigationLink {
-            ReceiveMoneyView()
+            RequestMoneyView()
         } label: {
             VStack(spacing: 10) {
                 Image("receive-money")
