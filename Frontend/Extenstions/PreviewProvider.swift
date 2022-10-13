@@ -60,4 +60,38 @@ class DeveloperPreview {
         }
         return requests
     }
+    
+    var item: Item {
+        Item(id: 33, version: 1, createdAt: "2022-09-04T14:16:25.693Z", updatedAt: "2022-09-04T14:16:25.693Z", deletedAt: nil, name: "americano", description: "not so thick coffee bruhhh", price: 150, image: nil)
+    }
+    
+    var billItem: BillItem {
+        BillItem(id: 28, version: 1, createdAt: "2022-09-04T14:16:25.699Z", updatedAt: "2022-09-04T14:16:25.699Z", deletedAt: nil, quantity: 1, total: 150, friends: Array(self.friends[1...3]), item: self.item, billId: 9)
+    }
+    
+    var billItems: [BillItem] {
+        var billItems = [BillItem]()
+        
+        for id in 1...3 {
+            var newBillItem = billItem
+            newBillItem.id = id
+            billItems.append(newBillItem)
+        }
+        
+        return billItems
+    }
+    
+    var bill: Bill {
+        Bill(id: 7, version: 4, createdAt: "2022-09-03T11:45:19.791Z", updatedAt: "2022-09-03T11:58:53.473Z", deletedAt: nil, title: "starbucks split", description: "on sunday aditya and test went to starbucks to drink americano coffee and now it's time to pay the split", total: 600, totalWithoutTax: 500, tax: 100, paidAmount: 235, fractionPaid: "0.39", isPaid: false, image: nil, leader: user, friends: friends, billItems: billItems, leaderId: user.id, friendsIds: friends.map {$0.id}, billItemIds: billItems.map{$0.id})
+    }
+    
+    var bills: [Bill] {
+        var bills = [Bill]()
+        for id in 1...3 {
+            var newBill = bill
+            newBill.id = id
+            bills.append(newBill)
+        }
+        return bills
+    }
 }

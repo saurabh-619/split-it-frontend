@@ -33,6 +33,10 @@ struct ApiConstants {
     static let MONEY_REQUESTS_EDIT = "http://localhost:3000/money-request"
     static let MONEY_REQUEST_STATUS_UPDATE = "http://localhost:3000/money-request"
     static let SEND_MONEY_REQUEST = "http://localhost:3000/money-request"
+    
+    // bill list
+    static let GET_LEADER_BILLS = "http://localhost:3000/bill?limit=100"
+    static let GET_SPLIT_BILLS = "http://localhost:3000/bill/split?limit=100"
 }
 
 struct AppStorageKeys {

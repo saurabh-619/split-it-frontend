@@ -24,7 +24,6 @@ class HomeViewModel: ObservableObject {
                 throw NetworkError.backendError(response.error ?? "")
             }
         } catch let error {
-            print(error)
             toast = Toast(type: .error, title: "ohh oh!", message: error.localizedDescription)
         }
         isLoading = false

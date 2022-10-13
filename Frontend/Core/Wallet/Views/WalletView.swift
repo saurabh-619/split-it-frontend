@@ -133,9 +133,9 @@ extension WalletView {
                 Image("receive-money")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 28, height: 28)
+                    .frame(width: 24, height: 24)
                     .foregroundColor(Color.theme.appWhite)
-                    .frame(width: 65, height: 65)
+                    .frame(width: 55, height: 55)
                     .background(
                         RoundedRectangle(cornerRadius: 20, style: .circular)
                             .fill(Color.theme.cardBackground)

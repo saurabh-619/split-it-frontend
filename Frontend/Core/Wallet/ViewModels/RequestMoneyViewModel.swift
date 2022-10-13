@@ -36,8 +36,7 @@ class RequestMoneyViewModel: ObservableObject {
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }
-        } catch let error {
-            print(error)
+        } catch let error { 
             toast = Toast(type: .error, title: "ohh oh!", message: error.localizedDescription)
         }
         isLoading = false
@@ -94,8 +93,6 @@ class RequestMoneyViewModel: ObservableObject {
     
     func sendMoneyRequest(onSubmit: () -> Void) async {
         validate()
-        
-        print(isFormDisabled)
         if(isFormDisabled) { return }
         
         isSubmitting = true
@@ -103,7 +100,6 @@ class RequestMoneyViewModel: ObservableObject {
         let sendMoneyRequestBody = RequestMoneyViewRequest(title: self.title, description: self.description, amount: Int(self.amount)!, requesteeId: requestee.id)
         do {
             let response: BaseResponse = try await ApiManager.shared.post(ApiConstants.SEND_MONEY_REQUEST, body: sendMoneyRequestBody)
-            print(response)
             if(response.ok) {
                 toast = Toast(title: "ohh oh!", message: "money request sent successfully")
                 try await Task.sleep(nanoseconds: 2_000_000_000)
