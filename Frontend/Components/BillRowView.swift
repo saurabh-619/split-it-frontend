@@ -15,7 +15,6 @@ struct BillRowView: View {
         HStack(alignment: .center, spacing: 24) {
             icon
             billInfo
-            Spacer()
             progress
         }
         .frame(maxWidth: .infinity)
@@ -24,8 +23,12 @@ struct BillRowView: View {
 
 struct BillRowView_Previews: PreviewProvider {
     static var previews: some View {
-        BillRowView(isLeader: true,bill: self.dev.bill)
-            .preferredColorScheme(.dark)
+        VStack(spacing: 45) {
+            ForEach(self.dev.bills) { bill in
+                BillRowView(isLeader: true, bill: bill)
+            }
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -45,11 +48,12 @@ extension BillRowView {
     }
     
     private var billInfo: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(bill.title)
-                .font(.title3)
+                .font(.headline)
                 .fontWeight(.semibold)
-                .lineLimit(1)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
             
             HStack(alignment: .center, spacing: -4) {
                 Text("total: ")
@@ -65,22 +69,13 @@ extension BillRowView {
                 Text(bill.total.withCommasString)
                     .foregroundColor(Color.theme.gray300)
             }
-            .font(.callout)
+            .font(.footnote)
             .fontWeight(.medium)
             AvatarRowView(people: bill.friends, size: 25, radius: 25)
         }
     }
     
-    private var progress: some View {
-        VStack {
-            Text(bill.fractionPaid)
-                .font(.title3)
-                .bold()
-                .foregroundColor(Color.theme.success)
-            Text("paid")
-                .font(.callout)
-                .bold()
-                .foregroundColor(Color.theme.appWhite)
-        }
+    private var progress: BillProgressView {
+        BillProgressView(fractionPaid: bill.fractionPaid)
     }
 }

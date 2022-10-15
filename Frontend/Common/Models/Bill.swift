@@ -13,7 +13,7 @@ struct Bill: Identifiable, Decodable {
     let deletedAt: String?
     let title, description: String
     let total, totalWithoutTax, tax, paidAmount: Int
-    let fractionPaid: String
+    var fractionPaid: String
     let isPaid: Bool
     let image: String?
     let leader: User

@@ -90,6 +90,7 @@ class DeveloperPreview {
         for id in 1...3 {
             var newBill = bill
             newBill.id = id
+            newBill.fractionPaid = Double.random(in: 0.12...0.80).getOneDigitString
             bills.append(newBill)
         }
         return bills

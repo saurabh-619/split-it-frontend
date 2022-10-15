@@ -22,7 +22,7 @@ struct AvatarView: View {
                     RoundedRectangle(cornerRadius: size / 3.2, style: .continuous)
                 )
         }
-        .padding(size / 10 )
+        .padding(hasBorder ? size / 10 : 0)
         .backgroundColor()
         .clipShape(
             RoundedRectangle(cornerRadius: size / 2.28, style: .continuous)
@@ -33,15 +33,15 @@ struct AvatarView: View {
         )
         .clipShape(
             RoundedRectangle(cornerRadius: size / 1.78, style: .continuous)
-        )
-        .padding(.bottom, 5)
+        ) 
     }
 }
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        HStack {
             AvatarView(url: self.dev.user.avatar)
+            AvatarView(url: self.dev.user.avatar, hasBorder: false)
             AvatarView(url: self.dev.user.avatar, size: 55)
         }
         .preferredColorScheme(.dark)

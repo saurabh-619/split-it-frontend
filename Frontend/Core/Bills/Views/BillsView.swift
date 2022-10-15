@@ -73,7 +73,11 @@ extension BillsView {
     private var bills: some View {
         LazyVStack(spacing: 50) {
             ForEach(vm.bills) { bill in
-                BillRowView(isLeader: vm.isLeaderTab, bill: bill)
+                NavigationLink {
+                    BillView(bill: bill)
+                } label: {    
+                    BillRowView(isLeader: vm.isLeaderTab, bill: bill)
+                } 
             }
         }
     }

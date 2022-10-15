@@ -92,6 +92,8 @@
 		09C56DB828F7161100B72659 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C56DB728F7161100B72659 /* Bill.swift */; };
 		09C56DBA28F7167000B72659 /* BillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C56DB928F7167000B72659 /* BillItem.swift */; };
 		09C56DBC28F716AE00B72659 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C56DBB28F716AE00B72659 /* Item.swift */; };
+		09C64C8128F9DC69001755C3 /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C64C8028F9DC69001755C3 /* BillView.swift */; };
+		09C64C8328F9FD40001755C3 /* BillProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C64C8228F9FD40001755C3 /* BillProgressView.swift */; };
 		09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C74D8A28F1CF1C001885FE /* AlertView.swift */; };
 		09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */; };
 		09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* RegisterResponse.swift */; };
@@ -199,6 +201,8 @@
 		09C56DB728F7161100B72659 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		09C56DB928F7167000B72659 /* BillItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItem.swift; sourceTree = "<group>"; };
 		09C56DBB28F716AE00B72659 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		09C64C8028F9DC69001755C3 /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
+		09C64C8228F9FD40001755C3 /* BillProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillProgressView.swift; sourceTree = "<group>"; };
 		09C74D8A28F1CF1C001885FE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		09CB888F28D5BB840077F045 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 				09C74D8A28F1CF1C001885FE /* AlertView.swift */,
 				099E1F0D28F73AEA000B71F8 /* BillRowView.swift */,
 				099E1F0F28F73F29000B71F8 /* AvatarRowView.swift */,
+				09C64C8228F9FD40001755C3 /* BillProgressView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				09C33DE128DF000E003AE11E /* BillsView.swift */,
+				09C64C8028F9DC69001755C3 /* BillView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				09CF062028E22A7700F2C481 /* UserWithFriendshipStatus.swift in Sources */,
 				0958400D28E4CE0C00225BA3 /* MoneyRequestRowView.swift in Sources */,
 				09B5589D28DA4E920006DE68 /* LottieView.swift in Sources */,
+				09C64C8328F9FD40001755C3 /* BillProgressView.swift in Sources */,
 				0920577728DB650A00BAA9E1 /* TabbarView.swift in Sources */,
 				0958400F28E4DBD700225BA3 /* String.swift in Sources */,
 				09BBB62A28D26B380007ACEF /* View.swift in Sources */,
@@ -881,6 +888,7 @@
 				09CD180728E0AFDC001E44B2 /* SearchFriendView.swift in Sources */,
 				0939250328F48DAD006B2438 /* RequestMoneyViewModel.swift in Sources */,
 				09B7D0A728EA145F0012394E /* PillView.swift in Sources */,
+				09C64C8128F9DC69001755C3 /* BillView.swift in Sources */,
 				09B6ED5C28DDD19200CC2406 /* CacheImageView.swift in Sources */,
 				0939250128F48DA3006B2438 /* RequestMoneyView.swift in Sources */,
 				09D0AF4F28E34E0A003C5AC0 /* AvatarView.swift in Sources */,
