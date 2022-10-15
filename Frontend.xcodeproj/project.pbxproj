@@ -45,6 +45,7 @@
 		09A5B98D28E0E856004D48B3 /* SheetHeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */; };
 		09A5B98F28E0EB15004D48B3 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98E28E0EB15004D48B3 /* SearchUsersResponse.swift */; };
 		09A5B99128E0F091004D48B3 /* PeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B99028E0F091004D48B3 /* PeopleListView.swift */; };
+		09B2FF6F28FA9BC400A1FD1D /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B2FF6E28FA9BC400A1FD1D /* Counter.swift */; };
 		09B3651228DF56DE00910584 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3651128DF56DE00910584 /* HomeViewModel.swift */; };
 		09B3651528DF586D00910584 /* Stash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09B3651328DF586D00910584 /* Stash.xcdatamodeld */; };
 		09B3651728DF5A5600910584 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3651628DF5A5600910584 /* PersistenceManager.swift */; };
@@ -154,6 +155,7 @@
 		09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeadingView.swift; sourceTree = "<group>"; };
 		09A5B98E28E0EB15004D48B3 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
 		09A5B99028E0F091004D48B3 /* PeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListView.swift; sourceTree = "<group>"; };
+		09B2FF6E28FA9BC400A1FD1D /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		09B3651128DF56DE00910584 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		09B3651428DF586D00910584 /* Stash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stash.xcdatamodel; sourceTree = "<group>"; };
 		09B3651628DF5A5600910584 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				09DC3A1028DCEB4800ECF8F2 /* LocalFileManager.swift */,
 				09B6ED5928DDCF2500CC2406 /* ImageLoader.swift */,
 				09B3651628DF5A5600910584 /* PersistenceManager.swift */,
+				09B2FF6E28FA9BC400A1FD1D /* Counter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -896,6 +899,7 @@
 				09C4B2D328DB97C8008621AA /* User.swift in Sources */,
 				09B4871F28E8BF7900596340 /* SendFriendRequestRequest.swift in Sources */,
 				099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */,
+				09B2FF6F28FA9BC400A1FD1D /* Counter.swift in Sources */,
 				09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */,
 				09EC2F3428DE37DE00C1D048 /* EditProfileResponse.swift in Sources */,
 				093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */,

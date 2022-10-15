@@ -86,6 +86,7 @@ extension BillsView {
         Group {
             if vm.isLoading {
                 AccentSpinner()
+                    .frame(maxWidth: .infinity)
                     .frame(height: 450)
             } else {
                 if vm.bills.isEmpty {

@@ -14,22 +14,21 @@ struct BillProgressView: View {
     var fontSize1: Double = 16.0
     var fontSize2: Double = 12.0
     
-    
     private var progressColor: Color {
         switch Double(fractionPaid) ?? 0.0 {
-        case 0.0...0.25:
+        case 0.0...0.33:
             return Color.theme.danger
-        case 0.25...0.75:
+        case 0.34...0.66:
             return Color.theme.warning
-        case 0.75...1.0:
+        case 0.67...1.0:
             return Color.theme.success
         default:
             return Color.theme.success
         }
     }
     
-    var body: some View {
-        ZStack {
+    var body: some View { 
+        return ZStack {
             progressCircle
             VStack {
                 Text("\((Double(fractionPaid)! * 100).getZeroDigitString)%")
@@ -48,7 +47,7 @@ struct BillProgressView: View {
 
 struct BillProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        BillProgressView(fractionPaid: "0.3")
+        BillProgressView(fractionPaid: "1.0")
             .preferredColorScheme(.dark)
     }
 }

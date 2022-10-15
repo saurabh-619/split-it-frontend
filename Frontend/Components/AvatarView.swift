@@ -22,8 +22,11 @@ struct AvatarView: View {
                     RoundedRectangle(cornerRadius: size / 3.2, style: .continuous)
                 )
         }
-        .padding(hasBorder ? size / 10 : 0)
-        .backgroundColor()
+//        .padding(hasBorder ? size / 10 : 0)
+//        .backgroundColor()
+        .padding(size / 10)
+        .background(hasBorder ? Color.theme.background : Color.clear)
+        
         .clipShape(
             RoundedRectangle(cornerRadius: size / 2.28, style: .continuous)
         )

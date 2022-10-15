@@ -45,8 +45,8 @@ struct UserView_Previews: PreviewProvider {
 
 extension UserView {
     private var userInfo: some View {
-        HStack(spacing: 22) {
-            AvatarView(url: vm.user.avatar, hasBorder: true)
+        HStack(spacing: 18) {
+            AvatarView(url: vm.user.avatar, hasBorder: true, size: 60)
                 .padding(.bottom, -1)
             
             VStack(alignment: .leading) {
