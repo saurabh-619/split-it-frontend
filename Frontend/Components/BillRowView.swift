@@ -38,9 +38,9 @@ extension BillRowView {
         Image(isLeader ? "receive-money" : "send-money")
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 32, height: 32)
+            .frame(width: 26, height: 26)
             .foregroundColor(isLeader ? Color.theme.success : Color.theme.danger)
-            .frame(width: 65, height: 65)
+            .frame(width: 55, height: 55)
             .background(Color.theme.gray900)
             .clipShape(
                 RoundedRectangle(cornerRadius: 65, style: .continuous)
@@ -71,11 +71,11 @@ extension BillRowView {
             }
             .font(.footnote)
             .fontWeight(.medium)
-            AvatarRowView(people: bill.friends, size: 25, radius: 25)
+            AvatarRowView(people: bill.friends ?? [], size: 25, radius: 25)
         }
     }
     
     private var progress: BillProgressView {
-        BillProgressView(fractionPaid: bill.fractionPaid)
+        BillProgressView(fractionPaid: bill.fractionPaid, size: 60,lineWidth: 4.5, fontSize1: 12, fontSize2: 8)
     }
 }

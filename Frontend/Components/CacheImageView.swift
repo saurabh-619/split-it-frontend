@@ -27,6 +27,19 @@ struct CacheImageView<Content: View>: View {
     }
 }
 
+struct CacheImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        CacheImageView(url: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80", content: { uiImage in
+            Image(uiImage: uiImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 55, height: 55)
+        })
+            .preferredColorScheme(.dark)
+    }
+}
+
+
 extension CacheImageView {
     private func getImage() async {
         do {

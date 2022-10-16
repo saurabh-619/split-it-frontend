@@ -120,27 +120,28 @@ extension BillView {
     
     @ViewBuilder
     func userRow(user: User) -> some View {
-        HStack(alignment: .center, spacing: 8) {
-            AvatarView(url: user.avatar, hasBorder: false, size: 54)
-            VStack(alignment: .leading) {
-                Text("\(user.firstName) \(user.lastName)")
-                    .font(.callout)
-                    .bold()
-                    .foregroundColor(Color.theme.white80)
-                Text("@\(user.username)")
-                    .font(.caption)
-                    .foregroundColor(Color.theme.gray300)
-            }
-        }
-        .onTapGesture {
+        Button {
             selectedUser = user
+        } label: {
+            HStack(alignment: .center, spacing: 8) {
+                AvatarView(url: user.avatar, hasBorder: false, size: 54)
+                VStack(alignment: .leading) {
+                    Text("\(user.firstName) \(user.lastName)")
+                        .font(.callout)
+                        .bold()
+                        .foregroundColor(Color.theme.white80)
+                    Text("@\(user.username)")
+                        .font(.caption)
+                        .foregroundColor(Color.theme.gray300)
+                }
+            }
         }
     }
     
     private var billLeader: some View {
         VStack(alignment: .leading, spacing: 12) {
             SectionTitleView(title: "leader")
-            userRow(user: bill.leader)
+            userRow(user: bill.leader!)
         }
         .padding(.bottom, 24)
     }
@@ -149,8 +150,8 @@ extension BillView {
         VStack(alignment: .leading, spacing: 12) {
             SectionTitleView(title: "friends")
             LazyVStack(alignment: .leading, spacing: 12) {
-                ForEach(bill.friends) { friend in
-                    userRow(user: bill.leader)
+                ForEach(bill.friends!) { friend in
+                    userRow(user: bill.leader!)
                 }
             }
         }
@@ -231,9 +232,9 @@ extension BillView {
         
         var items: some View {
             LazyVStack(alignment: .leading, spacing: 8) {
-                ForEach(bill.billItems.indices, id: \.self) { index in
-                    ItemView(billItem: bill.billItems[index])
-                    TransactionDividerView(isDashed: index != bill.billItems.count-1)
+                ForEach(bill.billItems!.indices, id: \.self) { index in
+                    ItemView(billItem: bill.billItems![index])
+                    TransactionDividerView(isDashed: index != bill.billItems!.count-1)
                         .padding(.vertical, 8)
                 }
             }

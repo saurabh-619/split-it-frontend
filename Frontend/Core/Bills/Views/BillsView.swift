@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BillsView: View {
     @StateObject private var vm = BillViewModel()
+    @State var navigateToTransactionsScreen = false
     
     var body: some View {
         NavigationStack {
@@ -30,6 +31,9 @@ struct BillsView: View {
                     await vm.getBills()
                 }
             }
+            .navigationDestination(isPresented: $navigateToTransactionsScreen) {
+                TransactionsView()
+            }
         }
     }
 }
@@ -43,10 +47,22 @@ struct BillsView_Previews: PreviewProvider {
 
 extension BillsView {
     private var heading: some View {
-        Text("bills list")
-            .font(.title2)
-            .bold()
-            .padding(.bottom, 16)
+        HStack {
+            Text("bills list")
+                .font(.title2)
+                .bold()
+                .padding(.bottom, 16)
+            Spacer()
+            Button {
+                navigateToTransactionsScreen = true
+            } label: {
+                Image("bell")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(Color.theme.appWhite)
+            }
+        }
     }
     
     private var filterSection: some View {
@@ -71,7 +87,7 @@ extension BillsView {
     }
     
     private var bills: some View {
-        LazyVStack(spacing: 50) {
+        LazyVStack(spacing: 35) {
             ForEach(vm.bills) { bill in
                 NavigationLink {
                     BillView(bill: bill)

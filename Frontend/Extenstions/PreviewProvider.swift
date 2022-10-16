@@ -25,6 +25,10 @@ class DeveloperPreview {
         User(id: 1, version: 1, username: "jon", firstName: "Jon", lastName: "Doe", email: "jon@gmail.com", avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80", walletId: 1, wallet: self.wallet, createdAt: "", updatedAt: "", deletedAt: "")
     }
     
+    var user2: User {
+        User(id: 2, version: 2, username: "sam007", firstName: "Sam", lastName: "Browsky", email: "sam@gmail.com", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80", walletId: 2, wallet: self.wallet, createdAt: "", updatedAt: "", deletedAt: "")
+    }
+    
     var userWithoutWallet: User {
         User(id: 1, version: 1, username: "jon", firstName: "Jon", lastName: "Doe", email: "jon@gmail.com", avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80", walletId: 1, wallet: nil, createdAt: "", updatedAt: "", deletedAt: "")
     }
@@ -95,4 +99,20 @@ class DeveloperPreview {
         }
         return bills
     }
+    
+    var transaction: Transaction {
+        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "wallet", isComplete: false, from: user2, to: user, billId: nil, moneyRequestId: 7, bill: nil, moneyRequest: moneyRequest, fromId: 2, toId: 1)
+    }
+    
+    var transactions: [Transaction] {
+        var transactions = [Transaction]()
+        
+        for id in 1...15 {
+            var newTransaction = transaction
+            newTransaction.id = id
+            transactions.append(newTransaction)
+        }
+        return transactions
+    }
+    
 }

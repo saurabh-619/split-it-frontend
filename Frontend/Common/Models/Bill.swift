@@ -16,9 +16,9 @@ struct Bill: Identifiable, Decodable {
     var fractionPaid: String
     let isPaid: Bool
     let image: String?
-    let leader: User
-    let friends: [User]
-    let billItems: [BillItem]
+    let leader: User?
+    let friends: [User]?
+    let billItems: [BillItem]?
     let leaderId: Int
     let friendsIds, billItemIds: [Int]
 }

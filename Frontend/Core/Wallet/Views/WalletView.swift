@@ -199,18 +199,18 @@ extension WalletView {
             } else {
                 LazyVStack {
                     ForEach(vm.moneyRequests) { request in
-                        let isSent = request.requestee!.id == sessionState.user.id
-                        
-                        MoneyRequestRowView(moneyRequest: request, isWalletView: true)
-                            .padding(.vertical, 10)
-                            .onTapGesture {
-                                selectedRequest = request
-                            }
-                            .sheet(item: $selectedRequest) { moneyRequest in
-                                MoneyRequestSheetView(moneyRequest: moneyRequest, isSent: isSent, toast: $vm.toast)
-                                    .preferredColorScheme(.dark)
-                                    .presentationDetents([.fraction(0.75), .large])
-                            } 
+                        let isSent = request.requestee!.id == sessionState.user.id  
+                        Button {
+                            selectedRequest = request
+                        } label: {
+                            MoneyRequestRowView(moneyRequest: request, isWalletView: true)
+                                .padding(.vertical, 10)
+                        }
+                        .sheet(item: $selectedRequest) { moneyRequest in
+                            MoneyRequestSheetView(moneyRequest: moneyRequest, isSent: isSent, toast: $vm.toast)
+                                .preferredColorScheme(.dark)
+                                .presentationDetents([.fraction(0.75), .large])
+                        }
                     }
                 }
             }
