@@ -24,6 +24,7 @@ struct TransactionsView: View {
                 .padding(20)
                 .frame(maxWidth: .infinity)
                 .backgroundColor()
+                .toastView(toast: $vm.toast)
                 .task {
                     await vm.getTransactions()
                 }
@@ -101,7 +102,10 @@ extension TransactionsView {
     }
     
     private func isSentTransaction(transaction: Transaction) -> Bool {
-        transaction.from.id == sessionState.user.id
+        if(transaction.type == "bill") {
+            return true
+        }
+        return transaction.from.id == sessionState.user.id
     }
     
     @ViewBuilder
@@ -164,7 +168,7 @@ extension TransactionsView {
             }
         }
         .sheet(item: $selectedTransaction) { transaction in
-            TransactionDetailsSheetView(transaction: transaction)
+            TransactionDetailsSheetView(transaction: transaction, isSent: isSentTransaction(transaction: transaction), toast: $vm.toast)
         }
     }
     

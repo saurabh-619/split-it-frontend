@@ -18,8 +18,7 @@ class TransactionsViewModel: ObservableObject {
     @Published var toast: Toast?
     
     func getTransactions() async {
-        isLoading = true
-        print("type - \(type) \n state - \(state)")
+        isLoading = true 
         do {
             let response: GetTransactionsResponse = try await ApiManager.shared.get("\(ApiConstants.GET_TRANSACTIONS)&type=\(type.rawValue)&state=\(state.rawValue)")
             

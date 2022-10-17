@@ -37,6 +37,7 @@ struct ApiConstants {
     // bill list
     static let GET_LEADER_BILLS = "http://localhost:3000/bill?limit=10000"
     static let GET_SPLIT_BILLS = "http://localhost:3000/bill/split?limit=10000"
+    static let SETTLE_THE_SPLIT = "http://localhost:3000/bill/pay-the-split"
     
     // transactions
     static let GET_TRANSACTIONS = "http://localhost:3000/transaction?page=1&limit=10000"

@@ -18,6 +18,8 @@
 		093CC70F28E81E35005A4298 /* PendingFriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */; };
 		093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */; };
 		093CC71428E83906005A4298 /* UpdateFriendRequestStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */; };
+		093E88DA28FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E88D928FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift */; };
+		093E88DD28FDDF0400BFDB8D /* SettleSplitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E88DC28FDDF0400BFDB8D /* SettleSplitRequest.swift */; };
 		0941FEF128E983F100897DC6 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF028E983F100897DC6 /* WalletViewModel.swift */; };
 		0941FEF328E9847300897DC6 /* AvatarWithoutBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */; };
 		0941FEF528E9895100897DC6 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941FEF428E9895100897DC6 /* Double.swift */; };
@@ -134,6 +136,8 @@
 		093CC70E28E81E35005A4298 /* PendingFriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsView.swift; sourceTree = "<group>"; };
 		093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestsViewModel.swift; sourceTree = "<group>"; };
 		093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFriendRequestStatusRequest.swift; sourceTree = "<group>"; };
+		093E88D928FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsSheetViewModel.swift; sourceTree = "<group>"; };
+		093E88DC28FDDF0400BFDB8D /* SettleSplitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleSplitRequest.swift; sourceTree = "<group>"; };
 		0941FEF028E983F100897DC6 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarWithoutBorderView.swift; sourceTree = "<group>"; };
 		0941FEF428E9895100897DC6 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -267,6 +271,14 @@
 			children = (
 				093CC71328E83906005A4298 /* UpdateFriendRequestStatusRequest.swift */,
 				09B4871E28E8BF7900596340 /* SendFriendRequestRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		093E88DB28FDDEF800BFDB8D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				093E88DC28FDDF0400BFDB8D /* SettleSplitRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -469,12 +481,12 @@
 				09A5B99028E0F091004D48B3 /* PeopleListView.swift */,
 				09D0AF4E28E34E0A003C5AC0 /* AvatarView.swift */,
 				0941FEF228E9847300897DC6 /* AvatarWithoutBorderView.swift */,
+				099E1F0F28F73F29000B71F8 /* AvatarRowView.swift */,
 				0958400C28E4CE0C00225BA3 /* MoneyRequestRowView.swift */,
 				09B7D0A628EA145F0012394E /* PillView.swift */,
 				09C1B46928ED79A200FA35A8 /* IconLabelView.swift */,
 				09C74D8A28F1CF1C001885FE /* AlertView.swift */,
 				099E1F0D28F73AEA000B71F8 /* BillRowView.swift */,
-				099E1F0F28F73F29000B71F8 /* AvatarRowView.swift */,
 				09C64C8228F9FD40001755C3 /* BillProgressView.swift */,
 			);
 			path = Components;
@@ -595,6 +607,7 @@
 			children = (
 				09C56DB228F7142600B72659 /* BillViewModel.swift */,
 				09CEAC3828FBE61F00FCAE77 /* TransactionsViewModel.swift */,
+				093E88D928FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -613,6 +626,7 @@
 		09C33DE028DF0003003AE11E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				093E88DB28FDDEF800BFDB8D /* Requests */,
 				09C56DB428F7159800B72659 /* Responses */,
 			);
 			path = Models;
@@ -855,6 +869,7 @@
 				09C1B46A28ED79A200FA35A8 /* IconLabelView.swift in Sources */,
 				09C1B46628ED67BF00FA35A8 /* MoneyRequestSheetView.swift in Sources */,
 				09C33DDC28DEFF02003AE11E /* Tab.swift in Sources */,
+				093E88DA28FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift in Sources */,
 				09A5B98B28E0D732004D48B3 /* PersonRowView.swift in Sources */,
 				09CB889628D5BD280077F045 /* RegisterView.swift in Sources */,
 				09BEAA6828D102F500FFEF94 /* FrontendApp.swift in Sources */,
@@ -909,6 +924,7 @@
 				09CD180D28E0B70D001E44B2 /* SearchFriendViewModel.swift in Sources */,
 				09C4B2D528DB97D5008621AA /* Wallet.swift in Sources */,
 				09C4B2DA28DB9A02008621AA /* AuthUserResponse.swift in Sources */,
+				093E88DD28FDDF0400BFDB8D /* SettleSplitRequest.swift in Sources */,
 				099D4B5D28D63DEE00023AF2 /* ValidationErrorView.swift in Sources */,
 				09C56DB828F7161100B72659 /* Bill.swift in Sources */,
 				09CD180728E0AFDC001E44B2 /* SearchFriendView.swift in Sources */,

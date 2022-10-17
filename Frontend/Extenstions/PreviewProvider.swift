@@ -101,14 +101,19 @@ class DeveloperPreview {
     }
     
     var transaction: Transaction {
-        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "wallet", isComplete: false, from: user2, to: user, billId: nil, moneyRequestId: 7, bill: nil, moneyRequest: moneyRequest, fromId: 2, toId: 1)
+        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "wallet", isComplete: false, from: user, to: user2, billId: nil, moneyRequestId: 7, bill: nil, moneyRequest: moneyRequest, fromId: 2, toId: 1)
+    }
+    
+    
+    var transaction2: Transaction {
+        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "split", isComplete: false, from: user, to: user2, billId: bill.id, moneyRequestId: nil, bill: bill, moneyRequest: nil, fromId: 2, toId: 1)
     }
     
     var transactions: [Transaction] {
         var transactions = [Transaction]()
         
         for id in 1...15 {
-            var newTransaction = transaction
+            var newTransaction = id % 2 == 0 ? transaction : transaction2
             newTransaction.id = id
             transactions.append(newTransaction)
         }
