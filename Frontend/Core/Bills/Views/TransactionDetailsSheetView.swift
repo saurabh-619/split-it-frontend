@@ -12,6 +12,7 @@ struct TransactionDetailsSheetView: View {
     let isSent: Bool
     
     @StateObject var vm: TransactionDetailsSheetViewModel
+    @EnvironmentObject var sessionState: SessionState
     @Environment(\.dismiss) var dismiss
     
     
@@ -35,6 +36,7 @@ struct TransactionDetailsSheetView: View {
 struct TransactionDetailsSheetView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionDetailsSheetView(transaction: self.dev.transaction2, isSent: true, toast: .constant(Toast(title: "", message: "")))
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
@@ -146,6 +148,7 @@ extension TransactionDetailsSheetView {
                 await vm.settleSplit(billId: transaction.billId!, transactionId: transaction.id) {
                     dismiss()
                 }
+                await sessionState.getAuthUser()
             }
         }
     }
