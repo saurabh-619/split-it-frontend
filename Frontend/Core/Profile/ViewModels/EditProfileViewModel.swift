@@ -121,15 +121,13 @@ class EditProfileViewModel: ObservableObject {
     
     private func checkUsernameAvailability() async -> Bool {
         do {
-            let response: UsernameAvailableResponse = try await ApiManager.shared.get("\(ApiConstants.USERNAME_AVAILABLE_URL)=\(username)")
-            print(response)
+            let response: UsernameAvailableResponse = try await ApiManager.shared.get("\(ApiConstants.USERNAME_AVAILABLE_URL)=\(username)") 
             if(response.ok) {
                 return response.isAvailable!
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }
         } catch let error {
-            print(error)
             toast = Toast(type: .error, title: "error", message: error.localizedDescription)
             return false
         }

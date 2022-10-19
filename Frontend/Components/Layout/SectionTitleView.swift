@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SectionTitleView: View {
     let title: String
+    var color: Color = Color.theme.appWhite
+    var fontWeight: Font.Weight = Font.Weight.bold
     
     var body: some View {
         Text(title)
             .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(Color.theme.appWhite)
+            .fontWeight(fontWeight)
+            .foregroundColor(color)
     }
 }
 

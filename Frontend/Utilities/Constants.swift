@@ -33,44 +33,16 @@ struct ApiConstants {
     static let MONEY_REQUESTS_EDIT = "http://localhost:3000/money-request"
     static let MONEY_REQUEST_STATUS_UPDATE = "http://localhost:3000/money-request"
     static let SEND_MONEY_REQUEST = "http://localhost:3000/money-request"
+    
+    // bill list
+    static let GET_LEADER_BILLS = "http://localhost:3000/bill?limit=10000"
+    static let GET_SPLIT_BILLS = "http://localhost:3000/bill/split?limit=10000"
+    static let SETTLE_THE_SPLIT = "http://localhost:3000/bill/pay-the-split"
+    
+    // transactions
+    static let GET_TRANSACTIONS = "http://localhost:3000/transaction?page=1&limit=10000"
 }
 
 struct AppStorageKeys {
     static let TOKEN = "token"
-}
-
-enum HttpMethod: String {
-    case GET = "GET"
-    case POST = "POST"
-    case PATCH = "PATCH"
-    case PUT = "PUT"
-    case DELETE = "DELETE"
-}
-
-enum Screen {
-    case HOME
-    case WALLET
-    case ADD
-    case BILLS
-    case PROFILE
-}
-
-enum FriendRequestStatus: String {
-    case SEEN = "seen"
-    case PENDING = "pending"
-    case ACCEPTED = "accepted"
-    case REJECTED = "rejected"
-    case UNFRIENDED = "unfriended"
-}
-
-enum MoneyRequestStatus: String, CaseIterable, Identifiable {
-    case PENDING = "pending"
-    case ACCEPTED = "accepted"
-    case REJECTED = "rejected"
-    case PAID = "paid"
-    case SEEN = "seen"
-    
-    var id: String {
-        self.rawValue
-    }
 }

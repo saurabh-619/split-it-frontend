@@ -25,6 +25,10 @@ class DeveloperPreview {
         User(id: 1, version: 1, username: "jon", firstName: "Jon", lastName: "Doe", email: "jon@gmail.com", avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80", walletId: 1, wallet: self.wallet, createdAt: "", updatedAt: "", deletedAt: "")
     }
     
+    var user2: User {
+        User(id: 2, version: 2, username: "sam007", firstName: "Sam", lastName: "Browsky", email: "sam@gmail.com", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80", walletId: 2, wallet: self.wallet, createdAt: "", updatedAt: "", deletedAt: "")
+    }
+    
     var userWithoutWallet: User {
         User(id: 1, version: 1, username: "jon", firstName: "Jon", lastName: "Doe", email: "jon@gmail.com", avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80", walletId: 1, wallet: nil, createdAt: "", updatedAt: "", deletedAt: "")
     }
@@ -60,4 +64,60 @@ class DeveloperPreview {
         }
         return requests
     }
+    
+    var item: Item {
+        Item(id: 33, version: 1, createdAt: "2022-09-04T14:16:25.693Z", updatedAt: "2022-09-04T14:16:25.693Z", deletedAt: nil, name: "americano", description: "not so thick coffee bruhhh", price: 150, image: nil)
+    }
+    
+    var billItem: BillItem {
+        BillItem(id: 28, version: 1, createdAt: "2022-09-04T14:16:25.699Z", updatedAt: "2022-09-04T14:16:25.699Z", deletedAt: nil, quantity: 1, total: 150, friends: Array(self.friends[1...3]), item: self.item, billId: 9)
+    }
+    
+    var billItems: [BillItem] {
+        var billItems = [BillItem]()
+        
+        for id in 1...3 {
+            var newBillItem = billItem
+            newBillItem.id = id
+            billItems.append(newBillItem)
+        }
+        
+        return billItems
+    }
+    
+    var bill: Bill {
+        Bill(id: 7, version: 4, createdAt: "2022-09-03T11:45:19.791Z", updatedAt: "2022-09-03T11:58:53.473Z", deletedAt: nil, title: "starbucks split", description: "on sunday aditya and test went to starbucks to drink americano coffee and now it's time to pay the split", total: 600, totalWithoutTax: 500, tax: 100, paidAmount: 235, fractionPaid: "0.39", isPaid: false, image: nil, leader: user, friends: friends, billItems: billItems, leaderId: user.id, friendsIds: friends.map {$0.id}, billItemIds: billItems.map{$0.id})
+    }
+    
+    var bills: [Bill] {
+        var bills = [Bill]()
+        for id in 1...3 {
+            var newBill = bill
+            newBill.id = id
+            newBill.fractionPaid = Double.random(in: 0.12...0.80).getOneDigitString
+            bills.append(newBill)
+        }
+        return bills
+    }
+    
+    var transaction: Transaction {
+        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "wallet", isComplete: false, from: user, to: user2, billId: nil, moneyRequestId: 7, bill: nil, moneyRequest: moneyRequest, fromId: 2, toId: 1)
+    }
+    
+    
+    var transaction2: Transaction {
+        Transaction(id: 28, version: 1, createdAt: "2022-10-10T19:45:07.305Z", updatedAt: "2022-10-10T19:45:07.305Z", deletedAt: nil, amount: 400, type: "split", isComplete: false, from: user, to: user2, billId: bill.id, moneyRequestId: nil, bill: bill, moneyRequest: nil, fromId: 2, toId: 1)
+    }
+    
+    var transactions: [Transaction] {
+        var transactions = [Transaction]()
+        
+        for id in 1...15 {
+            var newTransaction = id % 2 == 0 ? transaction : transaction2
+            newTransaction.id = id
+            transactions.append(newTransaction)
+        }
+        return transactions
+    }
+    
 }

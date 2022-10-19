@@ -13,20 +13,22 @@ struct PendingFriendRequestsView: View {
     @State private var selectedUserId: Int?
     
     var body: some View {
-        VStack {
-            heading
-            if vm.isLoading {
-                AccentSpinner()
-                    .frame(height: 450)
-            } else {
-                content
+        NavigationStack {
+            VStack {
+                heading
+                if vm.isLoading {
+                    AccentSpinner()
+                        .frame(height: 450)
+                } else {
+                    content
+                }
             }
+            .padding(20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .toastView(toast: $vm.toast)
+            .task {
+                await vm.getPendingFriendRequests()
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .toastView(toast: $vm.toast)
-        .task {
-            await vm.getPendingFriendRequests()
         }
     }
 }

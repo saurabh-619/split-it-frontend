@@ -152,7 +152,6 @@ class RegisterViewModel: ObservableObject {
     private func checkUsernameAvailability() async -> Bool {
         do {
             let response: UsernameAvailableResponse = try await ApiManager.shared.get("\(ApiConstants.USERNAME_AVAILABLE_URL)=\(username)")
-            print(response)
             if(response.ok) {
                 return response.isAvailable!
             } else {

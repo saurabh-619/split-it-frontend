@@ -12,14 +12,16 @@ struct SearchFriendView: View {
     @StateObject private var vm = SearchFriendViewModel()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            heading
-            search
-            resultTitle
-            results
-            Spacer()
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 10) {
+                heading
+                search
+                resultTitle
+                results
+                Spacer()
+            }
+            .padding(20)
         }
-        .padding(20) 
     }
 }
 

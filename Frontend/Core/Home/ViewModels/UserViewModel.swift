@@ -21,7 +21,6 @@ class UserViewModel: ObservableObject {
     @Published var toast: Toast?
     
     func getUser(userId: Int) async {
-        print(userId)
         isLoading = true
         do {
             let response: UserWithFriendshipStatus = try await ApiManager.shared.get("\(ApiConstants.SEARCH_USER_WITH_FRIENDSHIP_STATUS)/\(userId)")
@@ -38,7 +37,6 @@ class UserViewModel: ObservableObject {
                 throw NetworkError.backendError(response.error!)
             }
         } catch {
-            print(error)
             toast = Toast(type: .error, title: "ohh oh!", message: error.localizedDescription)
         }
         isLoading = false
@@ -80,7 +78,6 @@ class UserViewModel: ObservableObject {
         let sendFriendRequestBody = SendFriendRequestRequest(requesteeId: user.id)
         do {
             let response: BaseResponse = try await ApiManager.shared.post(ApiConstants.SEND_FRIEND_REQUEST, body: sendFriendRequestBody)
-            print(response)
             if(response.ok) {
                 setFollowBtnText(text: FriendRequestStatus.PENDING)
                 toast = Toast(title: "woohoo", message: "friend request to \(user.username) sent successfully")
@@ -98,7 +95,6 @@ class UserViewModel: ObservableObject {
         let updateStatusBody = UpdateFriendRequestStatusRequest(requestId: friendRequestId, status: FriendRequestStatus.UNFRIENDED.rawValue)
         do {
             let response: BaseResponse = try await ApiManager.shared.patch(ApiConstants.CHANGE_FRIEND_REQUEST_STATUS, body: updateStatusBody)
-            print(response)
             if(response.ok) {
                 toast = Toast(title: "woohoo!", message: "unfriended \(user.username) successfully")
                 setFollowBtnText(text: FriendRequestStatus.UNFRIENDED)
