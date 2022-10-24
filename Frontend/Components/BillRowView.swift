@@ -12,12 +12,13 @@ struct BillRowView: View {
     let bill: Bill
     
     var body: some View {
-        HStack(alignment: .center, spacing: 24) {
+        HStack(alignment: .center, spacing: 32) {
             icon
             billInfo
+            Spacer()
             progress
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -51,6 +52,7 @@ extension BillRowView {
         VStack(alignment: .leading, spacing: 6) {
             Text(bill.title)
                 .font(.headline)
+                .foregroundColor(Color.theme.appWhite)
                 .fontWeight(.semibold)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)

@@ -35,8 +35,11 @@
 		099D4B5F28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */; };
 		099D4B6528D6536F00023AF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6428D6536F00023AF2 /* HomeView.swift */; };
 		099D4B6728D65B5800023AF2 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */; };
+		099DCD3529055189005488B0 /* GenerateBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DCD3429055189005488B0 /* GenerateBillView.swift */; };
+		099DCD3729055AD5005488B0 /* SplitInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DCD3629055AD5005488B0 /* SplitInput.swift */; };
 		099E1F0E28F73AEA000B71F8 /* BillRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E1F0D28F73AEA000B71F8 /* BillRowView.swift */; };
 		099E1F1028F73F29000B71F8 /* AvatarRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E1F0F28F73F29000B71F8 /* AvatarRowView.swift */; };
+		09A03A202900753E00BE6F19 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A03A1F2900753E00BE6F19 /* AddViewModel.swift */; };
 		09A2EA1328F2AE3F00F63832 /* EditMoneyRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */; };
 		09A2EA1528F2AE4700F63832 /* EditMoneyRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */; };
 		09A2EA1728F2B0C200F63832 /* EditMoneyRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */; };
@@ -98,6 +101,9 @@
 		09C64C8128F9DC69001755C3 /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C64C8028F9DC69001755C3 /* BillView.swift */; };
 		09C64C8328F9FD40001755C3 /* BillProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C64C8228F9FD40001755C3 /* BillProgressView.swift */; };
 		09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C74D8A28F1CF1C001885FE /* AlertView.swift */; };
+		09C92DB029040787005BF20B /* AddBillItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C92DAF29040787005BF20B /* AddBillItemsView.swift */; };
+		09C92DB529040850005BF20B /* BillItemInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C92DB429040850005BF20B /* BillItemInput.swift */; };
+		09C92DB72904095D005BF20B /* AddBillItemSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C92DB62904095D005BF20B /* AddBillItemSheetView.swift */; };
 		09CB19D628FC87C00060A795 /* TransactionDetailsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB19D528FC87C00060A795 /* TransactionDetailsSheetView.swift */; };
 		09CB888E28D5BB7D0077F045 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */; };
 		09CB889028D5BB840077F045 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB888F28D5BB840077F045 /* RegisterResponse.swift */; };
@@ -153,8 +159,11 @@
 		099D4B5E28D64FC300023AF2 /* AdaptsToKeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboardModifier.swift; sourceTree = "<group>"; };
 		099D4B6428D6536F00023AF2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		099D4B6628D65B5800023AF2 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		099DCD3429055189005488B0 /* GenerateBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateBillView.swift; sourceTree = "<group>"; };
+		099DCD3629055AD5005488B0 /* SplitInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInput.swift; sourceTree = "<group>"; };
 		099E1F0D28F73AEA000B71F8 /* BillRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillRowView.swift; sourceTree = "<group>"; };
 		099E1F0F28F73F29000B71F8 /* AvatarRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRowView.swift; sourceTree = "<group>"; };
+		09A03A1F2900753E00BE6F19 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		09A2EA1228F2AE3F00F63832 /* EditMoneyRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestView.swift; sourceTree = "<group>"; };
 		09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestViewModel.swift; sourceTree = "<group>"; };
 		09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestRequest.swift; sourceTree = "<group>"; };
@@ -216,6 +225,9 @@
 		09C64C8028F9DC69001755C3 /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
 		09C64C8228F9FD40001755C3 /* BillProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillProgressView.swift; sourceTree = "<group>"; };
 		09C74D8A28F1CF1C001885FE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		09C92DAF29040787005BF20B /* AddBillItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillItemsView.swift; sourceTree = "<group>"; };
+		09C92DB429040850005BF20B /* BillItemInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemInput.swift; sourceTree = "<group>"; };
+		09C92DB62904095D005BF20B /* AddBillItemSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillItemSheetView.swift; sourceTree = "<group>"; };
 		09CB19D528FC87C00060A795 /* TransactionDetailsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsSheetView.swift; sourceTree = "<group>"; };
 		09CB888D28D5BB7D0077F045 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		09CB888F28D5BB840077F045 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
@@ -373,6 +385,25 @@
 				093CC71028E81E47005A4298 /* PendingFriendRequestsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		09A03A1D2900750B00BE6F19 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				09A03A1F2900753E00BE6F19 /* AddViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		09A03A1E2900751200BE6F19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09C4B2C928DB8B65008621AA /* AddView.swift */,
+				09C92DAF29040787005BF20B /* AddBillItemsView.swift */,
+				09C92DB62904095D005BF20B /* AddBillItemSheetView.swift */,
+				099DCD3429055189005488B0 /* GenerateBillView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		09A4437628E03502002B2F0C /* States */ = {
@@ -645,7 +676,9 @@
 		09C4B2C828DB8B58008621AA /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				09C4B2C928DB8B65008621AA /* AddView.swift */,
+				09C92DB129040821005BF20B /* Models */,
+				09A03A1E2900751200BE6F19 /* Views */,
+				09A03A1D2900750B00BE6F19 /* ViewModels */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -711,6 +744,31 @@
 				09CEAC3C28FBE8AD00FCAE77 /* GetTransactionsResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		09C92DB129040821005BF20B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09C92DB22904082C005BF20B /* Requests */,
+				09C92DB329040831005BF20B /* Common */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		09C92DB22904082C005BF20B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		09C92DB329040831005BF20B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				09C92DB429040850005BF20B /* BillItemInput.swift */,
+				099DCD3629055AD5005488B0 /* SplitInput.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		09CB888828D5BB450077F045 /* ViewModels */ = {
@@ -899,9 +957,12 @@
 				093CC71428E83906005A4298 /* UpdateFriendRequestStatusRequest.swift in Sources */,
 				09C4B2CD28DB8B7B008621AA /* ProfileView.swift in Sources */,
 				09CB889A28D5CC0E0077F045 /* TextFieldView.swift in Sources */,
+				09A03A202900753E00BE6F19 /* AddViewModel.swift in Sources */,
 				092C862528D76EC9007C45F1 /* Errors.swift in Sources */,
 				09C56DB328F7142600B72659 /* BillViewModel.swift in Sources */,
 				09A5B99128E0F091004D48B3 /* PeopleListView.swift in Sources */,
+				09C92DB72904095D005BF20B /* AddBillItemSheetView.swift in Sources */,
+				099DCD3729055AD5005488B0 /* SplitInput.swift in Sources */,
 				09CEAC3F28FBEB0C00FCAE77 /* Types.swift in Sources */,
 				09BEAA8B28D10D7A00FFEF94 /* LoginRequest.swift in Sources */,
 				09F5797928D70969003A54B3 /* NetworkManager.swift in Sources */,
@@ -940,6 +1001,7 @@
 				09B4871F28E8BF7900596340 /* SendFriendRequestRequest.swift in Sources */,
 				099D4B5828D63B6B00023AF2 /* TextFieldModifier.swift in Sources */,
 				09B2FF6F28FA9BC400A1FD1D /* Counter.swift in Sources */,
+				09C92DB529040850005BF20B /* BillItemInput.swift in Sources */,
 				09C74D8B28F1CF1C001885FE /* AlertView.swift in Sources */,
 				09EC2F3428DE37DE00C1D048 /* EditProfileResponse.swift in Sources */,
 				093CC71128E81E47005A4298 /* PendingFriendRequestsViewModel.swift in Sources */,
@@ -960,7 +1022,9 @@
 				09C4B2D128DB934A008621AA /* ProfileViewModel.swift in Sources */,
 				09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */,
 				099D006C28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift in Sources */,
+				09C92DB029040787005BF20B /* AddBillItemsView.swift in Sources */,
 				09CF061C28E2211300F2C481 /* UserView.swift in Sources */,
+				099DCD3529055189005488B0 /* GenerateBillView.swift in Sources */,
 				09B558A128DA50C50006DE68 /* SpinnerView.swift in Sources */,
 				09A5B98528E0D0FF004D48B3 /* PendingFriendRequestResponse.swift in Sources */,
 			);

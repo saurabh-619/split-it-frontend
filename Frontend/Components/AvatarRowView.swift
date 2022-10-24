@@ -15,7 +15,7 @@ struct AvatarRowView: View {
     var hasBorder: Bool = true
     
     var body: some View {
-        let bound = people.count > 3 ? 3 : 0
+        let bound = people.count > 3 ? 3 : people.count - 1
         return ZStack {
             ForEach(people.indices[0...bound], id: \.self) { index in
                 CacheImageView(url: people[index].avatar) { image in
@@ -42,7 +42,7 @@ struct AvatarRowView: View {
                     .offset(x: Double(4) * (size - offset))
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading) 
+//        .frame(maxWidth: .infinity, alignment: .leading) 
     }
 }
 

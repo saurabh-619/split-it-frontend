@@ -95,7 +95,7 @@ extension BillsView {
                     BillRowView(isLeader: vm.isLeaderTab, bill: bill)
                 } 
             }
-        }
+        } 
     }
     
     private var billsContent: some View {

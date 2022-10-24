@@ -43,11 +43,11 @@ class DeveloperPreview {
     }
     var moneyRequest: MoneyRequest {
         MoneyRequest(id: 7, version: 12, createdAt: "2022-09-06T08:10:56.648Z", updatedAt: "2022-09-06T08:45:06.147Z", deletedAt: nil, title: "[No Test] bro need some 100 bucks", description: "[No Test] I am gonna buy a fresh bike and for the very reason need 100 bucks. Your help will be appreciated.", amount: 5000, status: "pending", requesteeRemark: "yo broke ass f*** Off", requester: User(id: 9, version: 8, username: "test", firstName: "Test", lastName: "TDD", email: "test@gmail.com", avatar: "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTczNDV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjE2ODk2NzU&ixlib=rb-1.2.1&q=80&w=1080", walletId: 5, wallet: nil, createdAt: "2022-08-28T12:27:55.307Z", updatedAt: "2022-08-28T12:50:00.462Z", deletedAt: ""), requestee: User(id: 7, version: 1, username: "saurabh", firstName: "Saurabh", lastName: "Bomble", email: "saurabh@gmail.com", avatar: "https://images.unsplash.com/photo-1522778147829-047360bdc7f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTczNDV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjE2MzUzODM&ixlib=rb-1.2.1&q=80&w=1080", walletId: 3, wallet: nil, createdAt: "2022-08-27T21:23:03.244Z", updatedAt: "2022-08-27T21:23:03.244Z", deletedAt: ""), requesterId: 9, requesteeId: 7, transactionId: 1)
-
+        
     }
     var friendRequests: [FriendRequestWithRequester] {
         var requests = [FriendRequestWithRequester]()
-        for id in 1..<self.friends.count {
+        for id in 5..<self.friends.count {
             requests.append(FriendRequestWithRequester(id: id, requester: self.friends[id]))
         }
         return requests
@@ -120,4 +120,9 @@ class DeveloperPreview {
         return transactions
     }
     
+    var billItemInput = BillItemInput(billId: 1, name: "americano coffee", description: "it is a beverage brewed from the roasted and ground seeds of the tropical evergreen coffee plant", price: 150, friendIds: [1, 2], quantity: 2)
+    
+    var billItemInputs: [BillItemInput] {
+        [billItemInput, billItemInput, billItemInput, billItemInput, billItemInput, BillItemInput(billId: 4, name: "alsbfa", description: "akjsfkasfvkasfva", price: 130, friendIds: [1,2], quantity: 2)]
+    }
 }

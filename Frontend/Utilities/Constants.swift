@@ -41,6 +41,12 @@ struct ApiConstants {
     
     // transactions
     static let GET_TRANSACTIONS = "http://localhost:3000/transaction?page=1&limit=10000"
+    
+    // bill
+    static let INSERT_BILL = "http://localhost:3000/bill"
+    static let ADD_FRIENDS_TO_BILL = "http://localhost:3000/bill"
+    static let ADD_BILL_ITEMS_TO_BILL = "http://localhost:3000/bill-item"
+    static let GENERATE_BILL = "http://localhost:3000/bill/generate"
 }
 
 struct AppStorageKeys {
