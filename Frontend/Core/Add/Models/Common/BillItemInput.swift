@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BillItemInput: Identifiable, Encodable {
+struct BillItemInput: Identifiable, Encodable, Equatable {
     var id = UUID()
     
     let billId: Int?

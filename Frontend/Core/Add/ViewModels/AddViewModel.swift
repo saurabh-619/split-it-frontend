@@ -11,7 +11,7 @@ import Combine
 @MainActor
 class AddViewModel: ObservableObject {
     @Published var isLoading = true
-//    @Published var friends = [User]()
+    //    @Published var friends = [User]()
     @Published var friends = DeveloperPreview.shared.friends
     
     @Published var toast: Toast?
@@ -30,7 +30,6 @@ class AddViewModel: ObservableObject {
     
     // Bill info
     @Published var billItems = [BillItemInput]()
-//    @Published var billItems = DeveloperPreview.shared.billItemInputs
     @Published var billItemFriends = [User]()
     
     @Published var name = ""
@@ -44,10 +43,51 @@ class AddViewModel: ObservableObject {
     @Published var quantityError: String?
     @Published var isAddBillItemDisabled = false
     
+    @Published var total = 0
     @Published var tax = "0"
+    @Published var equalSplit = 0
+    @Published var splitTotal = 0
     @Published var splits = [SplitInput]()
     
     private var bag = Set<AnyCancellable>()
+    
+    init() {
+        $billItems
+            .sink { _ in
+                self.setTotalAndSplit()
+                self.setSplitTotal()
+            }
+            .store(in: &bag)
+        
+        $tax
+            .sink { _ in
+                self.setTotalAndSplit()
+                self.setSplitTotal()
+            }
+            .store(in: &bag)
+        
+        $splits
+            .sink { _ in
+                self.setSplitTotal()
+            }
+            .store(in: &bag)
+    }
+    
+    func setTotalAndSplit() {
+        guard self.selectedFriends.count != 0 else { return }
+        
+        self.total = self.billItems.reduce(0) { acc, item in
+            item.quantity * item.price
+        } + (Int(self.tax) ?? 0)
+        
+        self.createSplitInputs(split: Int(Double(self.total)/Double(self.selectedFriends.count).rounded(.up)))
+    }
+    
+    func setSplitTotal() {
+        self.splitTotal = self.splits.reduce(0, { acc,splitInput in
+            acc + (Int(splitInput.splitString) ?? 0)
+        })
+    }
     
     func getFriends() async {
         do {
@@ -102,10 +142,10 @@ class AddViewModel: ObservableObject {
         if(self.titleError != nil || self.descriptionError != nil) {
             self.isNextDisabled = true
         }
-    } 
+    }
     
     func nextStep() {
-//        validate()
+        //        validate()
         if(!isNextDisabled) {
             self.step = self.step == 4 ? 4 : self.step + 1
         }
@@ -116,7 +156,7 @@ class AddViewModel: ObservableObject {
     }
     
     func clearSelectedFriends() {
-        self.selectedFriends.removeAll() 
+        self.selectedFriends.removeAll()
     }
     
     func addOrRemoveSelectedFriend(friend: User) {
@@ -240,15 +280,21 @@ class AddViewModel: ObservableObject {
     }
     
     func createSplitInputs(split: Int) {
+        self.equalSplit = split
+        
         for friend in self.selectedFriends {
+            var friendTotal = Int(((Double(self.tax) ?? 0) / Double(self.selectedFriends.count)).rounded(.up))
+            friendTotal += billItems.reduce(0, { acc, billItem in
+                return billItem.friendIds.contains(friend.id) ? acc + billItem.price : acc + 0
+            })
+            
             let index = self.splits.firstIndex{ $0.friendId == friend.id}
             if(index == nil) {
-                self.splits.append(SplitInput(friendId: friend.id, split: split))
+                self.splits.append(SplitInput(friendId: friend.id, split: friendTotal))
             } else {
-                self.splits[index!].split = split
-//                self.splits[index!].splitString = String(split)
+                self.splits[index!].split = friendTotal
+                self.splits[index!].splitString = String(friendTotal)
             }
         }
-        print(self.splits)
     }
 }

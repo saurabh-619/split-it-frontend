@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import SwiftUI
 
-struct SplitInput: Equatable {
-    static func == (lhs: SplitInput, rhs: SplitInput) -> Bool {
-        lhs.friendId == rhs.friendId
-    }
-    
+class SplitInput: ObservableObject {
     var friendId: Int
-    var splitString: Binding<String>?
     var split: Int?
+    @Published var splitString: String = ""
+    
+    init(friendId: Int, split: Int? = nil) {
+        self.friendId = friendId
+        self.split = split
+    }
 }

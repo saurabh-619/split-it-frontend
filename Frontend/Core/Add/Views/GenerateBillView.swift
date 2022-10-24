@@ -15,13 +15,16 @@ struct GenerateBillView: View {
             billAmount
             SectionTitleView(title: "details")
             tax
-            SectionTitleView(title: "splits")
+            splitsHeading
             splits
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .onChange(of: self.total, perform: { total in
-            vm.createSplitInputs(split: total / vm.selectedFriends.count)
-        })
+//        .onChange(of: self.vm.billItems, perform: { newValue in
+//            vm.setTotalAndSplit()
+//        })
+//        .onChange(of: self.vm.tax, perform: { tax in
+//            vm.setTotalAndSplit()
+//        })
     }
 }
 
@@ -49,18 +52,12 @@ extension GenerateBillView {
         .foregroundColor(color)
     }
     
-    private var total: Int {
-        vm.billItems.reduce(0) { acc, item in
-            item.quantity * item.price
-        } + (Int(vm.tax) ?? 0)
-    }
-    
     private var billAmount: some View {
         VStack {
             Text("total")
                 .font(.subheadline)
                 .foregroundColor(Color.theme.white60)
-            PriceView(price:  total, size: 32)
+            PriceView(price: vm.total, size: 32)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 24)
@@ -82,6 +79,14 @@ extension GenerateBillView {
             Spacer()
             TextFieldView(placeholder: "tax", text: $vm.tax)
                 .frame(width: 120)
+        }
+    }
+    
+    private var splitsHeading: some View {
+        HStack {
+            SectionTitleView(title: "splits")
+            Spacer()
+            PriceView(price: vm.splitTotal, size: 18.0, color: vm.splitTotal >= vm.total ? Color.theme.gray500 : Color.theme.danger)
         }
     }
     
@@ -107,18 +112,13 @@ extension GenerateBillView {
                     .foregroundColor(Color.theme.white45)
             }
             Spacer()
-            TextEditor(text: $vm.splits.first{$0.friendId == friend.id}.splitString)
-//            PriceView(price: (total / vm.selectedFriends.count), size: 16, color: Color.theme.gray500)
+            TextEditorView(placeholder: "split", splitString: $vm.splits.first {$0.friendId.wrappedValue == friend.id}?.splitString ?? .constant("0"))
         }
     }
-    
     
     private var splits: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 24) {
-//                ForEach(DeveloperPreview.shared.friends) { friend in
-//                    friendUI(friend: friend)
-//                }
                 ForEach(vm.selectedFriends) { friend in
                     friendUI(friend: friend)
                 }
