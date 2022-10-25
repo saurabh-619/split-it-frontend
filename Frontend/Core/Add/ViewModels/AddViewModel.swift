@@ -11,8 +11,7 @@ import Combine
 @MainActor
 class AddViewModel: ObservableObject {
     @Published var isLoading = true
-    //    @Published var friends = [User]()
-    @Published var friends = DeveloperPreview.shared.friends
+    @Published var friends = [User]()
     
     @Published var toast: Toast?
     @Published var step = 0
@@ -53,15 +52,14 @@ class AddViewModel: ObservableObject {
     
     init() {
         $billItems
-            .sink { _ in
-                self.setTotalAndSplit()
-                self.setSplitTotal()
+            .sink { billItems in
+                self.setTotalAndSplit(billItems: billItems, tax: self.tax)
             }
             .store(in: &bag)
         
         $tax
-            .sink { _ in
-                self.setTotalAndSplit()
+            .sink { tax in
+                self.setTotalAndSplit(billItems: self.billItems, tax: tax)
                 self.setSplitTotal()
             }
             .store(in: &bag)
@@ -73,14 +71,14 @@ class AddViewModel: ObservableObject {
             .store(in: &bag)
     }
     
-    func setTotalAndSplit() {
+    func setTotalAndSplit(billItems: [BillItemInput], tax: String) {
         guard self.selectedFriends.count != 0 else { return }
         
-        self.total = self.billItems.reduce(0) { acc, item in
-            item.quantity * item.price
+        self.total = billItems.reduce(0) { acc, item in
+            acc + (item.quantity * item.price)
         } + (Int(self.tax) ?? 0)
         
-        self.createSplitInputs(split: Int(Double(self.total)/Double(self.selectedFriends.count).rounded(.up)))
+        self.createSplitInputs(billItems: billItems)
     }
     
     func setSplitTotal() {
@@ -145,7 +143,7 @@ class AddViewModel: ObservableObject {
     }
     
     func nextStep() {
-        //        validate()
+        validate()
         if(!isNextDisabled) {
             self.step = self.step == 4 ? 4 : self.step + 1
         }
@@ -254,7 +252,6 @@ class AddViewModel: ObservableObject {
         self.quantityError = nil
     }
     
-    
     func addOrRemoveBillItemFriend(friend: User) {
         let index = self.billItemFriends.firstIndex(of: friend)
         if(index == nil) {
@@ -279,9 +276,9 @@ class AddViewModel: ObservableObject {
         }
     }
     
-    func createSplitInputs(split: Int) {
-        self.equalSplit = split
-        
+    func createSplitInputs(billItems: [BillItemInput]) {
+        self.equalSplit = Int(Double(self.total)/Double(self.selectedFriends.count).rounded(.up))
+    
         for friend in self.selectedFriends {
             var friendTotal = Int(((Double(self.tax) ?? 0) / Double(self.selectedFriends.count)).rounded(.up))
             friendTotal += billItems.reduce(0, { acc, billItem in
@@ -290,11 +287,83 @@ class AddViewModel: ObservableObject {
             
             let index = self.splits.firstIndex{ $0.friendId == friend.id}
             if(index == nil) {
-                self.splits.append(SplitInput(friendId: friend.id, split: friendTotal))
+                let newSplitInput = SplitInput(friendId: friend.id, split: friendTotal, splitString: String(friendTotal))
+                self.splits.append(newSplitInput)
             } else {
                 self.splits[index!].split = friendTotal
                 self.splits[index!].splitString = String(friendTotal)
             }
         }
+    }
+    
+    func clearForm() {
+        self.isLoading = true
+        self.friends = [User]()
+
+        self.step = 0
+        
+        // basic info
+        self.title = ""
+        self.description = ""
+         
+        self.isNextDisabled = false
+        
+        // friends
+        self.selectedFriends = [User]()
+        
+        // Bill info
+        self.billItems = [BillItemInput]()
+        self.billItemFriends = [User]()
+        
+        self.name = ""
+        self.price = ""
+        self.quantity = ""
+        self.billItemDescription = ""
+         
+        self.isAddBillItemDisabled = false
+        
+        self.total = 0
+        self.tax = "0"
+        self.equalSplit = 0
+        self.splitTotal = 0
+        self.splits = [SplitInput]()
+    }
+    
+    func generateBill() async {
+        isLoading = true
+        do {
+            // 1. add basic bill info
+            let basicInfoBody = BasicInfoRequest(title: self.title, description: self.description)
+            let basicInfoResponse: BasicInfoResponse = try await ApiManager.shared.post(ApiConstants.INSERT_BILL, body: basicInfoBody)
+            
+            
+            // 2. add friends to the bill
+            let addFriendsBody = AddFriendsRequest(billId: basicInfoResponse.billId, friendIds: self.selectedFriends.map{$0.id})
+            let _: BasicInfoResponse = try await ApiManager.shared.patch(ApiConstants.ADD_FRIENDS_TO_BILL, body: addFriendsBody)
+            
+            // 3. add bill items to the bill
+            for billItem in self.billItems {
+                let billItemBody = AddBillItemRequest(billId: basicInfoResponse.billId, name: billItem.name, description: billItem.description, price: billItem.price, friendIds: billItem.friendIds, quantity: billItem.quantity)
+                let response: AddBillItemResponse = try await ApiManager.shared.patch(ApiConstants.ADD_BILL_ITEMS_TO_BILL, body: billItemBody)
+                if(!response.ok) {
+                    throw NetworkError.backendError(response.error ?? "")
+                }
+            }
+            
+            // 4. generate the bill
+            let isEqualSplit = Set(self.splits.map{Int($0.splitString)}).count <= 1
+            let generateBillBody = GenerateBillRequest(billId: basicInfoResponse.billId, tax: Int(self.tax) ?? 0, isPaid: false, isEqualSplit: isEqualSplit, splits: self.splits.map{Split(friendId: $0.friendId, split: $0.split)})
+            
+            let response: BaseResponse = try await ApiManager.shared.patch(ApiConstants.GENERATE_BILL, body: generateBillBody)
+            if(!response.ok) {
+                throw NetworkError.backendError(response.error ?? "")
+            }
+            self.clearForm()
+            self.step = 0
+            toast = Toast(title: "woohoo!", message: "split notifications were sent successfully to all friends")
+        } catch {
+            toast = Toast(type: .error, title: "ohh oh!", message: error.localizedDescription)
+        }
+        isLoading = false
     }
 }

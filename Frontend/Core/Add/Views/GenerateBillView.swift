@@ -123,7 +123,12 @@ extension GenerateBillView {
                     friendUI(friend: friend)
                 }
             }
+            
+            ActionButtonView(text: "generate", isLoading: vm.isLoading) {
+                Task {
+                    await vm.generateBill()
+                }
+            }
         }
     }
-     
 }

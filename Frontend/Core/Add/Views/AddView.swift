@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
+    @EnvironmentObject private var sessionState: SessionState
     @StateObject var vm = AddViewModel()
     
     var body: some View {
@@ -16,6 +17,9 @@ struct AddView: View {
             navbar
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .onAppear {
+            vm.addOrRemoveSelectedFriend(friend: sessionState.user)
+        }
         .task {
             await vm.getFriends()
         }
@@ -27,6 +31,7 @@ struct AddView: View {
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         AddView()
+            .environmentObject(SessionState())
             .preferredColorScheme(.dark)
     }
 }
@@ -91,6 +96,25 @@ extension AddView {
         }
     }
     
+    private var selectedFriendsTitle: some View {
+        Group {
+            if(!vm.friends.isEmpty) {
+                HStack {
+                    SectionTitleView(title: "selected \(vm.selectedFriends.filter{$0.id != sessionState.user.id}.count)/\(vm.friends.count)")
+                    Spacer()
+                    Button {
+                        vm.clearSelectedFriends()
+                    } label: {
+                        Text("clear")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.theme.white60)
+                    }
+                }
+            }
+        }
+    }
+    
     private var selectedFriends: some View {
         Group {
             if vm.selectedFriends.isEmpty {
@@ -102,7 +126,7 @@ extension AddView {
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(alignment: .center,spacing: 24) {
-                            ForEach(vm.selectedFriends) { friend in
+                            ForEach(vm.selectedFriends.filter{$0.id != sessionState.user.id}) { friend in
                                 VStack(spacing: 8) {
                                     CacheImageView(url: friend.avatar) { image in
                                         Image(uiImage: image)
@@ -146,25 +170,6 @@ extension AddView {
                 ForEach(vm.friends, id: \.id) { friend in
                     PersonRowView(user: friend, hasButton: true, buttonText: vm.selectedFriends.contains(friend) ? "remove" : "add", buttonTextColor: vm.selectedFriends.contains(friend) ? Color.theme.gray500 : Color.theme.accent) {
                         vm.addOrRemoveSelectedFriend(friend: friend)
-                    }
-                }
-            }
-        }
-    }
-    
-    private var selectedFriendsTitle: some View {
-        Group {
-            if(!vm.friends.isEmpty) {
-                HStack {
-                    SectionTitleView(title: "selected \(vm.selectedFriends.count)/\(vm.friends.count)")
-                    Spacer()
-                    Button {
-                        vm.clearSelectedFriends()
-                    } label: {
-                        Text("clear")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.theme.white60)
                     }
                 }
             }
