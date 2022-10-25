@@ -143,8 +143,9 @@ class AddViewModel: ObservableObject {
     }
     
     func nextStep() {
-        validate()
+        validateBasicInfo()
         if(!isNextDisabled) {
+            if(self.step == 1 && self.selectedFriends.count == 1) { return }
             self.step = self.step == 4 ? 4 : self.step + 1
         }
     }
@@ -299,8 +300,6 @@ class AddViewModel: ObservableObject {
     func clearForm() {
         self.isLoading = true
         self.friends = [User]()
-
-        self.step = 0
         
         // basic info
         self.title = ""
@@ -327,6 +326,8 @@ class AddViewModel: ObservableObject {
         self.equalSplit = 0
         self.splitTotal = 0
         self.splits = [SplitInput]()
+        
+        self.step = 0
     }
     
     func generateBill() async {
@@ -358,8 +359,7 @@ class AddViewModel: ObservableObject {
             if(!response.ok) {
                 throw NetworkError.backendError(response.error ?? "")
             }
-            self.clearForm()
-            self.step = 0
+            self.nextStep()
             toast = Toast(title: "woohoo!", message: "split notifications were sent successfully to all friends")
         } catch {
             toast = Toast(type: .error, title: "ohh oh!", message: error.localizedDescription)

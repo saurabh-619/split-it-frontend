@@ -47,6 +47,11 @@
 		09A2EA1528F2AE4700F63832 /* EditMoneyRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */; };
 		09A2EA1728F2B0C200F63832 /* EditMoneyRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */; };
 		09A4437828E03534002B2F0C /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4437728E03534002B2F0C /* SessionState.swift */; };
+		09A4E8FB2907FACE000DDA51 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4E8FA2907FACE000DDA51 /* SuccessView.swift */; };
+		09A4E8FD29080050000DDA51 /* TransactionDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4E8FC29080050000DDA51 /* TransactionDividerView.swift */; };
+		09A4E8FF29080096000DDA51 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4E8FE29080096000DDA51 /* PriceView.swift */; };
+		09A4E90229081255000DDA51 /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4E90129081255000DDA51 /* BasicInfoView.swift */; };
+		09A4E904290812B5000DDA51 /* AddFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4E903290812B5000DDA51 /* AddFriendsView.swift */; };
 		09A5B98528E0D0FF004D48B3 /* PendingFriendRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */; };
 		09A5B98728E0D13D004D48B3 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98628E0D13D004D48B3 /* FriendRequest.swift */; };
 		09A5B98B28E0D732004D48B3 /* PersonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5B98A28E0D732004D48B3 /* PersonRowView.swift */; };
@@ -178,6 +183,11 @@
 		09A2EA1428F2AE4700F63832 /* EditMoneyRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestViewModel.swift; sourceTree = "<group>"; };
 		09A2EA1628F2B0C200F63832 /* EditMoneyRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMoneyRequestRequest.swift; sourceTree = "<group>"; };
 		09A4437728E03534002B2F0C /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
+		09A4E8FA2907FACE000DDA51 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		09A4E8FC29080050000DDA51 /* TransactionDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDividerView.swift; sourceTree = "<group>"; };
+		09A4E8FE29080096000DDA51 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		09A4E90129081255000DDA51 /* BasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoView.swift; sourceTree = "<group>"; };
+		09A4E903290812B5000DDA51 /* AddFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsView.swift; sourceTree = "<group>"; };
 		09A5B98428E0D0FF004D48B3 /* PendingFriendRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFriendRequestResponse.swift; sourceTree = "<group>"; };
 		09A5B98628E0D13D004D48B3 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
 		09A5B98A28E0D732004D48B3 /* PersonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRowView.swift; sourceTree = "<group>"; };
@@ -288,6 +298,7 @@
 				09A5B98C28E0E856004D48B3 /* SheetHeadingView.swift */,
 				09B7D0A428EA133B0012394E /* SectionTitleView.swift */,
 				0939250528F496C3006B2438 /* NavbarView.swift */,
+				09A4E8FC29080050000DDA51 /* TransactionDividerView.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -414,9 +425,12 @@
 			isa = PBXGroup;
 			children = (
 				09C4B2C928DB8B65008621AA /* AddView.swift */,
+				09A4E90129081255000DDA51 /* BasicInfoView.swift */,
+				09A4E903290812B5000DDA51 /* AddFriendsView.swift */,
 				09C92DAF29040787005BF20B /* AddBillItemsView.swift */,
 				09C92DB62904095D005BF20B /* AddBillItemSheetView.swift */,
 				099DCD3429055189005488B0 /* GenerateBillView.swift */,
+				09A4E8FA2907FACE000DDA51 /* SuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,6 +557,7 @@
 				09C74D8A28F1CF1C001885FE /* AlertView.swift */,
 				099E1F0D28F73AEA000B71F8 /* BillRowView.swift */,
 				09C64C8228F9FD40001755C3 /* BillProgressView.swift */,
+				09A4E8FE29080096000DDA51 /* PriceView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -955,10 +970,12 @@
 				099D4B5A28D63BEF00023AF2 /* TextField.swift in Sources */,
 				09C1B46A28ED79A200FA35A8 /* IconLabelView.swift in Sources */,
 				09AB511129070CF80026606E /* BasicInfoRequest.swift in Sources */,
+				09A4E90229081255000DDA51 /* BasicInfoView.swift in Sources */,
 				09C1B46628ED67BF00FA35A8 /* MoneyRequestSheetView.swift in Sources */,
 				09C33DDC28DEFF02003AE11E /* Tab.swift in Sources */,
 				093E88DA28FDDCA000BFDB8D /* TransactionDetailsSheetViewModel.swift in Sources */,
 				09A5B98B28E0D732004D48B3 /* PersonRowView.swift in Sources */,
+				09A4E904290812B5000DDA51 /* AddFriendsView.swift in Sources */,
 				09CB889628D5BD280077F045 /* RegisterView.swift in Sources */,
 				09BEAA6828D102F500FFEF94 /* FrontendApp.swift in Sources */,
 				09CEAC3D28FBE8AD00FCAE77 /* GetTransactionsResponse.swift in Sources */,
@@ -992,6 +1009,7 @@
 				09465515290711230019E190 /* AddBillItemRequest.swift in Sources */,
 				09A03A202900753E00BE6F19 /* AddViewModel.swift in Sources */,
 				092C862528D76EC9007C45F1 /* Errors.swift in Sources */,
+				09A4E8FD29080050000DDA51 /* TransactionDividerView.swift in Sources */,
 				09C56DB328F7142600B72659 /* BillViewModel.swift in Sources */,
 				09A5B99128E0F091004D48B3 /* PeopleListView.swift in Sources */,
 				09C92DB72904095D005BF20B /* AddBillItemSheetView.swift in Sources */,
@@ -1014,6 +1032,7 @@
 				0958400F28E4DBD700225BA3 /* String.swift in Sources */,
 				09BBB62A28D26B380007ACEF /* View.swift in Sources */,
 				09A4437828E03534002B2F0C /* SessionState.swift in Sources */,
+				09A4E8FB2907FACE000DDA51 /* SuccessView.swift in Sources */,
 				09A5B98F28E0EB15004D48B3 /* SearchUsersResponse.swift in Sources */,
 				09CD180D28E0B70D001E44B2 /* SearchFriendViewModel.swift in Sources */,
 				09C4B2D528DB97D5008621AA /* Wallet.swift in Sources */,
@@ -1056,6 +1075,7 @@
 				09B3651228DF56DE00910584 /* HomeViewModel.swift in Sources */,
 				09CB889428D5BBC30077F045 /* ActionButtonView.swift in Sources */,
 				09C4B2D128DB934A008621AA /* ProfileViewModel.swift in Sources */,
+				09A4E8FF29080096000DDA51 /* PriceView.swift in Sources */,
 				09C0425428D39BFD00FEAC6D /* PreviewProvider.swift in Sources */,
 				099D006C28F0A39100E6E324 /* MoneyRequestSheetViewModel.swift in Sources */,
 				09C92DB029040787005BF20B /* AddBillItemsView.swift in Sources */,

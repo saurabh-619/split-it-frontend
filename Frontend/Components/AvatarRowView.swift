@@ -25,7 +25,7 @@ struct AvatarRowView: View {
                         .frame(width: size, height: size)
                         .cornerRadius(radius)
                         .padding(size/11.3)
-                        .background(Color.theme.appWhite)
+                        .background(hasBorder ? Color.theme.appWhite : Color.clear)
                         .cornerRadius(radius)
                         .offset(x: Double(index) * (size - offset))
                 }
@@ -35,14 +35,14 @@ struct AvatarRowView: View {
                     .font(.caption2)
                     .bold()
                     .foregroundColor(Color.theme.white60)
-                    .frame(width: size, height: size)
+                    .frame(width: hasBorder ? size : size - 3, height: hasBorder ? size : size - 3)
                     .padding(size/11.3)
                     .background(Color.theme.cardBackground)
                     .cornerRadius(radius)
                     .offset(x: Double(4) * (size - offset))
             }
         }
-//        .frame(maxWidth: .infinity, alignment: .leading) 
+        .frame(maxWidth: size * Double(people.count > 4 ? 5 : people.count), alignment: .leading)
     }
 }
 

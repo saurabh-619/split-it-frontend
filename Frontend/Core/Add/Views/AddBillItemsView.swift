@@ -52,22 +52,6 @@ extension AddBillItemsView {
     }
     
     @ViewBuilder
-    private func PriceView(price: Int) -> some View {
-        HStack(spacing: 0) {
-            Image("rupee")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 20, height: 20)
-                .padding(.horizontal, -2)
-            
-            Text(price.withCommasString)
-                .font(.system(size: 20))
-                .fontWeight(.bold)
-        }
-        .foregroundColor(Color.theme.accent)
-    }
-    
-    @ViewBuilder
     func QuantityView(quantity: Int, color: Color = Color.theme.white45) -> some View {
         HStack(alignment: .center, spacing: 2) {
             Text("x")

@@ -19,12 +19,6 @@ struct GenerateBillView: View {
             splits
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-//        .onChange(of: self.vm.billItems, perform: { newValue in
-//            vm.setTotalAndSplit()
-//        })
-//        .onChange(of: self.vm.tax, perform: { tax in
-//            vm.setTotalAndSplit()
-//        })
     }
 }
 
@@ -36,28 +30,12 @@ struct GenerateBillView_Previews: PreviewProvider {
 }
 
 extension GenerateBillView {
-    @ViewBuilder
-    private func PriceView(price: Int, size: CGFloat = 28, color: Color = Color.theme.accent) -> some View {
-        HStack(spacing: 0) {
-            Image("rupee")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: size, height: size)
-                .padding(.horizontal, -2)
-            
-            Text(price.withCommasString)
-                .font(.system(size: size))
-                .fontWeight(.bold)
-        }
-        .foregroundColor(color)
-    }
-    
     private var billAmount: some View {
         VStack {
             Text("total")
                 .font(.subheadline)
                 .foregroundColor(Color.theme.white60)
-            PriceView(price: vm.total, size: 32)
+            PriceView(price: vm.total, fontSize: 32)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 24)
@@ -86,7 +64,7 @@ extension GenerateBillView {
         HStack {
             SectionTitleView(title: "splits")
             Spacer()
-            PriceView(price: vm.splitTotal, size: 18.0, color: vm.splitTotal >= vm.total ? Color.theme.gray500 : Color.theme.danger)
+            PriceView(price: vm.splitTotal, fontSize: 18.0, color: vm.splitTotal >= vm.total ? Color.theme.gray500 : Color.theme.danger)
         }
     }
     
@@ -121,12 +99,6 @@ extension GenerateBillView {
             LazyVStack(alignment: .leading, spacing: 24) {
                 ForEach(vm.selectedFriends) { friend in
                     friendUI(friend: friend)
-                }
-            }
-            
-            ActionButtonView(text: "generate", isLoading: vm.isLoading) {
-                Task {
-                    await vm.generateBill()
                 }
             }
         }

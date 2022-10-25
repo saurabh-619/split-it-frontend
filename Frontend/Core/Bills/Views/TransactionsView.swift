@@ -40,7 +40,9 @@ struct TransactionsView: View {
                 }
             }
             .refreshable {
-                await vm.getTransactions()
+                Task {
+                    await vm.getTransactions()
+                }
             }
         }
         .navigationBarBackButtonHidden()

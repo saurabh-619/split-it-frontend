@@ -178,28 +178,6 @@ extension BillView {
         }
         
         @ViewBuilder
-        func TransactionDividerView(isDashed: Bool = true) -> some View {
-            Rectangle()
-                .stroke(style: StrokeStyle(lineWidth: 1, dash: isDashed ? [9] : [], dashPhase: 14))
-                .frame(maxWidth: .infinity, maxHeight: 0.5)
-                .foregroundColor(Color.theme.gray800)
-        }
-        
-        @ViewBuilder
-        func PriceView(price: Int, fontSize: Double = 16, color: Color = Color.theme.appWhite, fontWeight: Font.Weight = .regular) -> some View {
-            HStack(spacing: 0) {
-                Image("rupee")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: fontSize, height: fontSize)
-                Text(price.withCommasString)
-                    .font(.system(size: fontSize))
-                    .fontWeight(fontWeight)
-            }
-            .foregroundColor(color)
-        }
-        
-        @ViewBuilder
         func QuantityView(quantity: Int, color: Color = Color.theme.white45) -> some View {
             HStack(alignment: .bottom, spacing: 2) {
                 Text("\(quantity)")
