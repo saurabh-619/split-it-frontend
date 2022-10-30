@@ -22,6 +22,6 @@ struct TextEditorView: View {
 struct TextEditorView_Previews: PreviewProvider {
     static var previews: some View {
         TextEditorView(placeholder: "write something", splitString: .constant(""))
-        .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

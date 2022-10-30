@@ -16,7 +16,7 @@ struct Tab {
     static let tabs = [
         Tab(icon: "home", title: "home", screen: Screen.HOME),
         Tab(icon: "wallet", title: "wallet", screen: Screen.WALLET),
-        Tab(icon: "plus", title: "transaction", screen: Screen.ADD),
+        Tab(icon: "plus", title: "add bill", screen: Screen.ADD),
         Tab(icon: "credit-card", title: "bills", screen: Screen.BILLS),
         Tab(icon: "user", title: "profile", screen: Screen.PROFILE)
     ]

@@ -11,7 +11,7 @@ struct BillView: View {
     let bill: Bill
     
     @ObservedObject var counter: Counter
-    @State var selectedUser: User?
+    @State var selectedUser: UserWithPaymentInfo?
     
     init(bill: Bill) {
         self.bill = bill
@@ -119,7 +119,7 @@ extension BillView {
     }
     
     @ViewBuilder
-    func userRow(user: User) -> some View {
+    func userRow(isLeader: Bool, user: UserWithPaymentInfo) -> some View {
         Button {
             selectedUser = user
         } label: {
@@ -134,6 +134,10 @@ extension BillView {
                         .font(.caption)
                         .foregroundColor(Color.theme.gray300)
                 }
+                Spacer()
+                if(!isLeader) {
+                    PriceView(price: user.paymentInfo.amount, color: user.paymentInfo.hasPaid ? Color.theme.success : Color.theme.danger) 
+                }
             }
         }
     }
@@ -141,7 +145,7 @@ extension BillView {
     private var billLeader: some View {
         VStack(alignment: .leading, spacing: 12) {
             SectionTitleView(title: "leader")
-            userRow(user: bill.leader!)
+            userRow(isLeader: true, user: bill.leader!)
         }
         .padding(.bottom, 24)
     }
@@ -151,7 +155,7 @@ extension BillView {
             SectionTitleView(title: "friends")
             LazyVStack(alignment: .leading, spacing: 12) {
                 ForEach(bill.friends!) { friend in
-                    userRow(user: bill.leader!)
+                    userRow(isLeader: false, user: friend)
                 }
             }
         }

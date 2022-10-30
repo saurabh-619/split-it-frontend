@@ -39,7 +39,7 @@ class PendingFriendRequestsViewModel: ObservableObject {
         do {
             let response: BaseResponse = try await ApiManager.shared.patch(ApiConstants.CHANGE_FRIEND_REQUEST_STATUS, body: updateStatusBody)
             if(response.ok) {
-                toast = Toast(title: "woohoo!", message: "friend request accepted successfully")
+                toast = Toast(type: .info, title: "woohoo!", message: "friend request accepted successfully")
                 buttonText[index] = "added"
                 buttonTextColor[index] = Color.theme.gray700
                 isButtonDisabled[index] = true

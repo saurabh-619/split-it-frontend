@@ -38,7 +38,7 @@ class EditMoneyRequestViewModel: ObservableObject {
             let updateBody = EditMoneyRequestRequest(title: self.title, description: self.description, amount: Int(self.amount) ?? 0, requestId: self.requestId, transactionId: self.transactionId)
             let response: BaseResponse = try await ApiManager.shared.patch(ApiConstants.MONEY_REQUESTS_EDIT, body: updateBody)
             if(response.ok) {
-                toast = Toast(title: "woohoo", message: "money request succefully edited")
+                toast = Toast(type: .info, title: "woohoo", message: "money request succefully edited")
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }

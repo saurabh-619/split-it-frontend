@@ -53,6 +53,6 @@ extension SearchFriendView {
     }
     
     private var results: some View {
-        PeopleListView(emptyText: vm.count == 0 ? "couldn't find user searched" : "", people: vm.results)
+        PeopleListView(emptyText: vm.count == 0 ? "couldn't find the user searched" : "", people: vm.results)
     }
 }

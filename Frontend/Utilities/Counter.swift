@@ -17,14 +17,17 @@ class Counter: ObservableObject {
     
     init(speed: Double, end: String) {
         self.timer = Timer.publish(every: speed, on: .main, in: .common).autoconnect()
-        self.end = Double((Double(end) ?? 0.0).getTwoDigitString) ?? 0.0
+//        self.end = Double((Double(end) ?? 0.0).getTwoDigitString) ?? 0.0
+        self.end = Double(end) ?? 0.0
     }
     
     func start() {
         timer
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                if self.count < self.end { 
+                if String(self.count).prefix(4) != String(self.end).prefix(4) && self.count < 1.00 {
+                    print(String(self.count).prefix(4),
+                          String(self.end).prefix(4))
                     self.count += 0.01
                 } else {
                     self.bag.removeAll()

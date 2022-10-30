@@ -101,8 +101,8 @@ class RequestMoneyViewModel: ObservableObject {
         do {
             let response: BaseResponse = try await ApiManager.shared.post(ApiConstants.SEND_MONEY_REQUEST, body: sendMoneyRequestBody)
             if(response.ok) {
-                toast = Toast(title: "ohh oh!", message: "money request sent successfully")
-                try await Task.sleep(nanoseconds: 2_000_000_000)
+                toast = Toast(type: .info, title: "woohoo!", message: "money request sent successfully")
+                try await Task.sleep(nanoseconds: 1_000_000_000)
                 onSubmit()
             } else {
                 throw NetworkError.backendError(response.error ?? "")

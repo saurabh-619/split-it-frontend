@@ -162,7 +162,7 @@ extension TransactionDetailsSheetView {
                 .padding(.bottom, 25)
             BillMoneyRequestDetailsView()
             Spacer()
-            if transaction.type == "split" {
+            if transaction.type == "split" && isSent {
                 action
             }
         }

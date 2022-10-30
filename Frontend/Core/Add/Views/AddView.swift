@@ -76,7 +76,7 @@ extension AddView {
             Button {
                 Task {
                     vm.step += 1
-//                        await vm.generateBill()
+                    await vm.generateBill()
                 }
             } label: {
                 Image("send")
@@ -117,21 +117,21 @@ extension AddView {
     }
     
     @ViewBuilder
-    func ScreenView<Content: View>(content: Content, index: Int) -> some View {
+    func ScreenView<Content: View>(content: Content, step: Int) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .padding(.top, 80)
-            .offset(x: UIScreen.screenWidth * CGFloat(index - vm.step))
+            .offset(x: UIScreen.screenWidth * CGFloat(step - vm.step))
             .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.9, blendDuration: 0.58), value: vm.step)
     }
     
-    private var steps: some View {
+    private var steps: some View {        
         return ZStack {
-            ScreenView(content: BasicInfoView(vm: vm), index: 0)
-            ScreenView(content: AddFriendsView(vm: vm), index: 1)
-            ScreenView(content: AddBillItemsView(vm: vm), index: 2)
-            ScreenView(content: GenerateBillView(vm: vm), index: 3)
-            ScreenView(content: SuccessView(vm: vm), index: 4)
+            ScreenView(content: BasicInfoView(vm: vm), step: 0)
+            ScreenView(content: AddFriendsView(vm: vm), step: 1)
+            ScreenView(content: AddBillItemsView(vm: vm), step: 2)
+            ScreenView(content: GenerateBillView(vm: vm), step: 3)
+            ScreenView(content: SuccessView(vm: vm), step: 4)
         }
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)

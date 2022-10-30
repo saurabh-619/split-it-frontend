@@ -54,6 +54,7 @@ class AddViewModel: ObservableObject {
         $billItems
             .sink { billItems in
                 self.setTotalAndSplit(billItems: billItems, tax: self.tax)
+                self.setSplitTotal()
             }
             .store(in: &bag)
         

@@ -36,6 +36,7 @@ struct MoneyRequestSheetView: View {
                     await vm.changeMoneyRequestStatus(request:moneyRequest)
                 }
             })
+            .frame(maxHeight: .infinity, alignment: .center)
         }
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

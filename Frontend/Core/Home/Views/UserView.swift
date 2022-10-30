@@ -13,25 +13,27 @@ struct UserView: View {
     @EnvironmentObject var sessionState: SessionState
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-                if vm.isLoading {
-                    AccentSpinner()
-                        .frame(height: 450)
-                } else {
-                    userInfo
-                    if sessionState.user.id != vm.user.id {
-                        followButton
-                        moneyRequests
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    if vm.isLoading {
+                        AccentSpinner()
+                            .frame(height: 450)
+                    } else {
+                        userInfo
+                        if sessionState.user.id != vm.user.id {
+                            followButton
+                            moneyRequests
+                        }
                     }
                 }
             }
+            .padding(20)
+            .task {
+                await vm.getUser(userId: id)
+            }
+            .toastView(toast: $vm.toast)
         }
-        .padding(20)
-        .task {
-            await vm.getUser(userId: id)
-        }
-        .toastView(toast: $vm.toast)
     }
 }
 
@@ -91,7 +93,7 @@ extension UserView {
     private var requests: some View {
         Group {
             if vm.moneyRequests.isEmpty {
-                Text("no money request with @\(vm.user.username)")
+                Text("no money requests with @\(vm.user.username)")
                     .font(.caption2)
                     .foregroundColor(Color.theme.white60)
                     .frame(height: 120, alignment: .center)
@@ -110,12 +112,14 @@ extension UserView {
     
     private var moneyRequests: some View {
         VStack(alignment: .leading) {
+            if vm.followBtnText == "unfriend" {
             Text("money requests")
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(Color.theme.appWhite)
                 .padding(.bottom, 16)
                 requests
+            }
         }
     }
 }

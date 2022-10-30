@@ -46,16 +46,16 @@ struct LoginView_Previews: PreviewProvider {
 
 extension LoginView {
     private var heading: some View {
-        Group {
+        VStack(alignment: .leading, spacing: 8) {
             Text("let's sign you in.")
-                .font(.system(size: 40, weight: .bold))
-                .padding(.bottom, 12)
-            
+            .font(.system(size: 28, weight: .semibold))
+            .foregroundColor(Color.theme.white45)
+
             VStack(alignment: .leading) {
                 Text("welcome back.")
                 Text("you've been missed!")
             }
-            .font(.system(size: 32, weight: .light))
+            .font(.system(size: 36, weight: .bold))
         }
     }
     
@@ -68,7 +68,7 @@ extension LoginView {
     
     private var registerLink: some View {
         NavigationStack {
-            HStack {
+            HStack(spacing: 4) {
                 Text("don't have an account? ")
                     .foregroundColor(Color.theme.gray400)
                 NavigationLink(
@@ -90,6 +90,7 @@ extension LoginView {
                 let takeHome = await vm.login()
                 await sessionState.getAuthUser()
                 if(!sessionState.isFetching) {
+                    try await Task.sleep(nanoseconds: 3_000_000_000)
                     vm.takeHome = takeHome
                 }
             }

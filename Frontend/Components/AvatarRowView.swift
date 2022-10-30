@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AvatarRowView: View {
-    let people: [User]
+    let people: [any UserProtocol]
     var size: Double = 45.0
     var radius: Double = 45.0
     var offset: Double = 3.0

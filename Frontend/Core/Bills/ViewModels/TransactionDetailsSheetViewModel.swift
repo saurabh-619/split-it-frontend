@@ -26,7 +26,7 @@ class TransactionDetailsSheetViewModel: ObservableObject {
             if(response.ok) {
                 onComplete()
                 try await Task.sleep(nanoseconds: 500_000_000)
-                toast = Toast(title: "woohoo!", message: "split was successfully settled")
+                toast = Toast(type: .info, title: "woohoo!", message: "split was successfully settled")
             } else {
                 throw NetworkError.backendError(response.error ?? "")
             }
