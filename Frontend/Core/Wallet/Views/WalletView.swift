@@ -40,6 +40,7 @@ struct WalletView: View {
             }
             .refreshable {
                 Task {
+                    await sessionState.getAuthUser()
                     await vm.getMoneyRequests()
                 }
             }
@@ -191,7 +192,7 @@ extension WalletView {
     private var transactions: some View {
         Group {
             if vm.moneyRequests.isEmpty {
-                Text("no money request yet")
+                Text("no money requests yet")
                     .font(.footnote)
                     .foregroundColor(Color.theme.white60)
                     .frame(height: 90, alignment: .center)

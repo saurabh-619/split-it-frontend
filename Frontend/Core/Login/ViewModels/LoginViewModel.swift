@@ -67,7 +67,6 @@ class LoginViewModel: ObservableObject {
             if(response.ok) {
                 UserDefaults.standard.setToken(response.token!)
                 toast = Toast(type: .success, title: "congratulations!", message: "hi again \(username)😀, welcome back to splitit app")
-                try await Task.sleep(nanoseconds: 1_000_000_000)
                 return true
             } else {
                 throw NetworkError.backendError(response.error ?? "")

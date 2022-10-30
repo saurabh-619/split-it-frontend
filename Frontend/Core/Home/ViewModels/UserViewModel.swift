@@ -96,7 +96,7 @@ class UserViewModel: ObservableObject {
         do {
             let response: BaseResponse = try await ApiManager.shared.patch(ApiConstants.CHANGE_FRIEND_REQUEST_STATUS, body: updateStatusBody)
             if(response.ok) {
-                toast = Toast(title: "woohoo!", message: "unfriended \(user.username) successfully")
+                toast = Toast(type: .info, title: "woohoo!", message: "unfriended \(user.username) successfully")
                 setFollowBtnText(text: FriendRequestStatus.UNFRIENDED)
             } else {
                 throw NetworkError.backendError(response.error!)

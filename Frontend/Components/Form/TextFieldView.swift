@@ -11,6 +11,7 @@ struct TextFieldView: View {
     let placeholder: String
     @Binding var text: String
     var isEmail = false
+    var isMultiline = false
     var isNumber = false
     var bgColor = Color.theme.gray1000
     var borderColor = Color.theme.white30
@@ -24,7 +25,7 @@ struct TextFieldView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .trailing) {
-                TextField(placeholder, text: $text)
+                TextField(placeholder, text: $text, axis: isMultiline ? .vertical : .horizontal)
                     .keyboardDetails(isEmail: isEmail, isNumber: isNumber)
                 
                 if(haveSpinner) {
@@ -34,7 +35,8 @@ struct TextFieldView: View {
                 }
             }
             .padding(.horizontal, horizontalPad)
-            .frame(height: height)
+            .padding(.vertical, 18)
+            .frame(height: height, alignment: .top)
             .background(bgColor)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
@@ -47,7 +49,10 @@ struct TextFieldView: View {
 
 struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldView(placeholder: "some text", text: .constant("yo"), errorMsg: "bro wth")
-            .preferredColorScheme(.dark)
+        VStack {
+            TextFieldView(placeholder: "some text", text: .constant("yo"), errorMsg: "bro wth")
+            TextFieldView(placeholder: "some text", text: .constant("yo"), height: 100, errorMsg: "bro wth")
+        }
+        .preferredColorScheme(.dark)
     }
 }

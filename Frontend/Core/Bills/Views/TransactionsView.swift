@@ -40,7 +40,9 @@ struct TransactionsView: View {
                 }
             }
             .refreshable {
-                await vm.getTransactions()
+                Task {
+                    await vm.getTransactions()
+                }
             }
         }
         .navigationBarBackButtonHidden()
@@ -141,6 +143,7 @@ extension TransactionsView {
                 VStack(alignment: .leading, spacing: 8) {
                     Text((isBill ? transaction.bill?.title : transaction.moneyRequest?.title) ?? "")
                         .font(.subheadline)
+                        .foregroundColor(Color.theme.appWhite)
                         .lineLimit(1)
                     IconLabelView(icon: "calendar", text: transaction.createdAt.dateFromISOMonth)
                         .font(.caption)

@@ -21,7 +21,7 @@ struct RegisterView: View {
                         .frame(height: 45)
                     registerFields
                     Spacer()
-                        .frame(height: 65)
+                        .frame(height: 45)
                     footer
                 }
                 .padding(20)
@@ -47,14 +47,12 @@ struct RegisterView_Previews: PreviewProvider {
 
 extension RegisterView {
     private var heading: some View {
-        Group {
+        VStack(alignment: .leading, spacing: 8) {
             Text("splitit")
-                .font(.system(size: 32, weight: .semibold))
+                .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(Color.theme.white45)
-                .padding(.bottom, 1)
-            
             Text("makes it easier for friends to split and track bills")
-                .font(.system(size: 40, weight: .bold))
+                .font(.system(size: 36, weight: .bold))
         }
     }
     
@@ -70,15 +68,16 @@ extension RegisterView {
     }
     
     private var signInLink: some View {
-        HStack {
+        HStack(spacing: 4) {
             Text("already have an account? ")
                 .foregroundColor(Color.theme.gray400)
-            Text("sign in")
-                .foregroundColor(Color.theme.appWhite)
-                .bold()
-                .onTapGesture {
-                    dismiss()
-                }
+            Button {
+                dismiss()
+            } label:{
+                Text("sign in")
+                    .foregroundColor(Color.theme.appWhite)
+                    .bold()
+            }
         }
         .padding(.bottom, 10)
     }

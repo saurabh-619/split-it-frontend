@@ -158,7 +158,6 @@ class RegisterViewModel: ObservableObject {
                 throw NetworkError.backendError(response.error ?? "")
             }
         } catch let error {
-            print(error)
             toast = Toast(type: .error, title: "error", message: error.localizedDescription)
             return false
         }
